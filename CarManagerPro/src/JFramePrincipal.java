@@ -1,6 +1,21 @@
 
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.scene.control.ComboBox;
+import javax.swing.ComboBoxModel;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -20,7 +35,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
      */
     public JFramePrincipal() {
         initComponents();
-
     }
 
     /**
@@ -124,15 +138,12 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jT_inventarioProveedoresClientes = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
-        jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        jCB_concesionarioInventario = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
         jD_ventanaCRUD = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
@@ -173,6 +184,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jRB_provee = new javax.swing.JRadioButton();
         jLabel71 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
         jD_crearPlantaFabricacion = new javax.swing.JDialog();
         jLabel32 = new javax.swing.JLabel();
         jTF_crearIdPlanta = new javax.swing.JTextField();
@@ -217,6 +229,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel79 = new javax.swing.JLabel();
         jB_crearProveedor = new javax.swing.JButton();
         jPanel18 = new javax.swing.JPanel();
+        jLabel151 = new javax.swing.JLabel();
         jD_crearConsecionario = new javax.swing.JDialog();
         jLabel80 = new javax.swing.JLabel();
         jLabel81 = new javax.swing.JLabel();
@@ -227,14 +240,16 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jTF_crearParisCon = new javax.swing.JTextField();
         jPanel19 = new javax.swing.JPanel();
         jB_crearCon = new javax.swing.JButton();
+        jLabel152 = new javax.swing.JLabel();
         jD_crearCompania = new javax.swing.JDialog();
         jLabel84 = new javax.swing.JLabel();
         jLabel85 = new javax.swing.JLabel();
         jLabel86 = new javax.swing.JLabel();
-        jB_crearCompania = new javax.swing.JButton();
         jTF_crearIdCompania = new javax.swing.JTextField();
         jTF_crearNombreCompania = new javax.swing.JTextField();
         jPanel20 = new javax.swing.JPanel();
+        jB_crearCompania = new javax.swing.JButton();
+        jLabel150 = new javax.swing.JLabel();
         jD_crearCliente = new javax.swing.JDialog();
         jLabel87 = new javax.swing.JLabel();
         jLabel88 = new javax.swing.JLabel();
@@ -256,6 +271,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jB_crearCliente = new javax.swing.JButton();
         jTF_crearTipoEmpresaCliente = new javax.swing.JTextField();
         jLabel95 = new javax.swing.JLabel();
+        jLabel153 = new javax.swing.JLabel();
         jD_crearVenta = new javax.swing.JDialog();
         jLabel70 = new javax.swing.JLabel();
         jLabel74 = new javax.swing.JLabel();
@@ -474,17 +490,14 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_ventanaCliente.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel25.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 55)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(0, 0, 0));
         jLabel25.setText("Vehiculos");
         jD_ventanaCliente.getContentPane().add(jLabel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 10, 160, -1));
 
         jLabel26.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 55)); // NOI18N
-        jLabel26.setForeground(new java.awt.Color(0, 0, 0));
         jLabel26.setText(" Proveedores mas cercanos a mi");
         jD_ventanaCliente.getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
 
         jB_VehiculosClientes.setBackground(new java.awt.Color(255, 253, 168));
-        jB_VehiculosClientes.setForeground(new java.awt.Color(0, 0, 0));
         jB_VehiculosClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/coche (1).png"))); // NOI18N
         jB_VehiculosClientes.setBorder(new javax.swing.border.MatteBorder(null));
         jB_VehiculosClientes.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -542,7 +555,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jTable1.setRowHeight(20);
         jTable1.setSelectionBackground(new java.awt.Color(204, 0, 0));
         jTable1.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jTable1.setShowHorizontalLines(true);
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
@@ -555,7 +567,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
         jLabel33.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
-        jLabel33.setForeground(new java.awt.Color(0, 0, 0));
         jLabel33.setText("Reporte #1");
         jPanel4.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
@@ -637,7 +648,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jTable3.setRowHeight(20);
         jTable3.setSelectionBackground(new java.awt.Color(204, 0, 0));
         jTable3.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jTable3.setShowHorizontalLines(true);
         jTable3.getTableHeader().setReorderingAllowed(false);
         jScrollPane4.setViewportView(jTable3);
         if (jTable3.getColumnModel().getColumnCount() > 0) {
@@ -650,12 +660,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel6.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
         jLabel42.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
-        jLabel42.setForeground(new java.awt.Color(0, 0, 0));
         jLabel42.setText("Reporte #2");
         jPanel6.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jButton8.setBackground(new java.awt.Color(0, 0, 0));
-        jButton8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\busqueda (2).png")); // NOI18N
         jPanel6.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 40, -1));
 
         jLabel43.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
@@ -663,7 +671,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel6.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, -1, -1));
 
         jB_anteriorProveedoresClientes4.setBackground(new java.awt.Color(0, 0, 0));
-        jB_anteriorProveedoresClientes4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\responder.png")); // NOI18N
         jB_anteriorProveedoresClientes4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jB_anteriorProveedoresClientes4.setBorderPainted(false);
         jPanel6.add(jB_anteriorProveedoresClientes4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
@@ -702,7 +709,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jTable4.setRowHeight(20);
         jTable4.setSelectionBackground(new java.awt.Color(204, 0, 0));
         jTable4.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jTable4.setShowHorizontalLines(true);
         jTable4.getTableHeader().setReorderingAllowed(false);
         jScrollPane5.setViewportView(jTable4);
         if (jTable4.getColumnModel().getColumnCount() > 0) {
@@ -715,12 +721,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel7.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
         jLabel45.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
-        jLabel45.setForeground(new java.awt.Color(0, 0, 0));
         jLabel45.setText("Reporte #3");
         jPanel7.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jButton9.setBackground(new java.awt.Color(0, 0, 0));
-        jButton9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\busqueda (2).png")); // NOI18N
         jPanel7.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 40, -1));
 
         jLabel46.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
@@ -728,7 +732,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel7.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, -1, -1));
 
         jB_anteriorProveedoresClientes5.setBackground(new java.awt.Color(0, 0, 0));
-        jB_anteriorProveedoresClientes5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\responder.png")); // NOI18N
         jB_anteriorProveedoresClientes5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jB_anteriorProveedoresClientes5.setBorderPainted(false);
         jPanel7.add(jB_anteriorProveedoresClientes5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
@@ -767,7 +770,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jTable5.setRowHeight(20);
         jTable5.setSelectionBackground(new java.awt.Color(204, 0, 0));
         jTable5.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jTable5.setShowHorizontalLines(true);
         jTable5.getTableHeader().setReorderingAllowed(false);
         jScrollPane6.setViewportView(jTable5);
         if (jTable5.getColumnModel().getColumnCount() > 0) {
@@ -780,12 +782,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel8.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
         jLabel48.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
-        jLabel48.setForeground(new java.awt.Color(0, 0, 0));
         jLabel48.setText("Reporte #4");
         jPanel8.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jButton10.setBackground(new java.awt.Color(0, 0, 0));
-        jButton10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\busqueda (2).png")); // NOI18N
         jPanel8.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 40, -1));
 
         jLabel49.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
@@ -793,7 +793,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel8.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, -1, -1));
 
         jB_anteriorProveedoresClientes6.setBackground(new java.awt.Color(0, 0, 0));
-        jB_anteriorProveedoresClientes6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\responder.png")); // NOI18N
         jB_anteriorProveedoresClientes6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jB_anteriorProveedoresClientes6.setBorderPainted(false);
         jPanel8.add(jB_anteriorProveedoresClientes6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
@@ -832,7 +831,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jTable6.setRowHeight(20);
         jTable6.setSelectionBackground(new java.awt.Color(204, 0, 0));
         jTable6.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jTable6.setShowHorizontalLines(true);
         jTable6.getTableHeader().setReorderingAllowed(false);
         jScrollPane7.setViewportView(jTable6);
         if (jTable6.getColumnModel().getColumnCount() > 0) {
@@ -845,12 +843,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel9.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
         jLabel51.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
-        jLabel51.setForeground(new java.awt.Color(0, 0, 0));
         jLabel51.setText("Reporte #5");
         jPanel9.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jButton11.setBackground(new java.awt.Color(0, 0, 0));
-        jButton11.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\busqueda (2).png")); // NOI18N
         jPanel9.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 40, -1));
 
         jLabel52.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
@@ -858,7 +854,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel9.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, -1, -1));
 
         jB_anteriorProveedoresClientes7.setBackground(new java.awt.Color(0, 0, 0));
-        jB_anteriorProveedoresClientes7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\responder.png")); // NOI18N
         jB_anteriorProveedoresClientes7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jB_anteriorProveedoresClientes7.setBorderPainted(false);
         jPanel9.add(jB_anteriorProveedoresClientes7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
@@ -897,7 +892,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jTable7.setRowHeight(20);
         jTable7.setSelectionBackground(new java.awt.Color(204, 0, 0));
         jTable7.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jTable7.setShowHorizontalLines(true);
         jTable7.getTableHeader().setReorderingAllowed(false);
         jScrollPane8.setViewportView(jTable7);
         if (jTable7.getColumnModel().getColumnCount() > 0) {
@@ -910,12 +904,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel10.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
         jLabel54.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
-        jLabel54.setForeground(new java.awt.Color(0, 0, 0));
         jLabel54.setText("Reporte #6");
         jPanel10.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jButton12.setBackground(new java.awt.Color(0, 0, 0));
-        jButton12.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\busqueda (2).png")); // NOI18N
         jPanel10.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 40, -1));
 
         jLabel55.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
@@ -923,7 +915,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel10.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, -1, -1));
 
         jB_anteriorProveedoresClientes8.setBackground(new java.awt.Color(0, 0, 0));
-        jB_anteriorProveedoresClientes8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\responder.png")); // NOI18N
         jB_anteriorProveedoresClientes8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jB_anteriorProveedoresClientes8.setBorderPainted(false);
         jPanel10.add(jB_anteriorProveedoresClientes8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
@@ -962,7 +953,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jTable8.setRowHeight(20);
         jTable8.setSelectionBackground(new java.awt.Color(204, 0, 0));
         jTable8.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jTable8.setShowHorizontalLines(true);
         jTable8.getTableHeader().setReorderingAllowed(false);
         jScrollPane9.setViewportView(jTable8);
         if (jTable8.getColumnModel().getColumnCount() > 0) {
@@ -975,12 +965,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel11.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
         jLabel57.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
-        jLabel57.setForeground(new java.awt.Color(0, 0, 0));
         jLabel57.setText("Reporte #7");
         jPanel11.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jButton13.setBackground(new java.awt.Color(0, 0, 0));
-        jButton13.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\busqueda (2).png")); // NOI18N
         jPanel11.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 40, -1));
 
         jLabel58.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
@@ -988,7 +976,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel11.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, -1, -1));
 
         jB_anteriorProveedoresClientes9.setBackground(new java.awt.Color(0, 0, 0));
-        jB_anteriorProveedoresClientes9.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\responder.png")); // NOI18N
         jB_anteriorProveedoresClientes9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jB_anteriorProveedoresClientes9.setBorderPainted(false);
         jPanel11.add(jB_anteriorProveedoresClientes9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
@@ -1000,7 +987,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_ventanaServicioLocalizacionVehiculo.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jB_anteriorProveedoresClientes3.setBackground(new java.awt.Color(0, 51, 51));
-        jB_anteriorProveedoresClientes3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\responder.png")); // NOI18N
         jB_anteriorProveedoresClientes3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jB_anteriorProveedoresClientes3.setBorderPainted(false);
         jD_ventanaServicioLocalizacionVehiculo.getContentPane().add(jB_anteriorProveedoresClientes3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
@@ -1031,7 +1017,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jTable2.setRowHeight(20);
         jTable2.setSelectionBackground(new java.awt.Color(0, 255, 204));
         jTable2.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jTable2.setShowHorizontalLines(true);
         jTable2.getTableHeader().setReorderingAllowed(false);
         jScrollPane3.setViewportView(jTable2);
         if (jTable2.getColumnModel().getColumnCount() > 0) {
@@ -1051,18 +1036,15 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel35.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
-        jLabel35.setForeground(new java.awt.Color(0, 0, 0));
         jLabel35.setText("Inventario");
         jPanel5.add(jLabel35, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 10, -1, -1));
 
         jLabel34.setBackground(new java.awt.Color(204, 204, 204));
         jLabel34.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
-        jLabel34.setForeground(new java.awt.Color(0, 0, 0));
         jLabel34.setText("Seleccione El Pais");
         jPanel5.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 10, -1, -1));
 
         jButton4.setBackground(new java.awt.Color(0, 51, 51));
-        jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\busqueda (2).png")); // NOI18N
         jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton4MouseClicked(evt);
@@ -1079,7 +1061,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_ventanaInventario.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jB_anteriorProveedoresClientes.setBackground(new java.awt.Color(51, 0, 51));
-        jB_anteriorProveedoresClientes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\responder.png")); // NOI18N
         jB_anteriorProveedoresClientes.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jB_anteriorProveedoresClientes.setBorderPainted(false);
         jD_ventanaInventario.getContentPane().add(jB_anteriorProveedoresClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
@@ -1100,30 +1081,17 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jT_inventarioProveedoresClientes.setForeground(new java.awt.Color(255, 255, 255));
         jT_inventarioProveedoresClientes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Prueba1", "Car2", "e2iqhwe", "23124"},
-                {"Prueba2", "Car4 ", "qweqwe", "12414"},
-                {"Prueba3", "Car9", "qwcwce", "423424"},
-                {"Prueba4", "Car2", "ceerfe", "2342342"}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
-        });
+        ));
         jT_inventarioProveedoresClientes.setFillsViewportHeight(true);
         jT_inventarioProveedoresClientes.setFocusCycleRoot(true);
         jT_inventarioProveedoresClientes.setGridColor(new java.awt.Color(255, 255, 255));
         jT_inventarioProveedoresClientes.setRowHeight(22);
         jT_inventarioProveedoresClientes.setSelectionBackground(new java.awt.Color(0, 0, 0));
-        jT_inventarioProveedoresClientes.setSelectionForeground(new java.awt.Color(255, 255, 255));
-        jT_inventarioProveedoresClientes.setShowHorizontalLines(true);
         jT_inventarioProveedoresClientes.setSurrendersFocusOnKeystroke(true);
         jT_inventarioProveedoresClientes.getTableHeader().setResizingAllowed(false);
         jT_inventarioProveedoresClientes.getTableHeader().setReorderingAllowed(false);
@@ -1142,27 +1110,16 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dinero.png"))); // NOI18N
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 190, 50, 40));
 
-        jLabel28.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel28.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
-        jLabel28.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel28.setText("Seleccione El Consecionario");
-        jPanel2.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, -1));
-
         jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/concesionario (3).png"))); // NOI18N
         jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, 40));
 
-        jCB_concesionarioInventario.setBackground(new java.awt.Color(51, 0, 51));
-        jCB_concesionarioInventario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Con1", "Con2", "Con3" }));
-        jPanel2.add(jCB_concesionarioInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 140, 40));
-
         jButton1.setBackground(new java.awt.Color(102, 0, 102));
-        jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\busqueda (2).png")); // NOI18N
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 40, -1));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 80, 40, 30));
 
         jLabel30.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
         jLabel30.setText("Buscar");
@@ -1174,12 +1131,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jD_ventanaInventario.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 520));
 
+        jD_ventanaCRUD.setResizable(false);
         jD_ventanaCRUD.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anadir (2).png"))); // NOI18N
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 140, 150));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fabrica.png"))); // NOI18N
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 70, 80));
@@ -1301,7 +1256,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jB_anteriorProveedoresClientes1.setBackground(new java.awt.Color(153, 153, 153));
-        jB_anteriorProveedoresClientes1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\responder.png")); // NOI18N
         jB_anteriorProveedoresClientes1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jB_anteriorProveedoresClientes1.setBorderPainted(false);
         jPanel1.add(jB_anteriorProveedoresClientes1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
@@ -1330,7 +1284,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 jB_ejecutarCRUDMouseClicked(evt);
             }
         });
-        jPanel1.add(jB_ejecutarCRUD, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 750, 114, 51));
+        jPanel1.add(jB_ejecutarCRUD, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 710, 114, 51));
 
         buttonGroup2.add(jRB_provee);
         jPanel1.add(jRB_provee, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 770, -1, -1));
@@ -1343,50 +1297,41 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel72.setText("Acuerdo de Provision");
         jPanel1.add(jLabel72, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 740, -1, -1));
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 840));
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anadir (2).png"))); // NOI18N
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 90, -1, 140));
+
+        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 560, 810));
 
         jD_ventanaCRUD.getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, -1));
 
         jD_crearPlantaFabricacion.setResizable(false);
         jD_crearPlantaFabricacion.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel32.setForeground(new java.awt.Color(0, 0, 0));
         jLabel32.setText("idPlanta");
         jD_crearPlantaFabricacion.getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 116, -1, -1));
         jD_crearPlantaFabricacion.getContentPane().add(jTF_crearIdPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 106, 160, -1));
 
-        jLabel56.setForeground(new java.awt.Color(0, 0, 0));
         jLabel56.setText("Nombre");
         jD_crearPlantaFabricacion.getContentPane().add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 146, -1, -1));
         jD_crearPlantaFabricacion.getContentPane().add(jTF_crearNombrePlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 146, 160, -1));
-
-        jLabel61.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\fabrica.png")); // NOI18N
         jD_crearPlantaFabricacion.getContentPane().add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 6, -1, -1));
-
-        jPanel15.setForeground(new java.awt.Color(0, 0, 0));
 
         jPanel16.setBackground(new java.awt.Color(204, 204, 204));
         jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buttonGroup4.add(jRB_crearEnsambladora);
-        jRB_crearEnsambladora.setForeground(new java.awt.Color(0, 0, 0));
         jRB_crearEnsambladora.setText("Ensambladora");
         jPanel16.add(jRB_crearEnsambladora, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, -1, -1));
 
         buttonGroup4.add(jRB_crearSuministradora);
-        jRB_crearSuministradora.setForeground(new java.awt.Color(0, 0, 0));
         jRB_crearSuministradora.setText("Suministradora");
         jPanel16.add(jRB_crearSuministradora, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
 
-        jLabel60.setForeground(new java.awt.Color(0, 0, 0));
         jLabel60.setText("Tipo");
         jPanel16.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
 
-        jLabel143.setForeground(new java.awt.Color(0, 0, 0));
         jLabel143.setText("idCompania");
         jPanel16.add(jLabel143, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
-
-        jCB_crearIdCompaniaPlanta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel16.add(jCB_crearIdCompaniaPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 159, -1));
 
         jB_crearPlanta.setText("Crear");
@@ -1413,52 +1358,41 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_crearPlantaFabricacion.getContentPane().add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jD_crearVehiculo.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel62.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\coche.png")); // NOI18N
         jD_crearVehiculo.getContentPane().add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
 
-        jLabel63.setForeground(new java.awt.Color(0, 0, 0));
         jLabel63.setText("Precio");
         jD_crearVehiculo.getContentPane().add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
         jD_crearVehiculo.getContentPane().add(jTF_crearPrecioVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 202, -1));
 
-        jLabel64.setForeground(new java.awt.Color(0, 0, 0));
         jLabel64.setText("VIN");
         jD_crearVehiculo.getContentPane().add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
         jD_crearVehiculo.getContentPane().add(jTF_crearVinVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 202, -1));
 
-        jLabel65.setForeground(new java.awt.Color(0, 0, 0));
         jLabel65.setText("Carroceria");
         jD_crearVehiculo.getContentPane().add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, -1));
         jD_crearVehiculo.getContentPane().add(jTF_crearCarroceria, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 202, -1));
 
-        jLabel66.setForeground(new java.awt.Color(0, 0, 0));
         jLabel66.setText("Color");
         jD_crearVehiculo.getContentPane().add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, -1, -1));
         jD_crearVehiculo.getContentPane().add(jTF_crearColorVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, 202, -1));
 
-        jLabel67.setForeground(new java.awt.Color(0, 0, 0));
         jLabel67.setText("Transmision");
         jD_crearVehiculo.getContentPane().add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, -1, -1));
         jD_crearVehiculo.getContentPane().add(jTF_crearTransmisionVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 202, -1));
 
-        jLabel68.setForeground(new java.awt.Color(0, 0, 0));
         jLabel68.setText("Tipo de Motor");
         jD_crearVehiculo.getContentPane().add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 470, -1, -1));
 
-        jLabel69.setForeground(new java.awt.Color(0, 0, 0));
         jLabel69.setText("Modelo");
         jD_crearVehiculo.getContentPane().add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 520, -1, -1));
         jD_crearVehiculo.getContentPane().add(jTF_crearTipoMotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, 202, -1));
         jD_crearVehiculo.getContentPane().add(jTF_crearModeloVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 520, 202, -1));
 
-        jLabel73.setForeground(new java.awt.Color(0, 0, 0));
         jLabel73.setText("Marca");
         jD_crearVehiculo.getContentPane().add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 580, -1, -1));
         jD_crearVehiculo.getContentPane().add(jTF_crearMarcaVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 580, 200, -1));
 
         jPanel12.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel12.setForeground(new java.awt.Color(0, 0, 0));
         jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jB_crearVehiculo.setText("Crear");
@@ -1469,7 +1403,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         });
         jPanel12.add(jB_crearVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 640, -1, -1));
 
-        jLabel145.setForeground(new java.awt.Color(0, 0, 0));
         jLabel145.setText("idCompania");
         jPanel12.add(jLabel145, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 147, -1, -1));
 
@@ -1480,17 +1413,13 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jD_crearProveedor.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel77.setForeground(new java.awt.Color(0, 0, 0));
         jLabel77.setText("Id del Proveedor");
         jD_crearProveedor.getContentPane().add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 137, -1, -1));
 
-        jLabel78.setForeground(new java.awt.Color(0, 0, 0));
         jLabel78.setText("Nombre del Proveedor");
         jD_crearProveedor.getContentPane().add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 205, -1, -1));
         jD_crearProveedor.getContentPane().add(jTF_crearIdProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 131, 207, -1));
         jD_crearProveedor.getContentPane().add(jTF_crearNombreProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 199, 207, -1));
-
-        jLabel79.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\proveedor.png")); // NOI18N
         jD_crearProveedor.getContentPane().add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 18, -1, -1));
 
         jB_crearProveedor.setText("Crear");
@@ -1502,35 +1431,37 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_crearProveedor.getContentPane().add(jB_crearProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 295, -1, -1));
 
         jPanel18.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel18.setForeground(new java.awt.Color(0, 0, 0));
+
+        jLabel151.setText("Crear Proveedor");
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
         jPanel18Layout.setHorizontalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addGap(174, 174, 174)
+                .addComponent(jLabel151)
+                .addContainerGap(206, Short.MAX_VALUE))
         );
         jPanel18Layout.setVerticalGroup(
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 340, Short.MAX_VALUE)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addGap(61, 61, 61)
+                .addComponent(jLabel151)
+                .addContainerGap(265, Short.MAX_VALUE))
         );
 
         jD_crearProveedor.getContentPane().add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 340));
 
         jD_crearConsecionario.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel80.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\concesionario.png")); // NOI18N
         jD_crearConsecionario.getContentPane().add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 14, -1, -1));
 
-        jLabel81.setForeground(new java.awt.Color(0, 0, 0));
         jLabel81.setText("Nombre Concesionario");
         jD_crearConsecionario.getContentPane().add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 114, -1, -1));
 
-        jLabel82.setForeground(new java.awt.Color(0, 0, 0));
         jLabel82.setText("Pais");
         jD_crearConsecionario.getContentPane().add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 222, -1, -1));
 
-        jLabel83.setForeground(new java.awt.Color(0, 0, 0));
         jLabel83.setText("RTN Concesionario");
         jD_crearConsecionario.getContentPane().add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 166, -1, -1));
         jD_crearConsecionario.getContentPane().add(jTF_crearNombreCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 108, 187, -1));
@@ -1538,7 +1469,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_crearConsecionario.getContentPane().add(jTF_crearParisCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 216, 187, -1));
 
         jPanel19.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel19.setForeground(new java.awt.Color(0, 0, 0));
 
         jB_crearCon.setText("Crear");
         jB_crearCon.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1546,6 +1476,8 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 jB_crearConMouseClicked(evt);
             }
         });
+
+        jLabel152.setText("Crear Concesionario");
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -1555,11 +1487,17 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 .addContainerGap(242, Short.MAX_VALUE)
                 .addComponent(jB_crearCon)
                 .addGap(239, 239, 239))
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addGap(205, 205, 205)
+                .addComponent(jLabel152)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel19Layout.setVerticalGroup(
             jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
-                .addContainerGap(296, Short.MAX_VALUE)
+                .addGap(57, 57, 57)
+                .addComponent(jLabel152)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 225, Short.MAX_VALUE)
                 .addComponent(jB_crearCon)
                 .addContainerGap())
         );
@@ -1567,17 +1505,17 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_crearConsecionario.getContentPane().add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 330));
 
         jD_crearCompania.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel84.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\empresa.png")); // NOI18N
         jD_crearCompania.getContentPane().add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 16, -1, -1));
 
-        jLabel85.setForeground(new java.awt.Color(0, 0, 0));
         jLabel85.setText("id Compania");
         jD_crearCompania.getContentPane().add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 135, -1, -1));
 
-        jLabel86.setForeground(new java.awt.Color(0, 0, 0));
         jLabel86.setText("Nombre Compania");
         jD_crearCompania.getContentPane().add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 194, -1, -1));
+        jD_crearCompania.getContentPane().add(jTF_crearIdCompania, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 129, 207, -1));
+        jD_crearCompania.getContentPane().add(jTF_crearNombreCompania, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 188, 207, -1));
+
+        jPanel20.setBackground(new java.awt.Color(204, 204, 204));
 
         jB_crearCompania.setText("Crear");
         jB_crearCompania.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1585,64 +1523,61 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 jB_crearCompaniaMouseClicked(evt);
             }
         });
-        jD_crearCompania.getContentPane().add(jB_crearCompania, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 277, -1, -1));
-        jD_crearCompania.getContentPane().add(jTF_crearIdCompania, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 129, 207, -1));
-        jD_crearCompania.getContentPane().add(jTF_crearNombreCompania, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 188, 207, -1));
 
-        jPanel20.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel20.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel150.setText("Crear Compañia");
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
         jPanel20Layout.setHorizontalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 520, Short.MAX_VALUE)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addGap(215, 215, 215)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel150, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jB_crearCompania))
+                .addContainerGap(200, Short.MAX_VALUE))
         );
         jPanel20Layout.setVerticalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 310, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel20Layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(jLabel150, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 165, Short.MAX_VALUE)
+                .addComponent(jB_crearCompania)
+                .addGap(39, 39, 39))
         );
 
         jD_crearCompania.getContentPane().add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 310));
 
         jD_crearCliente.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel87.setForeground(new java.awt.Color(0, 0, 0));
         jLabel87.setText("RTN Cliente");
         jD_crearCliente.getContentPane().add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, -1));
 
-        jLabel88.setForeground(new java.awt.Color(0, 0, 0));
         jLabel88.setText("Nombre Cliente");
         jD_crearCliente.getContentPane().add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
 
-        jLabel89.setForeground(new java.awt.Color(0, 0, 0));
         jLabel89.setText("Telefono Cliente");
         jD_crearCliente.getContentPane().add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, -1));
 
-        jLabel91.setForeground(new java.awt.Color(0, 0, 0));
         jLabel91.setText("Direccion");
         jD_crearCliente.getContentPane().add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, -1));
 
-        jLabel92.setForeground(new java.awt.Color(0, 0, 0));
         jLabel92.setText("Sexo");
         jD_crearCliente.getContentPane().add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 383, -1, -1));
 
-        jLabel93.setForeground(new java.awt.Color(0, 0, 0));
         jLabel93.setText("Id del Cliente");
         jD_crearCliente.getContentPane().add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 432, -1, -1));
 
-        jLabel94.setForeground(new java.awt.Color(0, 0, 0));
         jLabel94.setText("Ingreso Anual");
         jD_crearCliente.getContentPane().add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 487, -1, -1));
 
         buttonGroup5.add(jRB_masculino);
-        jRB_masculino.setForeground(new java.awt.Color(0, 0, 0));
         jRB_masculino.setText("M");
         jD_crearCliente.getContentPane().add(jRB_masculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 382, -1, -1));
 
         jRB_Femenino.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup5.add(jRB_Femenino);
-        jRB_Femenino.setForeground(new java.awt.Color(0, 0, 0));
         jRB_Femenino.setText("F");
         jD_crearCliente.getContentPane().add(jRB_Femenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 382, -1, -1));
         jD_crearCliente.getContentPane().add(jTF_crearIdPersonaClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 426, 159, -1));
@@ -1653,10 +1588,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_crearCliente.getContentPane().add(jTF_crearDireccionCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 180, -1));
 
         jPanel13.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel13.setForeground(new java.awt.Color(0, 0, 0));
         jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel90.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\cliente.png")); // NOI18N
         jPanel13.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 6, -1, -1));
 
         jB_crearCliente.setText("Crear");
@@ -1669,27 +1601,24 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel13.add(jTF_crearTipoEmpresaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 380, 163, -1));
 
         jLabel95.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel95.setForeground(new java.awt.Color(0, 0, 0));
         jLabel95.setText("Tipo de Empresa");
         jPanel13.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, -1, -1));
+
+        jLabel153.setText("Crear Cliente");
+        jPanel13.add(jLabel153, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, -1, -1));
 
         jD_crearCliente.getContentPane().add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 580));
 
         jD_crearVenta.setResizable(false);
         jD_crearVenta.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel70.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\metodo-de-pago.png")); // NOI18N
         jD_crearVenta.getContentPane().add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
 
-        jLabel74.setForeground(new java.awt.Color(0, 0, 0));
         jLabel74.setText("RTN del Concesionario");
         jD_crearVenta.getContentPane().add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 97, -1, -1));
 
-        jLabel75.setForeground(new java.awt.Color(0, 0, 0));
         jLabel75.setText("RTN del Cliente");
         jD_crearVenta.getContentPane().add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 164, -1, -1));
 
-        jLabel76.setForeground(new java.awt.Color(0, 0, 0));
         jLabel76.setText("Fecha de la compra ");
         jD_crearVenta.getContentPane().add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 232, -1, -1));
 
@@ -1705,7 +1634,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_crearVenta.getContentPane().add(jB_crearVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, -1, -1));
 
         jPanel17.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel17.setForeground(new java.awt.Color(0, 0, 0));
         jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jCB_crearRtnConVenta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -1718,23 +1646,17 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jD_crearCompra.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel97.setForeground(new java.awt.Color(0, 0, 0));
         jLabel97.setText("RTN Concesionario");
         jD_crearCompra.getContentPane().add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
 
-        jLabel98.setForeground(new java.awt.Color(0, 0, 0));
         jLabel98.setText("ID Compania");
         jD_crearCompra.getContentPane().add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
 
-        jLabel100.setForeground(new java.awt.Color(0, 0, 0));
         jLabel100.setText("VIN Vehiculo");
         jD_crearCompra.getContentPane().add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, -1, -1));
 
         jPanel14.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel14.setForeground(new java.awt.Color(0, 0, 0));
         jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel96.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\trato (1).png")); // NOI18N
         jPanel14.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
 
         jCB_crearRtnConCompra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -1754,12 +1676,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
         });
         jPanel14.add(jB_crearCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, -1, -1));
 
-        jLabel99.setForeground(new java.awt.Color(0, 0, 0));
         jLabel99.setText("Precio de la venta");
         jPanel14.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, -1));
         jPanel14.add(jTF_crearPrecioCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 205, -1));
 
-        jLabel148.setForeground(new java.awt.Color(0, 0, 0));
         jLabel148.setText("Fecha Adquirido");
         jPanel14.add(jLabel148, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
 
@@ -1769,15 +1689,11 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_crearCompra.getContentPane().add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 500));
 
         jD_crearProvee.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel101.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\movimiento-de-la-mano.png")); // NOI18N
         jD_crearProvee.getContentPane().add(jLabel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 17, -1, -1));
 
-        jLabel102.setForeground(new java.awt.Color(0, 0, 0));
         jLabel102.setText("Id Compania");
         jD_crearProvee.getContentPane().add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 119, -1, -1));
 
-        jLabel103.setForeground(new java.awt.Color(0, 0, 0));
         jLabel103.setText("Id Proveedor");
         jD_crearProvee.getContentPane().add(jLabel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 168, -1, -1));
 
@@ -1790,7 +1706,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_crearProvee.getContentPane().add(jB_crearProvee, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 290, -1, -1));
 
         jPanel21.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel21.setForeground(new java.awt.Color(0, 0, 0));
         jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jCB_crearIdCompaniaProvee.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -1803,8 +1718,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jD_modiPlantaFabricacion.setResizable(false);
         jD_modiPlantaFabricacion.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel107.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\fabrica.png")); // NOI18N
         jD_modiPlantaFabricacion.getContentPane().add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 6, -1, -1));
 
         jB_modiPlanta.setText("Modificar");
@@ -1815,39 +1728,31 @@ public class JFramePrincipal extends javax.swing.JFrame {
         });
         jD_modiPlantaFabricacion.getContentPane().add(jB_modiPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 306, -1, -1));
 
-        jPanel22.setForeground(new java.awt.Color(0, 0, 0));
-
         jPanel23.setBackground(new java.awt.Color(204, 204, 204));
         jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel105.setForeground(new java.awt.Color(0, 0, 0));
         jLabel105.setText("Nombre");
         jPanel23.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
         jPanel23.add(jTF_modiNombrePlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 160, -1));
 
-        jLabel106.setForeground(new java.awt.Color(0, 0, 0));
         jLabel106.setText("Tipo");
         jPanel23.add(jLabel106, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
 
         buttonGroup4.add(jRB_modiEnsambladora);
-        jRB_modiEnsambladora.setForeground(new java.awt.Color(0, 0, 0));
         jRB_modiEnsambladora.setSelected(true);
         jRB_modiEnsambladora.setText("Ensambladora");
         jPanel23.add(jRB_modiEnsambladora, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, -1, -1));
 
         buttonGroup4.add(jRB_modiSuministradora);
-        jRB_modiSuministradora.setForeground(new java.awt.Color(0, 0, 0));
         jRB_modiSuministradora.setText("Suministradora");
         jPanel23.add(jRB_modiSuministradora, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, -1, -1));
 
         jCB_modiPlanta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel23.add(jCB_modiPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 220, -1));
 
-        jLabel41.setForeground(new java.awt.Color(0, 0, 0));
         jLabel41.setText("Seleccione el ID del la Fabrica que quiere modificar:");
         jPanel23.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
 
-        jB_cargarModiPlanta.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\mira.png")); // NOI18N
         jB_cargarModiPlanta.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jB_cargarModiPlantaMouseClicked(evt);
@@ -1875,7 +1780,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_modiConsecionario.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel24.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel24.setForeground(new java.awt.Color(0, 0, 0));
         jPanel24.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jB_modiCon.setText("Modificar");
@@ -1886,14 +1790,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
         });
         jPanel24.add(jB_modiCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, -1, -1));
 
-        jLabel110.setForeground(new java.awt.Color(0, 0, 0));
         jLabel110.setText("Pais");
         jPanel24.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, -1, -1));
-
-        jLabel108.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\concesionario.png")); // NOI18N
         jPanel24.add(jLabel108, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 14, -1, -1));
 
-        jLabel109.setForeground(new java.awt.Color(0, 0, 0));
         jLabel109.setText("Nombre Concesionario");
         jPanel24.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
         jPanel24.add(jTF_modiNombreCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 187, -1));
@@ -1902,11 +1802,9 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jCB_modiCon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel24.add(jCB_modiCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 220, -1));
 
-        jLabel44.setForeground(new java.awt.Color(0, 0, 0));
         jLabel44.setText("Seleccione el RTN del Concesionario que quiere modificar:");
         jPanel24.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, -1, -1));
 
-        jB_cargarModiCon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\mira.png")); // NOI18N
         jB_cargarModiCon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jB_cargarModiConMouseClicked(evt);
@@ -1917,47 +1815,37 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_modiConsecionario.getContentPane().add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 330));
 
         jD_modiVehiculo.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel112.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\coche.png")); // NOI18N
         jD_modiVehiculo.getContentPane().add(jLabel112, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
 
-        jLabel113.setForeground(new java.awt.Color(0, 0, 0));
         jLabel113.setText("Precio");
         jD_modiVehiculo.getContentPane().add(jLabel113, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, -1, -1));
         jD_modiVehiculo.getContentPane().add(jTF_modiPrecioVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 202, -1));
 
-        jLabel115.setForeground(new java.awt.Color(0, 0, 0));
         jLabel115.setText("Carroceria");
         jD_modiVehiculo.getContentPane().add(jLabel115, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, -1, -1));
         jD_modiVehiculo.getContentPane().add(jTF_modiCarroceria, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 202, -1));
 
-        jLabel116.setForeground(new java.awt.Color(0, 0, 0));
         jLabel116.setText("Color");
         jD_modiVehiculo.getContentPane().add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, -1, -1));
         jD_modiVehiculo.getContentPane().add(jTF_modiColorVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 202, -1));
 
-        jLabel117.setForeground(new java.awt.Color(0, 0, 0));
         jLabel117.setText("Transmision");
         jD_modiVehiculo.getContentPane().add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, -1, -1));
         jD_modiVehiculo.getContentPane().add(jTF_modiTransmisionVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 202, -1));
 
-        jLabel118.setForeground(new java.awt.Color(0, 0, 0));
         jLabel118.setText("Tipo de Motor");
         jD_modiVehiculo.getContentPane().add(jLabel118, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, -1, -1));
 
-        jLabel119.setForeground(new java.awt.Color(0, 0, 0));
         jLabel119.setText("Modelo");
         jD_modiVehiculo.getContentPane().add(jLabel119, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 510, -1, -1));
         jD_modiVehiculo.getContentPane().add(jTF_modiTipoMotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, 202, -1));
         jD_modiVehiculo.getContentPane().add(jTF_modiModeloVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, 202, -1));
 
-        jLabel120.setForeground(new java.awt.Color(0, 0, 0));
         jLabel120.setText("Marca");
         jD_modiVehiculo.getContentPane().add(jLabel120, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 570, -1, -1));
         jD_modiVehiculo.getContentPane().add(jTF_modiMarcaVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 570, 200, -1));
 
         jPanel25.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel25.setForeground(new java.awt.Color(0, 0, 0));
         jPanel25.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jB_modiVehiculo.setText("Modificar");
@@ -1971,11 +1859,9 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jCB_modiVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel25.add(jCB_modiVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 220, -1));
 
-        jLabel47.setForeground(new java.awt.Color(0, 0, 0));
         jLabel47.setText("Seleccione el VIN del vehiculo que quiere modificar:");
         jPanel25.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, -1, -1));
 
-        jB_cargarModiVehiculo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\mira.png")); // NOI18N
         jB_cargarModiVehiculo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jB_cargarModiVehiculoMouseClicked(evt);
@@ -1988,10 +1874,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_modiCliente.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel26.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel26.setForeground(new java.awt.Color(0, 0, 0));
         jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel128.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\cliente.png")); // NOI18N
         jPanel26.add(jLabel128, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 6, -1, -1));
 
         jB_modiCliente.setText("Modficar");
@@ -2004,58 +1887,47 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel26.add(jTF_modiTipoEmpresaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 410, 163, 30));
 
         jLabel129.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel129.setForeground(new java.awt.Color(0, 0, 0));
         jLabel129.setText("Tipo de Empresa");
         jPanel26.add(jLabel129, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, -1, 20));
         jPanel26.add(jTF_modiNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 180, 30));
 
-        jLabel122.setForeground(new java.awt.Color(0, 0, 0));
         jLabel122.setText("Nombre Cliente");
         jPanel26.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, 20));
 
-        jLabel123.setForeground(new java.awt.Color(0, 0, 0));
         jLabel123.setText("Telefono Cliente");
         jPanel26.add(jLabel123, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, 20));
         jPanel26.add(jTF_modiTelefonoClietne, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 180, 30));
         jPanel26.add(jTF_modiDireccionCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 180, 30));
 
-        jLabel124.setForeground(new java.awt.Color(0, 0, 0));
         jLabel124.setText("Direccion");
         jPanel26.add(jLabel124, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, -1, 20));
         jPanel26.add(jTF_modiIngresoPersonaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 500, 161, 30));
         jPanel26.add(jTF_modiIdPersonaClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 159, 30));
 
-        jLabel127.setForeground(new java.awt.Color(0, 0, 0));
         jLabel127.setText("Ingreso Anual");
         jPanel26.add(jLabel127, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, -1, 20));
 
-        jLabel126.setForeground(new java.awt.Color(0, 0, 0));
         jLabel126.setText("Id del Cliente");
         jPanel26.add(jLabel126, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, 20));
 
-        jLabel125.setForeground(new java.awt.Color(0, 0, 0));
         jLabel125.setText("Sexo");
         jPanel26.add(jLabel125, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, -1, 20));
 
         buttonGroup5.add(jRB_modiMasculino);
-        jRB_modiMasculino.setForeground(new java.awt.Color(0, 0, 0));
         jRB_modiMasculino.setText("M");
         jPanel26.add(jRB_modiMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, -1, 20));
 
         jRB_modiFemenino.setBackground(new java.awt.Color(0, 0, 0));
         buttonGroup5.add(jRB_modiFemenino);
-        jRB_modiFemenino.setForeground(new java.awt.Color(0, 0, 0));
         jRB_modiFemenino.setText("F");
         jPanel26.add(jRB_modiFemenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, -1, 20));
 
         jCB_modiCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel26.add(jCB_modiCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 220, -1));
 
-        jLabel50.setForeground(new java.awt.Color(0, 0, 0));
         jLabel50.setText("Seleccione el RTN del Cliente que quiere modificar:");
         jPanel26.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, -1, -1));
 
-        jB_cargarModiCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\mira.png")); // NOI18N
         jB_cargarModiCliente.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jB_cargarModiClienteMouseClicked(evt);
@@ -2066,15 +1938,11 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_modiCliente.getContentPane().add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 590));
 
         jD_modiCompania.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel142.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\empresa.png")); // NOI18N
         jD_modiCompania.getContentPane().add(jLabel142, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 16, -1, -1));
 
         jPanel30.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel30.setForeground(new java.awt.Color(0, 0, 0));
         jPanel30.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel144.setForeground(new java.awt.Color(0, 0, 0));
         jLabel144.setText("Nombre Compania");
         jPanel30.add(jLabel144, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
         jPanel30.add(jTF_modiNombreCompania, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 207, 30));
@@ -2090,11 +1958,9 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jCB_modiCompania.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel30.add(jCB_modiCompania, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 220, -1));
 
-        jLabel53.setForeground(new java.awt.Color(0, 0, 0));
         jLabel53.setText("Seleccione el ID de la Compania que quiere modificar:");
         jPanel30.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, -1));
 
-        jB_cargarModiCompania.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\mira.png")); // NOI18N
         jB_cargarModiCompania.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jB_cargarModiCompaniaMouseClicked(evt);
@@ -2105,12 +1971,9 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_modiCompania.getContentPane().add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 320));
 
         jD_modiProveedor.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel147.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\proveedor.png")); // NOI18N
         jD_modiProveedor.getContentPane().add(jLabel147, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 18, -1, -1));
 
         jPanel31.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel31.setForeground(new java.awt.Color(0, 0, 0));
         jPanel31.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jB_modiProveedor.setText("Modificar");
@@ -2122,18 +1985,15 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel31.add(jB_modiProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, -1, -1));
         jPanel31.add(jTF_modiNombreProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 207, -1));
 
-        jLabel146.setForeground(new java.awt.Color(0, 0, 0));
         jLabel146.setText("Nombre del Proveedor");
         jPanel31.add(jLabel146, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
 
         jCB_modiProveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel31.add(jCB_modiProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 220, -1));
 
-        jLabel140.setForeground(new java.awt.Color(0, 0, 0));
         jLabel140.setText("Seleccione el ID del proveedor que quiere modificar:");
         jPanel31.add(jLabel140, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
 
-        jB_cargarModiProveedor.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\mira.png")); // NOI18N
         jB_cargarModiProveedor.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jB_cargarModiProveedorMouseClicked(evt);
@@ -2145,19 +2005,14 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jD_modiVenta.setResizable(false);
         jD_modiVenta.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel104.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\metodo-de-pago.png")); // NOI18N
         jD_modiVenta.getContentPane().add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
 
-        jLabel111.setForeground(new java.awt.Color(0, 0, 0));
         jLabel111.setText("RTN del Concesionario");
         jD_modiVenta.getContentPane().add(jLabel111, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 97, -1, -1));
 
-        jLabel114.setForeground(new java.awt.Color(0, 0, 0));
         jLabel114.setText("RTN del Cliente");
         jD_modiVenta.getContentPane().add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 164, -1, -1));
 
-        jLabel121.setForeground(new java.awt.Color(0, 0, 0));
         jLabel121.setText("Fecha de la compra ");
         jD_modiVenta.getContentPane().add(jLabel121, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 232, -1, -1));
 
@@ -2165,7 +2020,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_modiVenta.getContentPane().add(jDC_modiFechaVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 237, -1));
 
         jPanel27.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel27.setForeground(new java.awt.Color(0, 0, 0));
         jPanel27.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jCB_modiRtnConVenta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -2176,23 +2030,17 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jB_modiVenta.setText("Modificar");
         jPanel27.add(jB_modiVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, -1, -1));
-
-        jB_cargarModiVenta.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\mira.png")); // NOI18N
         jPanel27.add(jB_cargarModiVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 40, -1));
 
         jD_modiVenta.getContentPane().add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 350));
 
         jD_modiCompra.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel130.setForeground(new java.awt.Color(0, 0, 0));
         jLabel130.setText("RTN Concesionario");
         jD_modiCompra.getContentPane().add(jLabel130, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
 
         jPanel28.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel28.setForeground(new java.awt.Color(0, 0, 0));
         jPanel28.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel134.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\trato (1).png")); // NOI18N
         jPanel28.add(jLabel134, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
 
         jCB_modiRtnConCompra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -2206,24 +2054,18 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jB_modiCompra.setText("Modificar");
         jPanel28.add(jB_modiCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
-
-        jB_cargarModiCompra.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\mira.png")); // NOI18N
         jPanel28.add(jB_cargarModiCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 40, -1));
 
-        jLabel131.setForeground(new java.awt.Color(0, 0, 0));
         jLabel131.setText("ID Compania");
         jPanel28.add(jLabel131, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
 
-        jLabel133.setForeground(new java.awt.Color(0, 0, 0));
         jLabel133.setText("VIN Vehiculo");
         jPanel28.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
         jPanel28.add(jTF_modiPrecioCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 205, -1));
 
-        jLabel132.setForeground(new java.awt.Color(0, 0, 0));
         jLabel132.setText("Precio de la venta");
         jPanel28.add(jLabel132, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, -1));
 
-        jLabel138.setForeground(new java.awt.Color(0, 0, 0));
         jLabel138.setText("Fecha Adquirido");
         jPanel28.add(jLabel138, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
 
@@ -2233,20 +2075,15 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_modiCompra.getContentPane().add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 420));
 
         jD_modiProvee.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel135.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\movimiento-de-la-mano.png")); // NOI18N
         jD_modiProvee.getContentPane().add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 17, -1, -1));
 
-        jLabel136.setForeground(new java.awt.Color(0, 0, 0));
         jLabel136.setText("Id Compania");
         jD_modiProvee.getContentPane().add(jLabel136, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 119, -1, -1));
 
-        jLabel137.setForeground(new java.awt.Color(0, 0, 0));
         jLabel137.setText("Id Proveedor");
         jD_modiProvee.getContentPane().add(jLabel137, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 168, -1, -1));
 
         jPanel29.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel29.setForeground(new java.awt.Color(0, 0, 0));
         jPanel29.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jCB_modiIdCompaniaProvee.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -2371,13 +2208,11 @@ public class JFramePrincipal extends javax.swing.JFrame {
         getContentPane().add(jL_passwordIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 40, 40));
 
         jP_password.setBackground(new java.awt.Color(204, 204, 204));
-        jP_password.setForeground(new java.awt.Color(0, 0, 0));
         jP_password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jP_password.setBorder(javax.swing.BorderFactory.createEtchedBorder(javax.swing.border.EtchedBorder.RAISED, java.awt.Color.black, null));
         getContentPane().add(jP_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 240, 210, 40));
 
         jB_login.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
-        jB_login.setForeground(new java.awt.Color(0, 0, 0));
         jB_login.setText("Login");
         jB_login.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, java.awt.Color.darkGray, java.awt.Color.darkGray));
         jB_login.setContentAreaFilled(false);
@@ -2395,7 +2230,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jL_MemberLogin.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 65)); // NOI18N
         jL_MemberLogin.setForeground(new java.awt.Color(102, 102, 102));
         jL_MemberLogin.setText("Member Login");
-        jL_MemberLogin.setBorder(null);
 
         javax.swing.GroupLayout jP_memberLoginLayout = new javax.swing.GroupLayout(jP_memberLogin);
         jP_memberLogin.setLayout(jP_memberLoginLayout);
@@ -2510,15 +2344,17 @@ public class JFramePrincipal extends javax.swing.JFrame {
         return quien;
     }
 
-    private void CREAR() {
+    private void CREAR() throws SQLException {
         int quien = A_Quien();
         switch (quien) {
             case 1:
                 //cargar el combobox jCB_crearIdCompaniaPlanta
+                llenarComboBoxCompañia(jCB_crearIdCompaniaPlanta);
                 jD_crearPlantaFabricacion.pack();
                 jD_crearPlantaFabricacion.setModal(true);
                 jD_crearPlantaFabricacion.setLocationRelativeTo(this);
                 jD_crearPlantaFabricacion.setVisible(true);
+
                 break;
             case 2:
                 //cargar el combobox jCB_crearIdCompaniaVehiculo
@@ -2675,6 +2511,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         switch (quien) {
             case 1:
                 //Aqui cargas las plantas para eliminar, en la Jlist
+                
                 jD_eliminarNonTrans.pack();
                 jD_eliminarNonTrans.setModal(true);
                 jD_eliminarNonTrans.setLocationRelativeTo(this);
@@ -2745,7 +2582,13 @@ public class JFramePrincipal extends javax.swing.JFrame {
         int hacer = Que_Quiere_Hacer();
         switch (hacer) {
             case 1:
+        {
+            try {
                 CREAR();
+            } catch (SQLException ex) {
+                Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
                 break;
             case 2:
                 MODIFICAR();
@@ -2793,6 +2636,20 @@ public class JFramePrincipal extends javax.swing.JFrame {
         idProveedor = jTF_crearIdProveedor.getText();
         nombreProveedor = jTF_crearNombreProveedor.getText();
         //mandar datos a la base
+        conn = db.getConnection();
+        CallableStatement cs = null;
+        String sql = "{CALL sp_insertarProveedor(?,?)}";
+        try {
+            cs = conn.prepareCall(sql);
+            cs.setString(1, idProveedor);
+            cs.setString(2, nombreProveedor);
+            cs.execute();
+            cs.close();
+            conn.close();
+            JOptionPane.showMessageDialog(jD_crearProveedor, "Se ha agregado a la DB con éxito", "Exito", JOptionPane.INFORMATION_MESSAGE);
+        } catch (SQLException ex) {
+            Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jB_crearProveedorMouseClicked
 
     private void jB_crearConMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_crearConMouseClicked
@@ -2801,12 +2658,41 @@ public class JFramePrincipal extends javax.swing.JFrame {
         nombreConcesionario = jTF_crearNombreCon.getText();
         pais = jTF_crearParisCon.getText();
         //mandat datos a la base
+        conn = db.getConnection();
+        CallableStatement cs = null;
+        String sql = "{CALL sp_insertarConcesionario(?,?,?)}";
+        try {
+            cs = conn.prepareCall(sql);
+            cs.setString(1, rtnCon);
+            cs.setString(2, nombreConcesionario);
+            cs.setString(3, pais);
+            cs.execute();
+            cs.close();
+            conn.close();
+            JOptionPane.showMessageDialog(jD_crearConsecionario, "Se ha agregado a la DB con éxito", "Exito", JOptionPane.INFORMATION_MESSAGE);
+        } catch (SQLException ex) {
+            Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jB_crearConMouseClicked
 
     private void jB_crearCompaniaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_crearCompaniaMouseClicked
         String idCompania, nombreCompania;
         idCompania = jTF_crearIdCompania.getText();
         nombreCompania = jTF_crearNombreCompania.getText();
+        conn = db.getConnection();
+        CallableStatement cs = null;
+        String sql = "{CALL sp_insertarCompañia(?,?)}";
+        try {
+            cs = conn.prepareCall(sql);
+            cs.setString(1, idCompania);
+            cs.setString(2, nombreCompania);
+            cs.execute();
+            cs.close();
+            conn.close();
+            JOptionPane.showMessageDialog(jD_crearCompania, "Se ha agregado a la DB con éxito", "Exito", JOptionPane.INFORMATION_MESSAGE);
+        } catch (SQLException ex) {
+            Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         //mandar datos a la base
     }//GEN-LAST:event_jB_crearCompaniaMouseClicked
 
@@ -2818,6 +2704,18 @@ public class JFramePrincipal extends javax.swing.JFrame {
         nombreCliente = jTF_crearNombreCliente.getText();
         direccion = jTF_crearDireccionCliente.getText();
         telefono = jTF_crearTelefonoClietne.getText();
+        conn = db.getConnection();
+        CallableStatement cs = null;
+        String sql = "{CALL sp_insertarCliente(?,?,?,?,?,?,?,?,?)}";
+        try {
+            cs = conn.prepareCall(sql);
+            cs.setString(1, rtnCliente);
+            cs.setString(2, nombreCliente);
+            cs.setString(3, direccion);
+            cs.setString(4, telefono);
+        } catch (SQLException ex) {
+            Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         if (Cliente == 1) {
             tipoCliente = "Persona";
             ingresoPersona = Double.parseDouble(jTF_crearIngresoPersonaCliente.getText());
@@ -2828,10 +2726,36 @@ public class JFramePrincipal extends javax.swing.JFrame {
             }
             idPersona = jTF_crearIdPersonaClient.getText();
             //mandar datos a la base
+            try {
+                cs.setInt(5, 1);
+                cs.setString(6, idPersona);
+                cs.setString(7, sexo + "");
+                cs.setDouble(8, ingresoPersona);
+                cs.setString(9, "0");
+            } catch (SQLException ex) {
+                Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
         } else if (Cliente == 2) {
             tipoCliente = "Empresa";
             tipoEmpresa = jTF_crearTipoEmpresaCliente.getText();
-            //mandar datos a la base
+            try {
+                //mandar datos a la base
+                cs.setInt(5, 0);
+                cs.setString(6, " ");
+                cs.setString(7, " ");
+                cs.setDouble(8, 0);
+                cs.setString(9, tipoEmpresa);
+            } catch (SQLException ex) {
+                Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        try {
+            cs.execute();
+            cs.close();
+            conn.close();
+            JOptionPane.showMessageDialog(jD_crearCliente, "Se ha agregado a la DB con éxito", "Exito", JOptionPane.INFORMATION_MESSAGE);
+        } catch (SQLException ex) {
+            Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_jB_crearClienteMouseClicked
 
@@ -3029,6 +2953,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jB_modiProveedorMouseClicked
 
     private void jB_VehiculosClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_VehiculosClientesMouseClicked
+        llenarTablaPrecio(jT_inventarioProveedoresClientes);
         jD_ventanaInventario.pack();
         jD_ventanaInventario.setModal(true);
         jD_ventanaInventario.setLocationRelativeTo(this);
@@ -3036,7 +2961,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jB_VehiculosClientesMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        String ConSelected = jCB_concesionarioInventario.getSelectedItem().toString();
+        //String ConSelected = jCB_concesionarioInventario.getSelectedItem().toString();
         //cargar los datos del concesionario ingresado
     }//GEN-LAST:event_jButton1MouseClicked
 
@@ -3089,6 +3014,88 @@ public class JFramePrincipal extends javax.swing.JFrame {
         });
     }
 
+    public void llenarComboBoxCompañia(JComboBox comboBox) throws SQLException {
+        conn = db.getConnection();
+
+        Statement st = conn.createStatement();
+        ArrayList<String> idCompañiaArray = new ArrayList<>();
+        String sql = "SELECT idCompañia FROM Compañia";
+        ResultSet rs = null;
+        int i = 0;
+        try {
+            rs = st.executeQuery(sql);
+            while (rs.next()) {
+                idCompañiaArray.set(i, rs.getString(i + 1));
+                i++;
+            }
+        } catch (Exception e) {
+        }
+        DefaultComboBoxModel modelo
+                = (DefaultComboBoxModel) comboBox.getModel();
+
+        for (i = 0; i < idCompañiaArray.size(); i++) {
+            modelo.addElement(idCompañiaArray.get(i));
+        }
+        comboBox.setModel(modelo);
+        conn.close();
+    }
+
+    public void llenarComboBoxConcesionario(JComboBox comboBox) throws SQLException {
+        conn = db.getConnection();
+
+        Statement st = conn.createStatement();
+        ArrayList<String> idCompañiaArray = new ArrayList<>();
+        String sql = "SELECT rtnCon FROM le_vende_a";
+        ResultSet rs = null;
+        int i = 0;
+        try {
+            rs = st.executeQuery(sql);
+            while (rs.next()) {
+                System.out.println("re");
+                idCompañiaArray.set(i, rs.getString(i + 1));
+                i++;
+            }
+        } catch (Exception e) {
+        }
+        DefaultComboBoxModel modelo
+                = (DefaultComboBoxModel) comboBox.getModel();
+
+        for (i = 0; i < idCompañiaArray.size(); i++) {
+            modelo.addElement(idCompañiaArray.get(i));
+        }
+        comboBox.setModel(modelo);
+        conn.close();
+    }
+    
+    public void llenarTablaPrecio(JTable tabla){
+        DefaultTableModel modelo;
+        String[]columnas = {"RTN Concesionario","Nombre Concesionario", "VinVehiculoComprado", "Precio Venta"};
+        modelo = new DefaultTableModel(null, columnas);
+        
+        String sql = "SELECT compra_a.rtnCon, conceionario.nombreConcesionario, compra_a.vinVehiculoComprado,compra_a.precioVenta"
+                + "FROM compra_a INNER JOIN concesionario ON compra_a.rtnCon = concesionario.rtnCon";
+        String[] filas = new String[4];
+        Statement st = null;
+        ResultSet rs = null;
+        conn = db.getConnection();
+        try{
+            st = conn.createStatement();
+            rs = st.executeQuery(sql);
+            System.out.println("dsd");
+            while(rs.next()) {
+                for (int i = 0; i < 4;i++){
+                    filas[i] = rs.getString(i+1);
+                }
+                modelo.addRow(filas);
+            }
+            tabla.setModel(modelo);
+            conn.close();
+        }catch(Exception e){
+            
+        }
+    }
+    Conexion db = new Conexion();
+    Connection conn = null;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
@@ -3151,7 +3158,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jCB_concesionarioInventario;
     private javax.swing.JComboBox<String> jCB_crearIdCompaniaCompra;
     private javax.swing.JComboBox<String> jCB_crearIdCompaniaPlanta;
     private javax.swing.JComboBox<String> jCB_crearIdCompaniaProvee;
@@ -3267,6 +3273,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel148;
     private javax.swing.JLabel jLabel149;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel150;
+    private javax.swing.JLabel jLabel151;
+    private javax.swing.JLabel jLabel152;
+    private javax.swing.JLabel jLabel153;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -3280,7 +3290,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel30;
