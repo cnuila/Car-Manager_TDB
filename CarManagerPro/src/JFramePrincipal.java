@@ -1,20 +1,26 @@
+
+import java.util.Date;
+import javax.swing.JOptionPane;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author Daniel Agurcia
  */
 public class JFramePrincipal extends javax.swing.JFrame {
 
+    int Cliente;
+
     /**
      * Creates new form JFramePrincipal
      */
     public JFramePrincipal() {
         initComponents();
+
     }
 
     /**
@@ -30,17 +36,19 @@ public class JFramePrincipal extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
         buttonGroup4 = new javax.swing.ButtonGroup();
+        buttonGroup5 = new javax.swing.ButtonGroup();
         jD_ventanaAdmin = new javax.swing.JDialog();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
+        jB_reportesAdmin = new javax.swing.JButton();
+        jB_inventarioAdmin = new javax.swing.JButton();
+        jB_crudAdmin = new javax.swing.JButton();
         jD_ventanaCliente = new javax.swing.JDialog();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
         jB_VehiculosClientes = new javax.swing.JButton();
+        jLabel149 = new javax.swing.JLabel();
         jB_ProveedoresClientes = new javax.swing.JButton();
         jD_ventanaMarketing = new javax.swing.JDialog();
         jTabbedPane1 = new javax.swing.JTabbedPane();
@@ -60,8 +68,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable3 = new javax.swing.JTable();
-        jComboBox5 = new javax.swing.JComboBox<>();
-        jLabel41 = new javax.swing.JLabel();
         jLabel42 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
         jLabel43 = new javax.swing.JLabel();
@@ -69,8 +75,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel7 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
-        jComboBox6 = new javax.swing.JComboBox<>();
-        jLabel44 = new javax.swing.JLabel();
         jLabel45 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
         jLabel46 = new javax.swing.JLabel();
@@ -78,8 +82,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel8 = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
         jTable5 = new javax.swing.JTable();
-        jComboBox7 = new javax.swing.JComboBox<>();
-        jLabel47 = new javax.swing.JLabel();
         jLabel48 = new javax.swing.JLabel();
         jButton10 = new javax.swing.JButton();
         jLabel49 = new javax.swing.JLabel();
@@ -87,8 +89,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel9 = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
         jTable6 = new javax.swing.JTable();
-        jComboBox8 = new javax.swing.JComboBox<>();
-        jLabel50 = new javax.swing.JLabel();
         jLabel51 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
         jLabel52 = new javax.swing.JLabel();
@@ -96,8 +96,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel10 = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
         jTable7 = new javax.swing.JTable();
-        jComboBox9 = new javax.swing.JComboBox<>();
-        jLabel53 = new javax.swing.JLabel();
         jLabel54 = new javax.swing.JLabel();
         jButton12 = new javax.swing.JButton();
         jLabel55 = new javax.swing.JLabel();
@@ -113,7 +111,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jB_anteriorProveedoresClientes3 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
-        jComboBox4 = new javax.swing.JComboBox<>();
+        jCB_paisInventairo = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
@@ -128,7 +126,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel28 = new javax.swing.JLabel();
         jLabel29 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        jCB_concesionarioInventario = new javax.swing.JComboBox<>();
         jButton1 = new javax.swing.JButton();
         jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
@@ -172,7 +170,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jB_ejecutarCRUD = new javax.swing.JButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
+        jRB_provee = new javax.swing.JRadioButton();
         jLabel71 = new javax.swing.JLabel();
         jLabel72 = new javax.swing.JLabel();
         jD_crearPlantaFabricacion = new javax.swing.JDialog();
@@ -180,20 +178,15 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jTF_crearIdPlanta = new javax.swing.JTextField();
         jLabel56 = new javax.swing.JLabel();
         jTF_crearNombrePlanta = new javax.swing.JTextField();
-        jLabel60 = new javax.swing.JLabel();
-        jRB_Ensambladora = new javax.swing.JRadioButton();
-        jRB_Otra = new javax.swing.JRadioButton();
         jLabel61 = new javax.swing.JLabel();
+        jPanel15 = new javax.swing.JPanel();
+        jPanel16 = new javax.swing.JPanel();
+        jRB_crearEnsambladora = new javax.swing.JRadioButton();
+        jRB_crearSuministradora = new javax.swing.JRadioButton();
+        jLabel60 = new javax.swing.JLabel();
+        jLabel143 = new javax.swing.JLabel();
+        jCB_crearIdCompaniaPlanta = new javax.swing.JComboBox<>();
         jB_crearPlanta = new javax.swing.JButton();
-        jD_crearVenta = new javax.swing.JDialog();
-        jLabel70 = new javax.swing.JLabel();
-        jLabel74 = new javax.swing.JLabel();
-        jTF_crearRtnConVenta = new javax.swing.JTextField();
-        jLabel75 = new javax.swing.JLabel();
-        jTF_crearRtnClienteVenta = new javax.swing.JTextField();
-        jLabel76 = new javax.swing.JLabel();
-        jDC_crearFechaVenta = new com.toedter.calendar.JDateChooser();
-        jB_crearVenta = new javax.swing.JButton();
         jD_crearVehiculo = new javax.swing.JDialog();
         jLabel62 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
@@ -210,10 +203,12 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel69 = new javax.swing.JLabel();
         jTF_crearTipoMotor = new javax.swing.JTextField();
         jTF_crearModeloVehiculo = new javax.swing.JTextField();
-        jB_crearVehiculo = new javax.swing.JButton();
         jLabel73 = new javax.swing.JLabel();
         jTF_crearMarcaVehiculo = new javax.swing.JTextField();
         jPanel12 = new javax.swing.JPanel();
+        jB_crearVehiculo = new javax.swing.JButton();
+        jLabel145 = new javax.swing.JLabel();
+        jCB_crearIdCompaniaVehiculo = new javax.swing.JComboBox<>();
         jD_crearProveedor = new javax.swing.JDialog();
         jLabel77 = new javax.swing.JLabel();
         jLabel78 = new javax.swing.JLabel();
@@ -221,6 +216,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jTF_crearNombreProveedor = new javax.swing.JTextField();
         jLabel79 = new javax.swing.JLabel();
         jB_crearProveedor = new javax.swing.JButton();
+        jPanel18 = new javax.swing.JPanel();
         jD_crearConsecionario = new javax.swing.JDialog();
         jLabel80 = new javax.swing.JLabel();
         jLabel81 = new javax.swing.JLabel();
@@ -229,6 +225,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jTF_crearNombreCon = new javax.swing.JTextField();
         jTF_crearRtnCon = new javax.swing.JTextField();
         jTF_crearParisCon = new javax.swing.JTextField();
+        jPanel19 = new javax.swing.JPanel();
         jB_crearCon = new javax.swing.JButton();
         jD_crearCompania = new javax.swing.JDialog();
         jLabel84 = new javax.swing.JLabel();
@@ -237,6 +234,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jB_crearCompania = new javax.swing.JButton();
         jTF_crearIdCompania = new javax.swing.JTextField();
         jTF_crearNombreCompania = new javax.swing.JTextField();
+        jPanel20 = new javax.swing.JPanel();
         jD_crearCliente = new javax.swing.JDialog();
         jLabel87 = new javax.swing.JLabel();
         jLabel88 = new javax.swing.JLabel();
@@ -245,22 +243,181 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel92 = new javax.swing.JLabel();
         jLabel93 = new javax.swing.JLabel();
         jLabel94 = new javax.swing.JLabel();
-        jRadioButton7 = new javax.swing.JRadioButton();
-        jRadioButton8 = new javax.swing.JRadioButton();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
-        jTextField7 = new javax.swing.JTextField();
+        jRB_masculino = new javax.swing.JRadioButton();
+        jRB_Femenino = new javax.swing.JRadioButton();
+        jTF_crearIdPersonaClient = new javax.swing.JTextField();
+        jTF_crearIngresoPersonaCliente = new javax.swing.JTextField();
+        jTF_crearRtnCliente = new javax.swing.JTextField();
+        jTF_crearNombreCliente = new javax.swing.JTextField();
+        jTF_crearTelefonoClietne = new javax.swing.JTextField();
+        jTF_crearDireccionCliente = new javax.swing.JTextField();
         jPanel13 = new javax.swing.JPanel();
         jLabel90 = new javax.swing.JLabel();
-        jButton14 = new javax.swing.JButton();
-        jTextField3 = new javax.swing.JTextField();
+        jB_crearCliente = new javax.swing.JButton();
+        jTF_crearTipoEmpresaCliente = new javax.swing.JTextField();
         jLabel95 = new javax.swing.JLabel();
+        jD_crearVenta = new javax.swing.JDialog();
+        jLabel70 = new javax.swing.JLabel();
+        jLabel74 = new javax.swing.JLabel();
+        jLabel75 = new javax.swing.JLabel();
+        jLabel76 = new javax.swing.JLabel();
+        jDC_crearFechaVenta = new com.toedter.calendar.JDateChooser();
+        jB_crearVenta = new javax.swing.JButton();
+        jPanel17 = new javax.swing.JPanel();
+        jCB_crearRtnConVenta = new javax.swing.JComboBox<>();
+        jCB_crearRtnClienteVenta = new javax.swing.JComboBox<>();
         jD_crearCompra = new javax.swing.JDialog();
-        jD_crearAcuerdo = new javax.swing.JDialog();
-        buttonGroup5 = new javax.swing.ButtonGroup();
+        jLabel97 = new javax.swing.JLabel();
+        jLabel98 = new javax.swing.JLabel();
+        jLabel100 = new javax.swing.JLabel();
+        jPanel14 = new javax.swing.JPanel();
+        jLabel96 = new javax.swing.JLabel();
+        jCB_crearRtnConCompra = new javax.swing.JComboBox<>();
+        jCB_crearIdCompaniaCompra = new javax.swing.JComboBox<>();
+        jCB_crearVinVehiculoCompra = new javax.swing.JComboBox<>();
+        jB_crearCompra = new javax.swing.JButton();
+        jLabel99 = new javax.swing.JLabel();
+        jTF_crearPrecioCompra = new javax.swing.JTextField();
+        jLabel148 = new javax.swing.JLabel();
+        jDC_crearFechaCompra = new com.toedter.calendar.JDateChooser();
+        jD_crearProvee = new javax.swing.JDialog();
+        jLabel101 = new javax.swing.JLabel();
+        jLabel102 = new javax.swing.JLabel();
+        jLabel103 = new javax.swing.JLabel();
+        jB_crearProvee = new javax.swing.JButton();
+        jPanel21 = new javax.swing.JPanel();
+        jCB_crearIdCompaniaProvee = new javax.swing.JComboBox<>();
+        jCB_crearIdProveedorProvee = new javax.swing.JComboBox<>();
+        jD_modiPlantaFabricacion = new javax.swing.JDialog();
+        jLabel107 = new javax.swing.JLabel();
+        jB_modiPlanta = new javax.swing.JButton();
+        jPanel22 = new javax.swing.JPanel();
+        jPanel23 = new javax.swing.JPanel();
+        jLabel105 = new javax.swing.JLabel();
+        jTF_modiNombrePlanta = new javax.swing.JTextField();
+        jLabel106 = new javax.swing.JLabel();
+        jRB_modiEnsambladora = new javax.swing.JRadioButton();
+        jRB_modiSuministradora = new javax.swing.JRadioButton();
+        jCB_modiPlanta = new javax.swing.JComboBox<>();
+        jLabel41 = new javax.swing.JLabel();
+        jB_cargarModiPlanta = new javax.swing.JButton();
+        jD_modiConsecionario = new javax.swing.JDialog();
+        jPanel24 = new javax.swing.JPanel();
+        jB_modiCon = new javax.swing.JButton();
+        jLabel110 = new javax.swing.JLabel();
+        jLabel108 = new javax.swing.JLabel();
+        jLabel109 = new javax.swing.JLabel();
+        jTF_modiNombreCon = new javax.swing.JTextField();
+        jTF_modiParisCon = new javax.swing.JTextField();
+        jCB_modiCon = new javax.swing.JComboBox<>();
+        jLabel44 = new javax.swing.JLabel();
+        jB_cargarModiCon = new javax.swing.JButton();
+        jD_modiVehiculo = new javax.swing.JDialog();
+        jLabel112 = new javax.swing.JLabel();
+        jLabel113 = new javax.swing.JLabel();
+        jTF_modiPrecioVehiculo = new javax.swing.JTextField();
+        jLabel115 = new javax.swing.JLabel();
+        jTF_modiCarroceria = new javax.swing.JTextField();
+        jLabel116 = new javax.swing.JLabel();
+        jTF_modiColorVehiculo = new javax.swing.JTextField();
+        jLabel117 = new javax.swing.JLabel();
+        jTF_modiTransmisionVehiculo = new javax.swing.JTextField();
+        jLabel118 = new javax.swing.JLabel();
+        jLabel119 = new javax.swing.JLabel();
+        jTF_modiTipoMotor = new javax.swing.JTextField();
+        jTF_modiModeloVehiculo = new javax.swing.JTextField();
+        jLabel120 = new javax.swing.JLabel();
+        jTF_modiMarcaVehiculo = new javax.swing.JTextField();
+        jPanel25 = new javax.swing.JPanel();
+        jB_modiVehiculo = new javax.swing.JButton();
+        jCB_modiVehiculo = new javax.swing.JComboBox<>();
+        jLabel47 = new javax.swing.JLabel();
+        jB_cargarModiVehiculo = new javax.swing.JButton();
+        jD_modiCliente = new javax.swing.JDialog();
+        jPanel26 = new javax.swing.JPanel();
+        jLabel128 = new javax.swing.JLabel();
+        jB_modiCliente = new javax.swing.JButton();
+        jTF_modiTipoEmpresaCliente = new javax.swing.JTextField();
+        jLabel129 = new javax.swing.JLabel();
+        jTF_modiNombreCliente = new javax.swing.JTextField();
+        jLabel122 = new javax.swing.JLabel();
+        jLabel123 = new javax.swing.JLabel();
+        jTF_modiTelefonoClietne = new javax.swing.JTextField();
+        jTF_modiDireccionCliente = new javax.swing.JTextField();
+        jLabel124 = new javax.swing.JLabel();
+        jTF_modiIngresoPersonaCliente = new javax.swing.JTextField();
+        jTF_modiIdPersonaClient = new javax.swing.JTextField();
+        jLabel127 = new javax.swing.JLabel();
+        jLabel126 = new javax.swing.JLabel();
+        jLabel125 = new javax.swing.JLabel();
+        jRB_modiMasculino = new javax.swing.JRadioButton();
+        jRB_modiFemenino = new javax.swing.JRadioButton();
+        jCB_modiCliente = new javax.swing.JComboBox<>();
+        jLabel50 = new javax.swing.JLabel();
+        jB_cargarModiCliente = new javax.swing.JButton();
+        jD_modiCompania = new javax.swing.JDialog();
+        jLabel142 = new javax.swing.JLabel();
+        jPanel30 = new javax.swing.JPanel();
+        jLabel144 = new javax.swing.JLabel();
+        jTF_modiNombreCompania = new javax.swing.JTextField();
+        jB_modiCompania = new javax.swing.JButton();
+        jCB_modiCompania = new javax.swing.JComboBox<>();
+        jLabel53 = new javax.swing.JLabel();
+        jB_cargarModiCompania = new javax.swing.JButton();
+        jD_modiProveedor = new javax.swing.JDialog();
+        jLabel147 = new javax.swing.JLabel();
+        jPanel31 = new javax.swing.JPanel();
+        jB_modiProveedor = new javax.swing.JButton();
+        jTF_modiNombreProveedor = new javax.swing.JTextField();
+        jLabel146 = new javax.swing.JLabel();
+        jCB_modiProveedor = new javax.swing.JComboBox<>();
+        jLabel140 = new javax.swing.JLabel();
+        jB_cargarModiProveedor = new javax.swing.JButton();
+        jD_modiVenta = new javax.swing.JDialog();
+        jLabel104 = new javax.swing.JLabel();
+        jLabel111 = new javax.swing.JLabel();
+        jLabel114 = new javax.swing.JLabel();
+        jLabel121 = new javax.swing.JLabel();
+        jDC_modiFechaVenta = new com.toedter.calendar.JDateChooser();
+        jPanel27 = new javax.swing.JPanel();
+        jCB_modiRtnConVenta = new javax.swing.JComboBox<>();
+        jCB_modiRtnClienteVenta = new javax.swing.JComboBox<>();
+        jB_modiVenta = new javax.swing.JButton();
+        jB_cargarModiVenta = new javax.swing.JButton();
+        jD_modiCompra = new javax.swing.JDialog();
+        jLabel130 = new javax.swing.JLabel();
+        jPanel28 = new javax.swing.JPanel();
+        jLabel134 = new javax.swing.JLabel();
+        jCB_modiRtnConCompra = new javax.swing.JComboBox<>();
+        jCB_modiIdCompaniaCompra = new javax.swing.JComboBox<>();
+        jCB_modiVinVehiculoCompra = new javax.swing.JComboBox<>();
+        jB_modiCompra = new javax.swing.JButton();
+        jB_cargarModiCompra = new javax.swing.JButton();
+        jLabel131 = new javax.swing.JLabel();
+        jLabel133 = new javax.swing.JLabel();
+        jTF_modiPrecioCompra = new javax.swing.JTextField();
+        jLabel132 = new javax.swing.JLabel();
+        jLabel138 = new javax.swing.JLabel();
+        jDC_modiFechaCompra = new com.toedter.calendar.JDateChooser();
+        jD_modiProvee = new javax.swing.JDialog();
+        jLabel135 = new javax.swing.JLabel();
+        jLabel136 = new javax.swing.JLabel();
+        jLabel137 = new javax.swing.JLabel();
+        jPanel29 = new javax.swing.JPanel();
+        jCB_modiIdCompaniaProvee = new javax.swing.JComboBox<>();
+        jCB_modiIdProveedorProvee = new javax.swing.JComboBox<>();
+        jB_modiProvee = new javax.swing.JButton();
+        jD_eliminarNonTrans = new javax.swing.JDialog();
+        jB_eliminarNonTrans = new javax.swing.JButton();
+        jLabel139 = new javax.swing.JLabel();
+        jScrollPane10 = new javax.swing.JScrollPane();
+        jL_eliminarNonTrans = new javax.swing.JList<>();
+        jD_eliminarTrans = new javax.swing.JDialog();
+        jB_eliminarTrans = new javax.swing.JButton();
+        jLabel141 = new javax.swing.JLabel();
+        jScrollPane11 = new javax.swing.JScrollPane();
+        jT_eliminarTrans = new javax.swing.JTable();
+        buttonGroup6 = new javax.swing.ButtonGroup();
         jL_usernameIcon = new javax.swing.JLabel();
         jTF_username = new javax.swing.JTextField();
         jL_passwordIcon = new javax.swing.JLabel();
@@ -287,17 +444,32 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel40.setText("Inventario");
         jD_ventanaAdmin.getContentPane().add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 90, -1, -1));
 
-        jButton5.setBackground(new java.awt.Color(153, 153, 153));
-        jButton5.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\tablero.png")); // NOI18N
-        jD_ventanaAdmin.getContentPane().add(jButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 300, 530));
+        jB_reportesAdmin.setBackground(new java.awt.Color(153, 153, 153));
+        jB_reportesAdmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\tablero.png")); // NOI18N
+        jB_reportesAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_reportesAdminMouseClicked(evt);
+            }
+        });
+        jD_ventanaAdmin.getContentPane().add(jB_reportesAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 300, 530));
 
-        jButton6.setBackground(new java.awt.Color(153, 153, 153));
-        jButton6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\inventario.png")); // NOI18N
-        jD_ventanaAdmin.getContentPane().add(jButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, 300, 530));
+        jB_inventarioAdmin.setBackground(new java.awt.Color(153, 153, 153));
+        jB_inventarioAdmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\inventario.png")); // NOI18N
+        jB_inventarioAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_inventarioAdminMouseClicked(evt);
+            }
+        });
+        jD_ventanaAdmin.getContentPane().add(jB_inventarioAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, 300, 530));
 
-        jButton7.setBackground(new java.awt.Color(153, 153, 153));
-        jButton7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\caja-de-herramientas.png")); // NOI18N
-        jD_ventanaAdmin.getContentPane().add(jButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 530));
+        jB_crudAdmin.setBackground(new java.awt.Color(153, 153, 153));
+        jB_crudAdmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\caja-de-herramientas.png")); // NOI18N
+        jB_crudAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_crudAdminMouseClicked(evt);
+            }
+        });
+        jD_ventanaAdmin.getContentPane().add(jB_crudAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 530));
 
         jD_ventanaCliente.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -308,18 +480,29 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jLabel26.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 55)); // NOI18N
         jLabel26.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel26.setText("Proveedores");
-        jD_ventanaCliente.getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 390, -1, -1));
+        jLabel26.setText(" Proveedores mas cercanos a mi");
+        jD_ventanaCliente.getContentPane().add(jLabel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 390, -1, -1));
 
         jB_VehiculosClientes.setBackground(new java.awt.Color(255, 253, 168));
         jB_VehiculosClientes.setForeground(new java.awt.Color(0, 0, 0));
         jB_VehiculosClientes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\coche (1).png")); // NOI18N
         jB_VehiculosClientes.setBorder(new javax.swing.border.MatteBorder(null));
+        jB_VehiculosClientes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_VehiculosClientesMouseClicked(evt);
+            }
+        });
         jD_ventanaCliente.getContentPane().add(jB_VehiculosClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 550, 390));
+
+        jLabel149.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel149.setForeground(new java.awt.Color(102, 204, 0));
+        jLabel149.setText("Si quieres gozar de esta opcion ¡HAZTE PREMIUM YA!");
+        jD_ventanaCliente.getContentPane().add(jLabel149, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 750, -1, -1));
 
         jB_ProveedoresClientes.setBackground(new java.awt.Color(168, 200, 255));
         jB_ProveedoresClientes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\comerciante (1).png")); // NOI18N
         jB_ProveedoresClientes.setBorder(new javax.swing.border.MatteBorder(null));
+        jB_ProveedoresClientes.setEnabled(false);
         jD_ventanaCliente.getContentPane().add(jB_ProveedoresClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 550, 390));
 
         jD_ventanaMarketing.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -378,11 +561,16 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
         jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\busqueda (2).png")); // NOI18N
-        jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 160, 40, -1));
+        jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton3MouseClicked(evt);
+            }
+        });
+        jPanel4.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 150, 40, -1));
 
         jLabel36.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
         jLabel36.setText("Buscar");
-        jPanel4.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 130, -1, -1));
+        jPanel4.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, -1, -1));
 
         jB_anteriorProveedoresClientes2.setBackground(new java.awt.Color(0, 0, 0));
         jB_anteriorProveedoresClientes2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\responder.png")); // NOI18N
@@ -403,13 +591,13 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jRadioButton3.setText("Semana");
         jPanel4.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, -1, -1));
 
-        buttonGroup3.add(jRadioButton4);
+        buttonGroup6.add(jRadioButton4);
         jRadioButton4.setText("Genero");
-        jPanel4.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 150, -1, -1));
+        jPanel4.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, -1, -1));
 
-        buttonGroup3.add(jRadioButton5);
+        buttonGroup6.add(jRadioButton5);
         jRadioButton5.setText("Ingresos");
-        jPanel4.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, -1, -1));
+        jPanel4.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, -1, -1));
 
         jLabel59.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
         jLabel59.setText("Buscar por:");
@@ -461,28 +649,18 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jPanel6.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        jComboBox5.setBackground(new java.awt.Color(0, 0, 0));
-        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "rep1", "rep2", "rep3" }));
-        jPanel6.add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 150, 30));
-
-        jLabel41.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel41.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
-        jLabel41.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel41.setText("Seleccione El Reporte");
-        jPanel6.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, -1, -1));
-
         jLabel42.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
         jLabel42.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel42.setText("Reportes #2");
+        jLabel42.setText("Reporte #2");
         jPanel6.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jButton8.setBackground(new java.awt.Color(0, 0, 0));
         jButton8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\busqueda (2).png")); // NOI18N
-        jPanel6.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 40, -1));
+        jPanel6.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 40, -1));
 
         jLabel43.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
         jLabel43.setText("Buscar");
-        jPanel6.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, -1, -1));
+        jPanel6.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, -1, -1));
 
         jB_anteriorProveedoresClientes4.setBackground(new java.awt.Color(0, 0, 0));
         jB_anteriorProveedoresClientes4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\responder.png")); // NOI18N
@@ -536,19 +714,9 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jPanel7.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        jComboBox6.setBackground(new java.awt.Color(0, 0, 0));
-        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "rep1", "rep2", "rep3" }));
-        jPanel7.add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 150, 30));
-
-        jLabel44.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel44.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
-        jLabel44.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel44.setText("Seleccione El Reporte");
-        jPanel7.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, -1, -1));
-
         jLabel45.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
         jLabel45.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel45.setText("Reportes #3");
+        jLabel45.setText("Reporte #3");
         jPanel7.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jButton9.setBackground(new java.awt.Color(0, 0, 0));
@@ -611,19 +779,9 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jPanel8.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        jComboBox7.setBackground(new java.awt.Color(0, 0, 0));
-        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "rep1", "rep2", "rep3" }));
-        jPanel8.add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 150, 30));
-
-        jLabel47.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel47.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
-        jLabel47.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel47.setText("Seleccione El Reporte");
-        jPanel8.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, -1, -1));
-
         jLabel48.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
         jLabel48.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel48.setText("Reportes #4");
+        jLabel48.setText("Reporte #4");
         jPanel8.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jButton10.setBackground(new java.awt.Color(0, 0, 0));
@@ -686,19 +844,9 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jPanel9.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        jComboBox8.setBackground(new java.awt.Color(0, 0, 0));
-        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "rep1", "rep2", "rep3" }));
-        jPanel9.add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 150, 30));
-
-        jLabel50.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel50.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
-        jLabel50.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel50.setText("Seleccione El Reporte");
-        jPanel9.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, -1, -1));
-
         jLabel51.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
         jLabel51.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel51.setText("Reportes #5");
+        jLabel51.setText("Reporte #5");
         jPanel9.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jButton11.setBackground(new java.awt.Color(0, 0, 0));
@@ -761,19 +909,9 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jPanel10.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        jComboBox9.setBackground(new java.awt.Color(0, 0, 0));
-        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "rep1", "rep2", "rep3" }));
-        jPanel10.add(jComboBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 150, 30));
-
-        jLabel53.setBackground(new java.awt.Color(204, 204, 204));
-        jLabel53.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
-        jLabel53.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel53.setText("Seleccione El Reporte");
-        jPanel10.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, -1, -1));
-
         jLabel54.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
         jLabel54.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel54.setText("Reportes #6");
+        jLabel54.setText("Reporte #6");
         jPanel10.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jButton12.setBackground(new java.awt.Color(0, 0, 0));
@@ -838,7 +976,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jLabel57.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
         jLabel57.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel57.setText("Reportes #7");
+        jLabel57.setText("Reporte #7");
         jPanel11.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jButton13.setBackground(new java.awt.Color(0, 0, 0));
@@ -905,9 +1043,9 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jD_ventanaServicioLocalizacionVehiculo.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 78, -1, -1));
 
-        jComboBox4.setBackground(new java.awt.Color(0, 51, 51));
-        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pais1", "Pais2", "Pais3" }));
-        jD_ventanaServicioLocalizacionVehiculo.getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 150, 30));
+        jCB_paisInventairo.setBackground(new java.awt.Color(0, 51, 51));
+        jCB_paisInventairo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pais1", "Pais2", "Pais3" }));
+        jD_ventanaServicioLocalizacionVehiculo.getContentPane().add(jCB_paisInventairo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 150, 30));
 
         jPanel5.setBackground(new java.awt.Color(0, 153, 102));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -925,6 +1063,11 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jButton4.setBackground(new java.awt.Color(0, 51, 51));
         jButton4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\busqueda (2).png")); // NOI18N
+        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton4MouseClicked(evt);
+            }
+        });
         jPanel5.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 110, 40, 40));
 
         jLabel37.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
@@ -1008,12 +1151,17 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel29.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\concesionario (3).png")); // NOI18N
         jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, 40));
 
-        jComboBox2.setBackground(new java.awt.Color(51, 0, 51));
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Con1", "Con2", "Con3" }));
-        jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 140, 40));
+        jCB_concesionarioInventario.setBackground(new java.awt.Color(51, 0, 51));
+        jCB_concesionarioInventario.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Con1", "Con2", "Con3" }));
+        jPanel2.add(jCB_concesionarioInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 10, 140, 40));
 
         jButton1.setBackground(new java.awt.Color(102, 0, 102));
         jButton1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\busqueda (2).png")); // NOI18N
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 110, 40, -1));
 
         jLabel30.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
@@ -1177,10 +1325,15 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, -1, -1));
 
         jB_ejecutarCRUD.setText("Ejecutar");
+        jB_ejecutarCRUD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_ejecutarCRUDMouseClicked(evt);
+            }
+        });
         jPanel1.add(jB_ejecutarCRUD, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 750, 114, 51));
 
-        buttonGroup2.add(jRadioButton6);
-        jPanel1.add(jRadioButton6, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 770, -1, -1));
+        buttonGroup2.add(jRB_provee);
+        jPanel1.add(jRB_provee, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 770, -1, -1));
 
         jLabel71.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\movimiento-de-la-mano.png")); // NOI18N
         jPanel1.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 680, -1, -1));
@@ -1195,470 +1348,1008 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_ventanaCRUD.getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, -1));
 
         jD_crearPlantaFabricacion.setResizable(false);
+        jD_crearPlantaFabricacion.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel32.setForeground(new java.awt.Color(0, 0, 0));
         jLabel32.setText("idPlanta");
+        jD_crearPlantaFabricacion.getContentPane().add(jLabel32, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 116, -1, -1));
+        jD_crearPlantaFabricacion.getContentPane().add(jTF_crearIdPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 106, 160, -1));
 
+        jLabel56.setForeground(new java.awt.Color(0, 0, 0));
         jLabel56.setText("Nombre");
-
-        jLabel60.setText("Tipo");
-
-        buttonGroup4.add(jRB_Ensambladora);
-        jRB_Ensambladora.setSelected(true);
-        jRB_Ensambladora.setText("Ensambladora");
-
-        buttonGroup4.add(jRB_Otra);
-        jRB_Otra.setText("Otra");
+        jD_crearPlantaFabricacion.getContentPane().add(jLabel56, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 146, -1, -1));
+        jD_crearPlantaFabricacion.getContentPane().add(jTF_crearNombrePlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 146, 160, -1));
 
         jLabel61.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\fabrica.png")); // NOI18N
+        jD_crearPlantaFabricacion.getContentPane().add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 6, -1, -1));
+
+        jPanel15.setForeground(new java.awt.Color(0, 0, 0));
+
+        jPanel16.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        buttonGroup4.add(jRB_crearEnsambladora);
+        jRB_crearEnsambladora.setForeground(new java.awt.Color(0, 0, 0));
+        jRB_crearEnsambladora.setText("Ensambladora");
+        jPanel16.add(jRB_crearEnsambladora, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, -1, -1));
+
+        buttonGroup4.add(jRB_crearSuministradora);
+        jRB_crearSuministradora.setForeground(new java.awt.Color(0, 0, 0));
+        jRB_crearSuministradora.setText("Suministradora");
+        jPanel16.add(jRB_crearSuministradora, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, -1, -1));
+
+        jLabel60.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel60.setText("Tipo");
+        jPanel16.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, -1, -1));
+
+        jLabel143.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel143.setText("idCompania");
+        jPanel16.add(jLabel143, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
+
+        jCB_crearIdCompaniaPlanta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel16.add(jCB_crearIdCompaniaPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 159, -1));
 
         jB_crearPlanta.setText("Crear");
+        jB_crearPlanta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_crearPlantaMouseClicked(evt);
+            }
+        });
+        jPanel16.add(jB_crearPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, -1, -1));
 
-        javax.swing.GroupLayout jD_crearPlantaFabricacionLayout = new javax.swing.GroupLayout(jD_crearPlantaFabricacion.getContentPane());
-        jD_crearPlantaFabricacion.getContentPane().setLayout(jD_crearPlantaFabricacionLayout);
-        jD_crearPlantaFabricacionLayout.setHorizontalGroup(
-            jD_crearPlantaFabricacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jD_crearPlantaFabricacionLayout.createSequentialGroup()
-                .addGroup(jD_crearPlantaFabricacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jD_crearPlantaFabricacionLayout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jLabel32)
-                        .addGap(15, 15, 15)
-                        .addComponent(jTF_crearIdPlanta, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jD_crearPlantaFabricacionLayout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jLabel56)
-                        .addGap(15, 15, 15)
-                        .addComponent(jTF_crearNombrePlanta, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jD_crearPlantaFabricacionLayout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jLabel60)
-                        .addGap(16, 16, 16)
-                        .addComponent(jRB_Ensambladora))
-                    .addGroup(jD_crearPlantaFabricacionLayout.createSequentialGroup()
-                        .addGap(110, 110, 110)
-                        .addComponent(jRB_Otra))
-                    .addGroup(jD_crearPlantaFabricacionLayout.createSequentialGroup()
-                        .addGap(160, 160, 160)
-                        .addComponent(jB_crearPlanta)))
-                .addContainerGap(84, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jD_crearPlantaFabricacionLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel61)
-                .addGap(144, 144, 144))
+        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
+        jPanel15.setLayout(jPanel15Layout);
+        jPanel15Layout.setHorizontalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel15Layout.createSequentialGroup()
+                .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 374, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-        jD_crearPlantaFabricacionLayout.setVerticalGroup(
-            jD_crearPlantaFabricacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jD_crearPlantaFabricacionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel61)
-                .addGap(30, 30, 30)
-                .addGroup(jD_crearPlantaFabricacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jD_crearPlantaFabricacionLayout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel32))
-                    .addComponent(jTF_crearIdPlanta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(12, 12, 12)
-                .addGroup(jD_crearPlantaFabricacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel56)
-                    .addComponent(jTF_crearNombrePlanta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(22, 22, 22)
-                .addGroup(jD_crearPlantaFabricacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel60)
-                    .addComponent(jRB_Ensambladora))
-                .addGap(12, 12, 12)
-                .addComponent(jRB_Otra)
-                .addGap(62, 62, 62)
-                .addComponent(jB_crearPlanta))
+        jPanel15Layout.setVerticalGroup(
+            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel16, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
         );
 
-        jD_crearVenta.setResizable(false);
-
-        jLabel70.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\metodo-de-pago.png")); // NOI18N
-
-        jLabel74.setText("RTN del Concesionario");
-
-        jLabel75.setText("RTN del Cliente");
-
-        jLabel76.setText("Fecha de la compra ");
-
-        jDC_crearFechaVenta.setDate(new java.util.Date(934933459000L));
-
-        jB_crearVenta.setText("Crear");
-
-        javax.swing.GroupLayout jD_crearVentaLayout = new javax.swing.GroupLayout(jD_crearVenta.getContentPane());
-        jD_crearVenta.getContentPane().setLayout(jD_crearVentaLayout);
-        jD_crearVentaLayout.setHorizontalGroup(
-            jD_crearVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jD_crearVentaLayout.createSequentialGroup()
-                .addGroup(jD_crearVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jD_crearVentaLayout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel74)
-                        .addGap(15, 15, 15)
-                        .addComponent(jTF_crearRtnConVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jD_crearVentaLayout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel75)
-                        .addGap(57, 57, 57)
-                        .addComponent(jTF_crearRtnClienteVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jD_crearVentaLayout.createSequentialGroup()
-                        .addGap(36, 36, 36)
-                        .addComponent(jLabel76)
-                        .addGap(32, 32, 32)
-                        .addComponent(jDC_crearFechaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jD_crearVentaLayout.createSequentialGroup()
-                        .addGap(230, 230, 230)
-                        .addComponent(jB_crearVenta))
-                    .addGroup(jD_crearVentaLayout.createSequentialGroup()
-                        .addGap(204, 204, 204)
-                        .addComponent(jLabel70)))
-                .addContainerGap(57, Short.MAX_VALUE))
-        );
-        jD_crearVentaLayout.setVerticalGroup(
-            jD_crearVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jD_crearVentaLayout.createSequentialGroup()
-                .addGap(8, 8, 8)
-                .addComponent(jLabel70)
-                .addGap(18, 18, 18)
-                .addGroup(jD_crearVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jD_crearVentaLayout.createSequentialGroup()
-                        .addGap(7, 7, 7)
-                        .addComponent(jLabel74))
-                    .addComponent(jTF_crearRtnConVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addGroup(jD_crearVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jD_crearVentaLayout.createSequentialGroup()
-                        .addGap(4, 4, 4)
-                        .addComponent(jLabel75))
-                    .addComponent(jTF_crearRtnClienteVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(42, 42, 42)
-                .addGroup(jD_crearVentaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jD_crearVentaLayout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(jLabel76))
-                    .addComponent(jDC_crearFechaVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(62, 62, 62)
-                .addComponent(jB_crearVenta))
-        );
+        jD_crearPlantaFabricacion.getContentPane().add(jPanel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         jD_crearVehiculo.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel62.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\coche.png")); // NOI18N
         jD_crearVehiculo.getContentPane().add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
 
+        jLabel63.setForeground(new java.awt.Color(0, 0, 0));
         jLabel63.setText("Precio");
-        jD_crearVehiculo.getContentPane().add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, -1, -1));
-        jD_crearVehiculo.getContentPane().add(jTF_crearPrecioVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 110, 202, -1));
+        jD_crearVehiculo.getContentPane().add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
+        jD_crearVehiculo.getContentPane().add(jTF_crearPrecioVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 202, -1));
 
+        jLabel64.setForeground(new java.awt.Color(0, 0, 0));
         jLabel64.setText("VIN");
-        jD_crearVehiculo.getContentPane().add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, -1, -1));
-        jD_crearVehiculo.getContentPane().add(jTF_crearVinVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 160, 202, -1));
+        jD_crearVehiculo.getContentPane().add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
+        jD_crearVehiculo.getContentPane().add(jTF_crearVinVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 202, -1));
 
+        jLabel65.setForeground(new java.awt.Color(0, 0, 0));
         jLabel65.setText("Carroceria");
-        jD_crearVehiculo.getContentPane().add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, -1, -1));
-        jD_crearVehiculo.getContentPane().add(jTF_crearCarroceria, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 220, 202, -1));
+        jD_crearVehiculo.getContentPane().add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, -1));
+        jD_crearVehiculo.getContentPane().add(jTF_crearCarroceria, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 202, -1));
 
+        jLabel66.setForeground(new java.awt.Color(0, 0, 0));
         jLabel66.setText("Color");
-        jD_crearVehiculo.getContentPane().add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 280, -1, -1));
-        jD_crearVehiculo.getContentPane().add(jTF_crearColorVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 270, 202, -1));
+        jD_crearVehiculo.getContentPane().add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, -1, -1));
+        jD_crearVehiculo.getContentPane().add(jTF_crearColorVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, 202, -1));
 
+        jLabel67.setForeground(new java.awt.Color(0, 0, 0));
         jLabel67.setText("Transmision");
-        jD_crearVehiculo.getContentPane().add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 330, -1, -1));
-        jD_crearVehiculo.getContentPane().add(jTF_crearTransmisionVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 330, 202, -1));
+        jD_crearVehiculo.getContentPane().add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, -1, -1));
+        jD_crearVehiculo.getContentPane().add(jTF_crearTransmisionVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 202, -1));
 
+        jLabel68.setForeground(new java.awt.Color(0, 0, 0));
         jLabel68.setText("Tipo de Motor");
-        jD_crearVehiculo.getContentPane().add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, -1, -1));
+        jD_crearVehiculo.getContentPane().add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 470, -1, -1));
 
+        jLabel69.setForeground(new java.awt.Color(0, 0, 0));
         jLabel69.setText("Modelo");
-        jD_crearVehiculo.getContentPane().add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 430, -1, -1));
-        jD_crearVehiculo.getContentPane().add(jTF_crearTipoMotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 380, 202, -1));
-        jD_crearVehiculo.getContentPane().add(jTF_crearModeloVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 430, 202, -1));
+        jD_crearVehiculo.getContentPane().add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 520, -1, -1));
+        jD_crearVehiculo.getContentPane().add(jTF_crearTipoMotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, 202, -1));
+        jD_crearVehiculo.getContentPane().add(jTF_crearModeloVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 520, 202, -1));
+
+        jLabel73.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel73.setText("Marca");
+        jD_crearVehiculo.getContentPane().add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 580, -1, -1));
+        jD_crearVehiculo.getContentPane().add(jTF_crearMarcaVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 580, 200, -1));
+
+        jPanel12.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel12.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jB_crearVehiculo.setText("Crear");
-        jD_crearVehiculo.getContentPane().add(jB_crearVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 550, -1, -1));
+        jB_crearVehiculo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_crearVehiculoMouseClicked(evt);
+            }
+        });
+        jPanel12.add(jB_crearVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 640, -1, -1));
 
-        jLabel73.setText("Marca");
-        jD_crearVehiculo.getContentPane().add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, -1, -1));
-        jD_crearVehiculo.getContentPane().add(jTF_crearMarcaVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 490, 200, -1));
+        jLabel145.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel145.setText("idCompania");
+        jPanel12.add(jLabel145, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 147, -1, -1));
 
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 500, Short.MAX_VALUE)
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 590, Short.MAX_VALUE)
-        );
+        jCB_crearIdCompaniaVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel12.add(jCB_crearIdCompaniaVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 137, 207, -1));
 
-        jD_crearVehiculo.getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 590));
+        jD_crearVehiculo.getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 690));
 
+        jD_crearProveedor.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel77.setForeground(new java.awt.Color(0, 0, 0));
         jLabel77.setText("Id del Proveedor");
+        jD_crearProveedor.getContentPane().add(jLabel77, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 137, -1, -1));
 
+        jLabel78.setForeground(new java.awt.Color(0, 0, 0));
         jLabel78.setText("Nombre del Proveedor");
+        jD_crearProveedor.getContentPane().add(jLabel78, new org.netbeans.lib.awtextra.AbsoluteConstraints(47, 205, -1, -1));
+        jD_crearProveedor.getContentPane().add(jTF_crearIdProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(184, 131, 207, -1));
+        jD_crearProveedor.getContentPane().add(jTF_crearNombreProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(183, 199, 207, -1));
 
         jLabel79.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\proveedor.png")); // NOI18N
+        jD_crearProveedor.getContentPane().add(jLabel79, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 18, -1, -1));
 
         jB_crearProveedor.setText("Crear");
+        jB_crearProveedor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_crearProveedorMouseClicked(evt);
+            }
+        });
+        jD_crearProveedor.getContentPane().add(jB_crearProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(207, 295, -1, -1));
 
-        javax.swing.GroupLayout jD_crearProveedorLayout = new javax.swing.GroupLayout(jD_crearProveedor.getContentPane());
-        jD_crearProveedor.getContentPane().setLayout(jD_crearProveedorLayout);
-        jD_crearProveedorLayout.setHorizontalGroup(
-            jD_crearProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jD_crearProveedorLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addGroup(jD_crearProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel78)
-                    .addComponent(jLabel77))
-                .addGroup(jD_crearProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jD_crearProveedorLayout.createSequentialGroup()
-                        .addGap(13, 13, 13)
-                        .addComponent(jTF_crearIdProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jD_crearProveedorLayout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jD_crearProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTF_crearNombreProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, 207, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jD_crearProveedorLayout.createSequentialGroup()
-                                .addComponent(jB_crearProveedor)
-                                .addGap(124, 124, 124)))))
-                .addContainerGap(66, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jD_crearProveedorLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel79)
-                .addGap(188, 188, 188))
+        jPanel18.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel18.setForeground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 460, Short.MAX_VALUE)
         );
-        jD_crearProveedorLayout.setVerticalGroup(
-            jD_crearProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jD_crearProveedorLayout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addComponent(jLabel79)
-                .addGap(49, 49, 49)
-                .addGroup(jD_crearProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel77)
-                    .addComponent(jTF_crearIdProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
-                .addGroup(jD_crearProveedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel78)
-                    .addComponent(jTF_crearNombreProveedor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addComponent(jB_crearProveedor)
-                .addGap(18, 18, 18))
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 340, Short.MAX_VALUE)
         );
+
+        jD_crearProveedor.getContentPane().add(jPanel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 340));
+
+        jD_crearConsecionario.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel80.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\concesionario.png")); // NOI18N
+        jD_crearConsecionario.getContentPane().add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 14, -1, -1));
 
+        jLabel81.setForeground(new java.awt.Color(0, 0, 0));
         jLabel81.setText("Nombre Concesionario");
+        jD_crearConsecionario.getContentPane().add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 114, -1, -1));
 
+        jLabel82.setForeground(new java.awt.Color(0, 0, 0));
         jLabel82.setText("Pais");
+        jD_crearConsecionario.getContentPane().add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 222, -1, -1));
 
+        jLabel83.setForeground(new java.awt.Color(0, 0, 0));
         jLabel83.setText("RTN Concesionario");
+        jD_crearConsecionario.getContentPane().add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(109, 166, -1, -1));
+        jD_crearConsecionario.getContentPane().add(jTF_crearNombreCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 108, 187, -1));
+        jD_crearConsecionario.getContentPane().add(jTF_crearRtnCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 160, 187, -1));
+        jD_crearConsecionario.getContentPane().add(jTF_crearParisCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 216, 187, -1));
+
+        jPanel19.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel19.setForeground(new java.awt.Color(0, 0, 0));
 
         jB_crearCon.setText("Crear");
+        jB_crearCon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_crearConMouseClicked(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jD_crearConsecionarioLayout = new javax.swing.GroupLayout(jD_crearConsecionario.getContentPane());
-        jD_crearConsecionario.getContentPane().setLayout(jD_crearConsecionarioLayout);
-        jD_crearConsecionarioLayout.setHorizontalGroup(
-            jD_crearConsecionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jD_crearConsecionarioLayout.createSequentialGroup()
-                .addGap(236, 236, 236)
-                .addComponent(jLabel80)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jD_crearConsecionarioLayout.createSequentialGroup()
-                .addContainerGap(109, Short.MAX_VALUE)
-                .addGroup(jD_crearConsecionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jD_crearConsecionarioLayout.createSequentialGroup()
-                        .addGroup(jD_crearConsecionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel81)
-                            .addComponent(jLabel83, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel82, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, 18)
-                        .addGroup(jD_crearConsecionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTF_crearNombreCon)
-                            .addComponent(jTF_crearRtnCon)
-                            .addComponent(jTF_crearParisCon, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(98, 98, 98))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jD_crearConsecionarioLayout.createSequentialGroup()
-                        .addComponent(jB_crearCon)
-                        .addGap(218, 218, 218))))
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
+                .addContainerGap(242, Short.MAX_VALUE)
+                .addComponent(jB_crearCon)
+                .addGap(239, 239, 239))
         );
-        jD_crearConsecionarioLayout.setVerticalGroup(
-            jD_crearConsecionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jD_crearConsecionarioLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addComponent(jLabel80)
-                .addGap(30, 30, 30)
-                .addGroup(jD_crearConsecionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel81)
-                    .addComponent(jTF_crearNombreCon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24)
-                .addGroup(jD_crearConsecionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel83)
-                    .addComponent(jTF_crearRtnCon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(28, 28, 28)
-                .addGroup(jD_crearConsecionarioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel82)
-                    .addComponent(jTF_crearParisCon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 111, Short.MAX_VALUE)
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel19Layout.createSequentialGroup()
+                .addContainerGap(296, Short.MAX_VALUE)
                 .addComponent(jB_crearCon)
                 .addContainerGap())
         );
 
+        jD_crearConsecionario.getContentPane().add(jPanel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 330));
+
+        jD_crearCompania.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
         jLabel84.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\empresa.png")); // NOI18N
+        jD_crearCompania.getContentPane().add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 16, -1, -1));
 
+        jLabel85.setForeground(new java.awt.Color(0, 0, 0));
         jLabel85.setText("id Compania");
+        jD_crearCompania.getContentPane().add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 135, -1, -1));
 
+        jLabel86.setForeground(new java.awt.Color(0, 0, 0));
         jLabel86.setText("Nombre Compania");
+        jD_crearCompania.getContentPane().add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(86, 194, -1, -1));
 
         jB_crearCompania.setText("Crear");
+        jB_crearCompania.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_crearCompaniaMouseClicked(evt);
+            }
+        });
+        jD_crearCompania.getContentPane().add(jB_crearCompania, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 277, -1, -1));
+        jD_crearCompania.getContentPane().add(jTF_crearIdCompania, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 129, 207, -1));
+        jD_crearCompania.getContentPane().add(jTF_crearNombreCompania, new org.netbeans.lib.awtextra.AbsoluteConstraints(224, 188, 207, -1));
 
-        javax.swing.GroupLayout jD_crearCompaniaLayout = new javax.swing.GroupLayout(jD_crearCompania.getContentPane());
-        jD_crearCompania.getContentPane().setLayout(jD_crearCompaniaLayout);
-        jD_crearCompaniaLayout.setHorizontalGroup(
-            jD_crearCompaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jD_crearCompaniaLayout.createSequentialGroup()
-                .addGap(86, 86, 86)
-                .addGroup(jD_crearCompaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel86)
-                    .addComponent(jLabel85))
-                .addGap(32, 32, 32)
-                .addGroup(jD_crearCompaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jTF_crearIdCompania)
-                    .addComponent(jTF_crearNombreCompania, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jD_crearCompaniaLayout.createSequentialGroup()
-                .addContainerGap(233, Short.MAX_VALUE)
-                .addGroup(jD_crearCompaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jD_crearCompaniaLayout.createSequentialGroup()
-                        .addComponent(jLabel84)
-                        .addGap(226, 226, 226))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jD_crearCompaniaLayout.createSequentialGroup()
-                        .addComponent(jB_crearCompania)
-                        .addGap(228, 228, 228))))
+        jPanel20.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel20.setForeground(new java.awt.Color(0, 0, 0));
+
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 520, Short.MAX_VALUE)
         );
-        jD_crearCompaniaLayout.setVerticalGroup(
-            jD_crearCompaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jD_crearCompaniaLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel84)
-                .addGap(49, 49, 49)
-                .addGroup(jD_crearCompaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel85)
-                    .addComponent(jTF_crearIdCompania, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addGroup(jD_crearCompaniaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel86)
-                    .addComponent(jTF_crearNombreCompania, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
-                .addComponent(jB_crearCompania)
-                .addContainerGap())
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 310, Short.MAX_VALUE)
         );
+
+        jD_crearCompania.getContentPane().add(jPanel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 310));
 
         jD_crearCliente.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel87.setForeground(new java.awt.Color(0, 0, 0));
         jLabel87.setText("RTN Cliente");
         jD_crearCliente.getContentPane().add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 110, -1, -1));
 
+        jLabel88.setForeground(new java.awt.Color(0, 0, 0));
         jLabel88.setText("Nombre Cliente");
         jD_crearCliente.getContentPane().add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 160, -1, -1));
 
+        jLabel89.setForeground(new java.awt.Color(0, 0, 0));
         jLabel89.setText("Telefono Cliente");
         jD_crearCliente.getContentPane().add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, -1, -1));
 
+        jLabel91.setForeground(new java.awt.Color(0, 0, 0));
         jLabel91.setText("Direccion");
         jD_crearCliente.getContentPane().add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, -1));
 
+        jLabel92.setForeground(new java.awt.Color(0, 0, 0));
         jLabel92.setText("Sexo");
         jD_crearCliente.getContentPane().add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 383, -1, -1));
 
+        jLabel93.setForeground(new java.awt.Color(0, 0, 0));
         jLabel93.setText("Id del Cliente");
         jD_crearCliente.getContentPane().add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 432, -1, -1));
 
+        jLabel94.setForeground(new java.awt.Color(0, 0, 0));
         jLabel94.setText("Ingreso Anual");
         jD_crearCliente.getContentPane().add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 487, -1, -1));
 
-        buttonGroup5.add(jRadioButton7);
-        jRadioButton7.setText("M");
-        jD_crearCliente.getContentPane().add(jRadioButton7, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 382, -1, -1));
+        buttonGroup5.add(jRB_masculino);
+        jRB_masculino.setForeground(new java.awt.Color(0, 0, 0));
+        jRB_masculino.setText("M");
+        jD_crearCliente.getContentPane().add(jRB_masculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 382, -1, -1));
 
-        buttonGroup5.add(jRadioButton8);
-        jRadioButton8.setText("F");
-        jD_crearCliente.getContentPane().add(jRadioButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 382, -1, -1));
-        jD_crearCliente.getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 426, 159, -1));
-        jD_crearCliente.getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 481, 161, -1));
-        jD_crearCliente.getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 180, -1));
-        jD_crearCliente.getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 180, -1));
+        jRB_Femenino.setBackground(new java.awt.Color(0, 0, 0));
+        buttonGroup5.add(jRB_Femenino);
+        jRB_Femenino.setForeground(new java.awt.Color(0, 0, 0));
+        jRB_Femenino.setText("F");
+        jD_crearCliente.getContentPane().add(jRB_Femenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 382, -1, -1));
+        jD_crearCliente.getContentPane().add(jTF_crearIdPersonaClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 426, 159, -1));
+        jD_crearCliente.getContentPane().add(jTF_crearIngresoPersonaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 481, 161, -1));
+        jD_crearCliente.getContentPane().add(jTF_crearRtnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 180, -1));
+        jD_crearCliente.getContentPane().add(jTF_crearNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 180, -1));
+        jD_crearCliente.getContentPane().add(jTF_crearTelefonoClietne, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 180, -1));
+        jD_crearCliente.getContentPane().add(jTF_crearDireccionCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 180, -1));
 
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
-            }
-        });
-        jD_crearCliente.getContentPane().add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 180, -1));
-        jD_crearCliente.getContentPane().add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, 180, -1));
+        jPanel13.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel13.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel90.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\cliente.png")); // NOI18N
+        jPanel13.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 6, -1, -1));
 
-        jButton14.setText("Crear");
+        jB_crearCliente.setText("Crear");
+        jB_crearCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_crearClienteMouseClicked(evt);
+            }
+        });
+        jPanel13.add(jB_crearCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 540, -1, -1));
+        jPanel13.add(jTF_crearTipoEmpresaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 380, 163, -1));
 
+        jLabel95.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel95.setForeground(new java.awt.Color(0, 0, 0));
         jLabel95.setText("Tipo de Empresa");
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(247, 247, 247)
-                .addComponent(jButton14)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addContainerGap(267, Short.MAX_VALUE)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addComponent(jLabel90)
-                        .addGap(249, 249, 249))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addComponent(jLabel95)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(15, 15, 15))))
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel90)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 311, Short.MAX_VALUE)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel95))
-                .addGap(137, 137, 137)
-                .addComponent(jButton14)
-                .addContainerGap())
-        );
+        jPanel13.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, -1, -1));
 
         jD_crearCliente.getContentPane().add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 580));
 
-        javax.swing.GroupLayout jD_crearCompraLayout = new javax.swing.GroupLayout(jD_crearCompra.getContentPane());
-        jD_crearCompra.getContentPane().setLayout(jD_crearCompraLayout);
-        jD_crearCompraLayout.setHorizontalGroup(
-            jD_crearCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        jD_crearVenta.setResizable(false);
+        jD_crearVenta.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel70.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\metodo-de-pago.png")); // NOI18N
+        jD_crearVenta.getContentPane().add(jLabel70, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
+
+        jLabel74.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel74.setText("RTN del Concesionario");
+        jD_crearVenta.getContentPane().add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 97, -1, -1));
+
+        jLabel75.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel75.setText("RTN del Cliente");
+        jD_crearVenta.getContentPane().add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 164, -1, -1));
+
+        jLabel76.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel76.setText("Fecha de la compra ");
+        jD_crearVenta.getContentPane().add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 232, -1, -1));
+
+        jDC_crearFechaVenta.setDate(new java.util.Date(934933459000L));
+        jD_crearVenta.getContentPane().add(jDC_crearFechaVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 237, -1));
+
+        jB_crearVenta.setText("Crear");
+        jB_crearVenta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_crearVentaMouseClicked(evt);
+            }
+        });
+        jD_crearVenta.getContentPane().add(jB_crearVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, -1, -1));
+
+        jPanel17.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel17.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jCB_crearRtnConVenta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel17.add(jCB_crearRtnConVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 160, -1));
+
+        jCB_crearRtnClienteVenta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel17.add(jCB_crearRtnClienteVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 160, -1));
+
+        jD_crearVenta.getContentPane().add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 350));
+
+        jD_crearCompra.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel97.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel97.setText("RTN Concesionario");
+        jD_crearCompra.getContentPane().add(jLabel97, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
+
+        jLabel98.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel98.setText("ID Compania");
+        jD_crearCompra.getContentPane().add(jLabel98, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, -1, -1));
+
+        jLabel100.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel100.setText("VIN Vehiculo");
+        jD_crearCompra.getContentPane().add(jLabel100, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 240, -1, -1));
+
+        jPanel14.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel14.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel96.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\trato (1).png")); // NOI18N
+        jPanel14.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
+
+        jCB_crearRtnConCompra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel14.add(jCB_crearRtnConCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 180, -1));
+
+        jCB_crearIdCompaniaCompra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel14.add(jCB_crearIdCompaniaCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 180, -1));
+
+        jCB_crearVinVehiculoCompra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel14.add(jCB_crearVinVehiculoCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 180, -1));
+
+        jB_crearCompra.setText("Crear");
+        jB_crearCompra.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_crearCompraMouseClicked(evt);
+            }
+        });
+        jPanel14.add(jB_crearCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, -1, -1));
+
+        jLabel99.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel99.setText("Precio de la venta");
+        jPanel14.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, -1));
+        jPanel14.add(jTF_crearPrecioCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 205, -1));
+
+        jLabel148.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel148.setText("Fecha Adquirido");
+        jPanel14.add(jLabel148, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
+
+        jDC_crearFechaCompra.setDate(new java.util.Date(976084732000L));
+        jPanel14.add(jDC_crearFechaCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 200, -1));
+
+        jD_crearCompra.getContentPane().add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 500));
+
+        jD_crearProvee.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel101.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\movimiento-de-la-mano.png")); // NOI18N
+        jD_crearProvee.getContentPane().add(jLabel101, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 17, -1, -1));
+
+        jLabel102.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel102.setText("Id Compania");
+        jD_crearProvee.getContentPane().add(jLabel102, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 119, -1, -1));
+
+        jLabel103.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel103.setText("Id Proveedor");
+        jD_crearProvee.getContentPane().add(jLabel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 168, -1, -1));
+
+        jB_crearProvee.setText("Crear");
+        jB_crearProvee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_crearProveeMouseClicked(evt);
+            }
+        });
+        jD_crearProvee.getContentPane().add(jB_crearProvee, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 290, -1, -1));
+
+        jPanel21.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel21.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jCB_crearIdCompaniaProvee.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel21.add(jCB_crearIdCompaniaProvee, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 150, -1));
+
+        jCB_crearIdProveedorProvee.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel21.add(jCB_crearIdProveedorProvee, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 150, -1));
+
+        jD_crearProvee.getContentPane().add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 330));
+
+        jD_modiPlantaFabricacion.setResizable(false);
+        jD_modiPlantaFabricacion.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel107.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\fabrica.png")); // NOI18N
+        jD_modiPlantaFabricacion.getContentPane().add(jLabel107, new org.netbeans.lib.awtextra.AbsoluteConstraints(166, 6, -1, -1));
+
+        jB_modiPlanta.setText("Modificar");
+        jB_modiPlanta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_modiPlantaMouseClicked(evt);
+            }
+        });
+        jD_modiPlantaFabricacion.getContentPane().add(jB_modiPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 306, -1, -1));
+
+        jPanel22.setForeground(new java.awt.Color(0, 0, 0));
+
+        jPanel23.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel23.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel105.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel105.setText("Nombre");
+        jPanel23.add(jLabel105, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, -1, -1));
+        jPanel23.add(jTF_modiNombrePlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 170, 160, -1));
+
+        jLabel106.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel106.setText("Tipo");
+        jPanel23.add(jLabel106, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
+
+        buttonGroup4.add(jRB_modiEnsambladora);
+        jRB_modiEnsambladora.setForeground(new java.awt.Color(0, 0, 0));
+        jRB_modiEnsambladora.setSelected(true);
+        jRB_modiEnsambladora.setText("Ensambladora");
+        jPanel23.add(jRB_modiEnsambladora, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, -1, -1));
+
+        buttonGroup4.add(jRB_modiSuministradora);
+        jRB_modiSuministradora.setForeground(new java.awt.Color(0, 0, 0));
+        jRB_modiSuministradora.setText("Suministradora");
+        jPanel23.add(jRB_modiSuministradora, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 250, -1, -1));
+
+        jCB_modiPlanta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel23.add(jCB_modiPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 130, 220, -1));
+
+        jLabel41.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel41.setText("Seleccione el ID del la Fabrica que quiere modificar:");
+        jPanel23.add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 100, -1, -1));
+
+        jB_cargarModiPlanta.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\mira.png")); // NOI18N
+        jB_cargarModiPlanta.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_cargarModiPlantaMouseClicked(evt);
+            }
+        });
+        jPanel23.add(jB_cargarModiPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 124, 40, -1));
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
-        jD_crearCompraLayout.setVerticalGroup(
-            jD_crearCompraLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel22Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, 336, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        javax.swing.GroupLayout jD_crearAcuerdoLayout = new javax.swing.GroupLayout(jD_crearAcuerdo.getContentPane());
-        jD_crearAcuerdo.getContentPane().setLayout(jD_crearAcuerdoLayout);
-        jD_crearAcuerdoLayout.setHorizontalGroup(
-            jD_crearAcuerdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        jD_modiPlantaFabricacion.getContentPane().add(jPanel22, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+
+        jD_modiConsecionario.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel24.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel24.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel24.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jB_modiCon.setText("Modificar");
+        jB_modiCon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_modiConMouseClicked(evt);
+            }
+        });
+        jPanel24.add(jB_modiCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 280, -1, -1));
+
+        jLabel110.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel110.setText("Pais");
+        jPanel24.add(jLabel110, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 230, -1, -1));
+
+        jLabel108.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\concesionario.png")); // NOI18N
+        jPanel24.add(jLabel108, new org.netbeans.lib.awtextra.AbsoluteConstraints(236, 14, -1, -1));
+
+        jLabel109.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel109.setText("Nombre Concesionario");
+        jPanel24.add(jLabel109, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 190, -1, -1));
+        jPanel24.add(jTF_modiNombreCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 180, 187, -1));
+        jPanel24.add(jTF_modiParisCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 220, 187, -1));
+
+        jCB_modiCon.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel24.add(jCB_modiCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 220, -1));
+
+        jLabel44.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel44.setText("Seleccione el RTN del Concesionario que quiere modificar:");
+        jPanel24.add(jLabel44, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, -1, -1));
+
+        jB_cargarModiCon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\mira.png")); // NOI18N
+        jB_cargarModiCon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_cargarModiConMouseClicked(evt);
+            }
+        });
+        jPanel24.add(jB_cargarModiCon, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 40, -1));
+
+        jD_modiConsecionario.getContentPane().add(jPanel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 540, 330));
+
+        jD_modiVehiculo.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel112.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\coche.png")); // NOI18N
+        jD_modiVehiculo.getContentPane().add(jLabel112, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
+
+        jLabel113.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel113.setText("Precio");
+        jD_modiVehiculo.getContentPane().add(jLabel113, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 250, -1, -1));
+        jD_modiVehiculo.getContentPane().add(jTF_modiPrecioVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 202, -1));
+
+        jLabel115.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel115.setText("Carroceria");
+        jD_modiVehiculo.getContentPane().add(jLabel115, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 310, -1, -1));
+        jD_modiVehiculo.getContentPane().add(jTF_modiCarroceria, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 202, -1));
+
+        jLabel116.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel116.setText("Color");
+        jD_modiVehiculo.getContentPane().add(jLabel116, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 360, -1, -1));
+        jD_modiVehiculo.getContentPane().add(jTF_modiColorVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 202, -1));
+
+        jLabel117.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel117.setText("Transmision");
+        jD_modiVehiculo.getContentPane().add(jLabel117, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 410, -1, -1));
+        jD_modiVehiculo.getContentPane().add(jTF_modiTransmisionVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 410, 202, -1));
+
+        jLabel118.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel118.setText("Tipo de Motor");
+        jD_modiVehiculo.getContentPane().add(jLabel118, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 460, -1, -1));
+
+        jLabel119.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel119.setText("Modelo");
+        jD_modiVehiculo.getContentPane().add(jLabel119, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 510, -1, -1));
+        jD_modiVehiculo.getContentPane().add(jTF_modiTipoMotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 460, 202, -1));
+        jD_modiVehiculo.getContentPane().add(jTF_modiModeloVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 510, 202, -1));
+
+        jLabel120.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel120.setText("Marca");
+        jD_modiVehiculo.getContentPane().add(jLabel120, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 570, -1, -1));
+        jD_modiVehiculo.getContentPane().add(jTF_modiMarcaVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 570, 200, -1));
+
+        jPanel25.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel25.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel25.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jB_modiVehiculo.setText("Modificar");
+        jB_modiVehiculo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_modiVehiculoMouseClicked(evt);
+            }
+        });
+        jPanel25.add(jB_modiVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 640, -1, 30));
+
+        jCB_modiVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel25.add(jCB_modiVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 220, -1));
+
+        jLabel47.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel47.setText("Seleccione el VIN del vehiculo que quiere modificar:");
+        jPanel25.add(jLabel47, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 100, -1, -1));
+
+        jB_cargarModiVehiculo.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\mira.png")); // NOI18N
+        jB_cargarModiVehiculo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_cargarModiVehiculoMouseClicked(evt);
+            }
+        });
+        jPanel25.add(jB_cargarModiVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 40, -1));
+
+        jD_modiVehiculo.getContentPane().add(jPanel25, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 690));
+
+        jD_modiCliente.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel26.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel26.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel26.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel128.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\cliente.png")); // NOI18N
+        jPanel26.add(jLabel128, new org.netbeans.lib.awtextra.AbsoluteConstraints(279, 6, -1, -1));
+
+        jB_modiCliente.setText("Modficar");
+        jB_modiCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_modiClienteMouseClicked(evt);
+            }
+        });
+        jPanel26.add(jB_modiCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 550, -1, 30));
+        jPanel26.add(jTF_modiTipoEmpresaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 410, 163, 30));
+
+        jLabel129.setBackground(new java.awt.Color(0, 0, 0));
+        jLabel129.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel129.setText("Tipo de Empresa");
+        jPanel26.add(jLabel129, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 420, -1, 20));
+        jPanel26.add(jTF_modiNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 230, 180, 30));
+
+        jLabel122.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel122.setText("Nombre Cliente");
+        jPanel26.add(jLabel122, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 230, -1, 20));
+
+        jLabel123.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel123.setText("Telefono Cliente");
+        jPanel26.add(jLabel123, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 280, -1, 20));
+        jPanel26.add(jTF_modiTelefonoClietne, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 280, 180, 30));
+        jPanel26.add(jTF_modiDireccionCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 340, 180, 30));
+
+        jLabel124.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel124.setText("Direccion");
+        jPanel26.add(jLabel124, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 340, -1, 20));
+        jPanel26.add(jTF_modiIngresoPersonaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 500, 161, 30));
+        jPanel26.add(jTF_modiIdPersonaClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, 159, 30));
+
+        jLabel127.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel127.setText("Ingreso Anual");
+        jPanel26.add(jLabel127, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 510, -1, 20));
+
+        jLabel126.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel126.setText("Id del Cliente");
+        jPanel26.add(jLabel126, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, 20));
+
+        jLabel125.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel125.setText("Sexo");
+        jPanel26.add(jLabel125, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 410, -1, 20));
+
+        buttonGroup5.add(jRB_modiMasculino);
+        jRB_modiMasculino.setForeground(new java.awt.Color(0, 0, 0));
+        jRB_modiMasculino.setText("M");
+        jPanel26.add(jRB_modiMasculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 410, -1, 20));
+
+        jRB_modiFemenino.setBackground(new java.awt.Color(0, 0, 0));
+        buttonGroup5.add(jRB_modiFemenino);
+        jRB_modiFemenino.setForeground(new java.awt.Color(0, 0, 0));
+        jRB_modiFemenino.setText("F");
+        jPanel26.add(jRB_modiFemenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 410, -1, 20));
+
+        jCB_modiCliente.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel26.add(jCB_modiCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 220, -1));
+
+        jLabel50.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel50.setText("Seleccione el RTN del Cliente que quiere modificar:");
+        jPanel26.add(jLabel50, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, -1, -1));
+
+        jB_cargarModiCliente.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\mira.png")); // NOI18N
+        jB_cargarModiCliente.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_cargarModiClienteMouseClicked(evt);
+            }
+        });
+        jPanel26.add(jB_cargarModiCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 130, 40, -1));
+
+        jD_modiCliente.getContentPane().add(jPanel26, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 590));
+
+        jD_modiCompania.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel142.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\empresa.png")); // NOI18N
+        jD_modiCompania.getContentPane().add(jLabel142, new org.netbeans.lib.awtextra.AbsoluteConstraints(233, 16, -1, -1));
+
+        jPanel30.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel30.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel30.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel144.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel144.setText("Nombre Compania");
+        jPanel30.add(jLabel144, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 220, -1, -1));
+        jPanel30.add(jTF_modiNombreCompania, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 207, 30));
+
+        jB_modiCompania.setText("Modificar");
+        jB_modiCompania.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_modiCompaniaMouseClicked(evt);
+            }
+        });
+        jPanel30.add(jB_modiCompania, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 270, -1, -1));
+
+        jCB_modiCompania.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel30.add(jCB_modiCompania, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 140, 220, -1));
+
+        jLabel53.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel53.setText("Seleccione el ID de la Compania que quiere modificar:");
+        jPanel30.add(jLabel53, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, -1, -1));
+
+        jB_cargarModiCompania.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\mira.png")); // NOI18N
+        jB_cargarModiCompania.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_cargarModiCompaniaMouseClicked(evt);
+            }
+        });
+        jPanel30.add(jB_cargarModiCompania, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 130, 40, -1));
+
+        jD_modiCompania.getContentPane().add(jPanel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 520, 320));
+
+        jD_modiProveedor.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel147.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\proveedor.png")); // NOI18N
+        jD_modiProveedor.getContentPane().add(jLabel147, new org.netbeans.lib.awtextra.AbsoluteConstraints(205, 18, -1, -1));
+
+        jPanel31.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel31.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel31.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jB_modiProveedor.setText("Modificar");
+        jB_modiProveedor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_modiProveedorMouseClicked(evt);
+            }
+        });
+        jPanel31.add(jB_modiProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 250, -1, -1));
+        jPanel31.add(jTF_modiNombreProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 210, 207, -1));
+
+        jLabel146.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel146.setText("Nombre del Proveedor");
+        jPanel31.add(jLabel146, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
+
+        jCB_modiProveedor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel31.add(jCB_modiProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 140, 220, -1));
+
+        jLabel140.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel140.setText("Seleccione el ID del proveedor que quiere modificar:");
+        jPanel31.add(jLabel140, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, -1, -1));
+
+        jB_cargarModiProveedor.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\mira.png")); // NOI18N
+        jB_cargarModiProveedor.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_cargarModiProveedorMouseClicked(evt);
+            }
+        });
+        jPanel31.add(jB_cargarModiProveedor, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 130, 40, -1));
+
+        jD_modiProveedor.getContentPane().add(jPanel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 300));
+
+        jD_modiVenta.setResizable(false);
+        jD_modiVenta.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel104.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\metodo-de-pago.png")); // NOI18N
+        jD_modiVenta.getContentPane().add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
+
+        jLabel111.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel111.setText("RTN del Concesionario");
+        jD_modiVenta.getContentPane().add(jLabel111, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 97, -1, -1));
+
+        jLabel114.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel114.setText("RTN del Cliente");
+        jD_modiVenta.getContentPane().add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 164, -1, -1));
+
+        jLabel121.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel121.setText("Fecha de la compra ");
+        jD_modiVenta.getContentPane().add(jLabel121, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 232, -1, -1));
+
+        jDC_modiFechaVenta.setDate(new java.util.Date(934933459000L));
+        jD_modiVenta.getContentPane().add(jDC_modiFechaVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 237, -1));
+
+        jPanel27.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel27.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel27.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jCB_modiRtnConVenta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel27.add(jCB_modiRtnConVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 160, -1));
+
+        jCB_modiRtnClienteVenta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel27.add(jCB_modiRtnClienteVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 160, -1));
+
+        jB_modiVenta.setText("Modificar");
+        jPanel27.add(jB_modiVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, -1, -1));
+
+        jB_cargarModiVenta.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\mira.png")); // NOI18N
+        jPanel27.add(jB_cargarModiVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 40, -1));
+
+        jD_modiVenta.getContentPane().add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 350));
+
+        jD_modiCompra.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel130.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel130.setText("RTN Concesionario");
+        jD_modiCompra.getContentPane().add(jLabel130, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
+
+        jPanel28.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel28.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel28.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel134.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\trato (1).png")); // NOI18N
+        jPanel28.add(jLabel134, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
+
+        jCB_modiRtnConCompra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel28.add(jCB_modiRtnConCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 180, -1));
+
+        jCB_modiIdCompaniaCompra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel28.add(jCB_modiIdCompaniaCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 180, -1));
+
+        jCB_modiVinVehiculoCompra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel28.add(jCB_modiVinVehiculoCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 180, -1));
+
+        jB_modiCompra.setText("Modificar");
+        jPanel28.add(jB_modiCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
+
+        jB_cargarModiCompra.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\mira.png")); // NOI18N
+        jPanel28.add(jB_cargarModiCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 40, -1));
+
+        jLabel131.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel131.setText("ID Compania");
+        jPanel28.add(jLabel131, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
+
+        jLabel133.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel133.setText("VIN Vehiculo");
+        jPanel28.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
+        jPanel28.add(jTF_modiPrecioCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 205, -1));
+
+        jLabel132.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel132.setText("Precio de la venta");
+        jPanel28.add(jLabel132, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, -1));
+
+        jLabel138.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel138.setText("Fecha Adquirido");
+        jPanel28.add(jLabel138, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
+
+        jDC_modiFechaCompra.setDate(new java.util.Date(976084732000L));
+        jPanel28.add(jDC_modiFechaCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 200, -1));
+
+        jD_modiCompra.getContentPane().add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 420));
+
+        jD_modiProvee.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel135.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\movimiento-de-la-mano.png")); // NOI18N
+        jD_modiProvee.getContentPane().add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 17, -1, -1));
+
+        jLabel136.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel136.setText("Id Compania");
+        jD_modiProvee.getContentPane().add(jLabel136, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 119, -1, -1));
+
+        jLabel137.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel137.setText("Id Proveedor");
+        jD_modiProvee.getContentPane().add(jLabel137, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 168, -1, -1));
+
+        jPanel29.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel29.setForeground(new java.awt.Color(0, 0, 0));
+        jPanel29.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jCB_modiIdCompaniaProvee.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel29.add(jCB_modiIdCompaniaProvee, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 150, -1));
+
+        jCB_modiIdProveedorProvee.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jPanel29.add(jCB_modiIdProveedorProvee, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 150, -1));
+
+        jB_modiProvee.setText("Modificar");
+        jPanel29.add(jB_modiProvee, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, -1, -1));
+
+        jD_modiProvee.getContentPane().add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 260));
+
+        jB_eliminarNonTrans.setText("Eliminar");
+        jB_eliminarNonTrans.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_eliminarNonTransMouseClicked(evt);
+            }
+        });
+
+        jLabel139.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel139.setText("Seleccione la identificacion del cual quiere Eliminar:");
+
+        jL_eliminarNonTrans.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane10.setViewportView(jL_eliminarNonTrans);
+
+        javax.swing.GroupLayout jD_eliminarNonTransLayout = new javax.swing.GroupLayout(jD_eliminarNonTrans.getContentPane());
+        jD_eliminarNonTrans.getContentPane().setLayout(jD_eliminarNonTransLayout);
+        jD_eliminarNonTransLayout.setHorizontalGroup(
+            jD_eliminarNonTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jD_eliminarNonTransLayout.createSequentialGroup()
+                .addGroup(jD_eliminarNonTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jD_eliminarNonTransLayout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addGroup(jD_eliminarNonTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel139, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jScrollPane10)))
+                    .addGroup(jD_eliminarNonTransLayout.createSequentialGroup()
+                        .addGap(230, 230, 230)
+                        .addComponent(jB_eliminarNonTrans)))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
-        jD_crearAcuerdoLayout.setVerticalGroup(
-            jD_crearAcuerdoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        jD_eliminarNonTransLayout.setVerticalGroup(
+            jD_eliminarNonTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jD_eliminarNonTransLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addComponent(jLabel139)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jB_eliminarNonTrans)
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+
+        jB_eliminarTrans.setText("Eliminar");
+
+        jLabel141.setFont(new java.awt.Font("sansserif", 0, 18)); // NOI18N
+        jLabel141.setText("Seleccione la identificacion del cual quiere Eliminar:");
+
+        jT_eliminarTrans.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane11.setViewportView(jT_eliminarTrans);
+
+        javax.swing.GroupLayout jD_eliminarTransLayout = new javax.swing.GroupLayout(jD_eliminarTrans.getContentPane());
+        jD_eliminarTrans.getContentPane().setLayout(jD_eliminarTransLayout);
+        jD_eliminarTransLayout.setHorizontalGroup(
+            jD_eliminarTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jD_eliminarTransLayout.createSequentialGroup()
+                .addGroup(jD_eliminarTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jD_eliminarTransLayout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 456, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jD_eliminarTransLayout.createSequentialGroup()
+                        .addGap(46, 46, 46)
+                        .addComponent(jLabel141))
+                    .addGroup(jD_eliminarTransLayout.createSequentialGroup()
+                        .addGap(224, 224, 224)
+                        .addComponent(jB_eliminarTrans)))
+                .addContainerGap(45, Short.MAX_VALUE))
+        );
+        jD_eliminarTransLayout.setVerticalGroup(
+            jD_eliminarTransLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jD_eliminarTransLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel141)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 296, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addComponent(jB_eliminarTrans)
+                .addGap(14, 14, 14))
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -1690,9 +2381,9 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jB_login.setText("Login");
         jB_login.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.black, java.awt.Color.white, java.awt.Color.darkGray, java.awt.Color.darkGray));
         jB_login.setContentAreaFilled(false);
-        jB_login.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
-            public void mouseMoved(java.awt.event.MouseEvent evt) {
-                jB_loginMouseMoved(evt);
+        jB_login.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_loginMouseClicked(evt);
             }
         });
         getContentPane().add(jB_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 330, 140, 50));
@@ -1729,14 +2420,639 @@ public class JFramePrincipal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jB_loginMouseMoved(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_loginMouseMoved
+    private void jB_loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_loginMouseClicked
+        String username = jTF_username.getText();
+        String password = jP_password.getText();
+        if ((username.equals("Admin") || username.equals("admin")) && (password.equals("123"))) {
+            JOptionPane.showMessageDialog(this, "Bienvenido Administrador");
+            jD_ventanaAdmin.pack();
+            jD_ventanaAdmin.setModal(true);
+            jD_ventanaAdmin.setLocationRelativeTo(this);
+            jD_ventanaAdmin.setVisible(true);
+        } else if ((username.equals("Cliente") || username.equals("cliente")) && (password.equals("123"))) {
+            JOptionPane.showMessageDialog(this, "Bienvenido Cliente");
+            jD_ventanaCliente.pack();
+            jD_ventanaCliente.setModal(true);
+            jD_ventanaCliente.setLocationRelativeTo(this);
+            jD_ventanaCliente.setVisible(true);
+        } else if ((username.equals("Marketing") || username.equals("marketing")) && (password.equals("123"))) {
+            JOptionPane.showMessageDialog(this, "Bienvenido Empleado de Marketing");
+            jD_ventanaMarketing.pack();
+            jD_ventanaMarketing.setModal(true);
+            jD_ventanaMarketing.setLocationRelativeTo(this);
+            jD_ventanaMarketing.setVisible(true);
+        } else if ((username.equals("ServicioLV") || username.equals("serviciolv")) && (password.equals("123"))) {
+            JOptionPane.showMessageDialog(this, "Bienvenido Empleado de Servicio de Localizacion de Vehiculos");
+            jD_ventanaServicioLocalizacionVehiculo.pack();
+            jD_ventanaServicioLocalizacionVehiculo.setModal(true);
+            jD_ventanaServicioLocalizacionVehiculo.setLocationRelativeTo(this);
+            jD_ventanaServicioLocalizacionVehiculo.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(this, "Usuario o Contrasena Incorrecto");
+        }
+    }//GEN-LAST:event_jB_loginMouseClicked
 
-         
-    }//GEN-LAST:event_jB_loginMouseMoved
+    private void jB_crudAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_crudAdminMouseClicked
+        jD_ventanaCRUD.pack();
+        jD_ventanaCRUD.setModal(true);
+        jD_ventanaCRUD.setLocationRelativeTo(this);
+        jD_ventanaCRUD.setVisible(true);
+    }//GEN-LAST:event_jB_crudAdminMouseClicked
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    private void jB_reportesAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_reportesAdminMouseClicked
+        jD_ventanaMarketing.pack();
+        jD_ventanaMarketing.setModal(true);
+        jD_ventanaMarketing.setLocationRelativeTo(this);
+        jD_ventanaMarketing.setVisible(true);
+    }//GEN-LAST:event_jB_reportesAdminMouseClicked
+
+    private void jB_inventarioAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_inventarioAdminMouseClicked
+        jD_ventanaServicioLocalizacionVehiculo.pack();
+        jD_ventanaServicioLocalizacionVehiculo.setModal(true);
+        jD_ventanaServicioLocalizacionVehiculo.setLocationRelativeTo(this);
+        jD_ventanaServicioLocalizacionVehiculo.setVisible(true);
+    }//GEN-LAST:event_jB_inventarioAdminMouseClicked
+
+    private int Que_Quiere_Hacer() {
+        int hacer = 0;
+        if (jRB_crear.isSelected()) {
+            hacer = 1;
+        } else if (jRB_modificar.isSelected()) {
+            hacer = 2;
+        } else if (jRB_eliminar.isSelected()) {
+            hacer = 3;
+        }
+        return hacer;
+    }
+
+    private int A_Quien() {
+        int quien = 0;
+        if (jRB_plantaFabricacion.isSelected()) {
+            quien = 1;
+        } else if (jRB_vehiculo.isSelected()) {
+            quien = 2;
+        } else if (jRB_venta.isSelected()) {
+            quien = 3;
+        } else if (jRB_proveedor.isSelected()) {
+            quien = 4;
+        } else if (jRB_consecionario.isSelected()) {
+            quien = 5;
+        } else if (jRB_compra.isSelected()) {
+            quien = 6;
+        } else if (jRB_compania.isSelected()) {
+            quien = 7;
+        } else if (jRB_cliente.isSelected()) {
+            quien = 8;
+        } else if (jRB_provee.isSelected()) {
+            quien = 9;
+        }
+        System.out.println(quien);
+        return quien;
+    }
+
+    private void CREAR() {
+        int quien = A_Quien();
+        switch (quien) {
+            case 1:
+                //cargar el combobox jCB_crearIdCompaniaPlanta
+                jD_crearPlantaFabricacion.pack();
+                jD_crearPlantaFabricacion.setModal(true);
+                jD_crearPlantaFabricacion.setLocationRelativeTo(this);
+                jD_crearPlantaFabricacion.setVisible(true);
+                break;
+            case 2:
+                //cargar el combobox jCB_crearIdCompaniaVehiculo
+                jD_crearVehiculo.pack();
+                jD_crearVehiculo.setModal(true);
+                jD_crearVehiculo.setLocationRelativeTo(this);
+                jD_crearVehiculo.setVisible(true);
+                break;
+            case 3:
+                //cargar comboboxes de la ventana de crearVenta
+                jD_crearVenta.pack();
+                jD_crearVenta.setModal(true);
+                jD_crearVenta.setLocationRelativeTo(this);
+                jD_crearVenta.setVisible(true);
+                break;
+            case 4:
+                jD_crearProveedor.pack();
+                jD_crearProveedor.setModal(true);
+                jD_crearProveedor.setLocationRelativeTo(this);
+                jD_crearProveedor.setVisible(true);
+                break;
+            case 5:
+                jD_crearConsecionario.pack();
+                jD_crearConsecionario.setModal(true);
+                jD_crearConsecionario.setLocationRelativeTo(this);
+                jD_crearConsecionario.setVisible(true);
+                break;
+            case 6:
+                //cargar las comboboxes de la ventana crearCompra
+                jD_crearCompra.pack();
+                jD_crearCompra.setModal(true);
+                jD_crearCompra.setLocationRelativeTo(this);
+                jD_crearCompra.setVisible(true);
+                break;
+            case 7:
+                jD_crearCompania.pack();
+                jD_crearCompania.setModal(true);
+                jD_crearCompania.setLocationRelativeTo(this);
+                jD_crearCompania.setVisible(true);
+                break;
+            case 8:
+                int seleccion = JOptionPane.showOptionDialog(null, "Seleccione una opcion",
+                        "Selector de opciones", JOptionPane.YES_NO_CANCEL_OPTION,
+                        JOptionPane.QUESTION_MESSAGE, null,// null para icono por defecto.
+                        new Object[]{"Persona", "Empresa"}, "opcion 1");
+                if (seleccion != -1) {
+                    if (seleccion == 0) {
+                        Cliente = 1;
+                        jTF_crearTipoEmpresaCliente.setEnabled(false);
+                        jTF_crearIdPersonaClient.setEnabled(true);
+                        jTF_crearIngresoPersonaCliente.setEnabled(true);
+                        jRB_Femenino.setEnabled(true);
+                        jRB_masculino.setEnabled(true);
+                    } else if (seleccion == 1) {
+                        Cliente = 2;
+                        jTF_crearTipoEmpresaCliente.setEnabled(true);
+                        jTF_crearIdPersonaClient.setEnabled(false);
+                        jTF_crearIngresoPersonaCliente.setEnabled(false);
+                        jRB_Femenino.setEnabled(false);
+                        jRB_masculino.setEnabled(false);
+                    }
+                    jD_crearCliente.pack();
+                    jD_crearCliente.setModal(true);
+                    jD_crearCliente.setLocationRelativeTo(this);
+                    jD_crearCliente.setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Seleccione que tipo de Cliente!");
+                }
+
+                break;
+            case 9:
+                //cargar las comboboxes de la ventana crearProvee
+                jD_crearProvee.pack();
+                jD_crearProvee.setModal(true);
+                jD_crearProvee.setLocationRelativeTo(this);
+                jD_crearProvee.setVisible(true);
+                break;
+            default:
+                JOptionPane.showMessageDialog(this, "Seleccione a quien quiere aplicarle lo antes seleccionado!");
+                break;
+        }
+    }
+
+    private void MODIFICAR() {
+        int quien = A_Quien();
+        switch (quien) {
+            case 1:
+                //Aqui Cargas los id del combobox jCB_modiPlanta
+                jD_modiPlantaFabricacion.pack();
+                jD_modiPlantaFabricacion.setModal(true);
+                jD_modiPlantaFabricacion.setLocationRelativeTo(this);
+                jD_modiPlantaFabricacion.setVisible(true);
+                break;
+            case 2:
+                //Aqui Cargas los RTN del combobox jCB_modiVehiculo
+                jD_modiVehiculo.pack();
+                jD_modiVehiculo.setModal(true);
+                jD_modiVehiculo.setLocationRelativeTo(this);
+                jD_modiVehiculo.setVisible(true);
+                break;
+            case 3:
+                //Aqui Cargas los id del combobox jCB_modiRtnConVenta y jCB_modiRtnClienteVenta
+                jD_modiVenta.pack();
+                jD_modiVenta.setModal(true);
+                jD_modiVenta.setLocationRelativeTo(this);
+                jD_modiVenta.setVisible(true);
+                break;
+            case 4:
+                //Aqui Cargas los id del combobox jCB_modiProveedor
+                jD_modiProveedor.pack();
+                jD_modiProveedor.setModal(true);
+                jD_modiProveedor.setLocationRelativeTo(this);
+                jD_modiProveedor.setVisible(true);
+                break;
+            case 5:
+                //Aqui Cargas los id del combobox jCB_modiCon
+                jD_modiConsecionario.pack();
+                jD_modiConsecionario.setModal(true);
+                jD_modiConsecionario.setLocationRelativeTo(this);
+                jD_modiConsecionario.setVisible(true);
+                break;
+            case 6:
+                //Aqui Cargas los id del combobox jCB_modiRtnConCompra, jCB_modiIdCompaniaCompra, y jCB_modiVinVehiculoCompra
+                jD_modiCompra.pack();
+                jD_modiCompra.setModal(true);
+                jD_modiCompra.setLocationRelativeTo(this);
+                jD_modiCompra.setVisible(true);
+                break;
+            case 7:
+                //Aqui Cargas los id del combobox jCB_modiCompania
+                jD_modiCompania.pack();
+                jD_modiCompania.setModal(true);
+                jD_modiCompania.setLocationRelativeTo(this);
+                jD_modiCompania.setVisible(true);
+                break;
+            case 8:
+                //Aqui Cargas los RTN del combobox jCB_modiCliente
+                jD_modiCliente.pack();
+                jD_modiCliente.setModal(true);
+                jD_modiCliente.setLocationRelativeTo(this);
+                jD_modiCliente.setVisible(true);
+                break;
+            case 9:
+                JOptionPane.showMessageDialog(this, "Lo sentimos, pero no puede modificar este elemento!");
+                break;
+            default:
+                JOptionPane.showMessageDialog(this, "Seleccione a quien quiere aplicarle lo antes seleccionado!");
+                break;
+        }
+    }
+
+    private void ELIMINAR() {
+        int quien = A_Quien();
+        switch (quien) {
+            case 1:
+                //Aqui cargas las plantas para eliminar, en la Jlist
+                jD_eliminarNonTrans.pack();
+                jD_eliminarNonTrans.setModal(true);
+                jD_eliminarNonTrans.setLocationRelativeTo(this);
+                jD_eliminarNonTrans.setVisible(true);
+                break;
+            case 2:
+                //Aqui cargas los Vehiculos para eliminar  en la Jlist
+                jD_eliminarNonTrans.pack();
+                jD_eliminarNonTrans.setModal(true);
+                jD_eliminarNonTrans.setLocationRelativeTo(this);
+                jD_eliminarNonTrans.setVisible(true);
+                break;
+            case 3:
+                //Aqui cargas las ventas para eliminar
+                jD_eliminarTrans.pack();
+                jD_eliminarTrans.setModal(true);
+                jD_eliminarTrans.setLocationRelativeTo(this);
+                jD_eliminarTrans.setVisible(true);
+                break;
+            case 4:
+                //Aqui cargas los proveedores para eliminar  en la Jlist
+                jD_eliminarNonTrans.pack();
+                jD_eliminarNonTrans.setModal(true);
+                jD_eliminarNonTrans.setLocationRelativeTo(this);
+                jD_eliminarNonTrans.setVisible(true);
+                break;
+            case 5:
+                //Aqui cargas los Concesionario para eliminar en la Jlist
+                jD_eliminarNonTrans.pack();
+                jD_eliminarNonTrans.setModal(true);
+                jD_eliminarNonTrans.setLocationRelativeTo(this);
+                jD_eliminarNonTrans.setVisible(true);
+                break;
+            case 6:
+                //Aqui cargas las Compras para eliminar
+                jD_eliminarTrans.pack();
+                jD_eliminarTrans.setModal(true);
+                jD_eliminarTrans.setLocationRelativeTo(this);
+                jD_eliminarTrans.setVisible(true);
+                break;
+            case 7:
+                //Aqui cargas las Companias para eliminar en la Jlist
+                jD_eliminarNonTrans.pack();
+                jD_eliminarNonTrans.setModal(true);
+                jD_eliminarNonTrans.setLocationRelativeTo(this);
+                jD_eliminarNonTrans.setVisible(true);
+                break;
+            case 8:
+                //Aqui cargas los Clientas para eliminar en la Jlist
+                jD_eliminarNonTrans.pack();
+                jD_eliminarNonTrans.setModal(true);
+                jD_eliminarNonTrans.setLocationRelativeTo(this);
+                jD_eliminarNonTrans.setVisible(true);
+                break;
+            case 9:
+                //Aqui cargas las Provisiones para eliminar
+                jD_eliminarTrans.pack();
+                jD_eliminarTrans.setModal(true);
+                jD_eliminarTrans.setLocationRelativeTo(this);
+                jD_eliminarTrans.setVisible(true);
+                break;
+            default:
+                break;
+        }
+    }
+
+    private void jB_ejecutarCRUDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_ejecutarCRUDMouseClicked
+        int hacer = Que_Quiere_Hacer();
+        switch (hacer) {
+            case 1:
+                CREAR();
+                break;
+            case 2:
+                MODIFICAR();
+                break;
+            case 3:
+                ELIMINAR();
+                break;
+            default:
+                JOptionPane.showMessageDialog(this, "Seleccione que desea realizar");
+                break;
+        }
+    }//GEN-LAST:event_jB_ejecutarCRUDMouseClicked
+
+    private void jB_crearPlantaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_crearPlantaMouseClicked
+        String idPlanta, tipoPlanta, nombrePlanta, idCompania;
+        idPlanta = jTF_crearIdPlanta.getText();
+        if (jRB_crearEnsambladora.isSelected()) {
+            tipoPlanta = "Ensambladora";
+        } else {
+            tipoPlanta = "Suministradora";
+        }
+        nombrePlanta = jTF_crearNombrePlanta.getText();
+        idCompania = jCB_crearIdCompaniaPlanta.getSelectedItem().toString();
+        System.out.println(idCompania);
+        //mandar datos a la base
+    }//GEN-LAST:event_jB_crearPlantaMouseClicked
+
+    private void jB_crearVehiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_crearVehiculoMouseClicked
+        String idCompania, vin, tipoMotor, color, transmision, modelo, tipoCarroceria, marca;
+        double precioCompra;
+        idCompania = jCB_crearIdCompaniaVehiculo.getSelectedItem().toString();
+        vin = jTF_crearVinVehiculo.getText();
+        tipoMotor = jTF_crearTipoMotor.getText();
+        color = jTF_crearColorVehiculo.getText();
+        transmision = jTF_crearTransmisionVehiculo.getText();
+        modelo = jTF_crearModeloVehiculo.getText();
+        tipoCarroceria = jTF_crearCarroceria.getText();
+        precioCompra = Double.parseDouble(jTF_crearPrecioVehiculo.getText());
+        marca = jTF_crearMarcaVehiculo.getText();
+        //mandar los datos a la base
+    }//GEN-LAST:event_jB_crearVehiculoMouseClicked
+
+    private void jB_crearProveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_crearProveedorMouseClicked
+        String idProveedor, nombreProveedor;
+        idProveedor = jTF_crearIdProveedor.getText();
+        nombreProveedor = jTF_crearNombreProveedor.getText();
+        //mandar datos a la base
+    }//GEN-LAST:event_jB_crearProveedorMouseClicked
+
+    private void jB_crearConMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_crearConMouseClicked
+        String rtnCon, nombreConcesionario, pais;
+        rtnCon = jTF_crearRtnCon.getText();
+        nombreConcesionario = jTF_crearNombreCon.getText();
+        pais = jTF_crearParisCon.getText();
+        //mandat datos a la base
+    }//GEN-LAST:event_jB_crearConMouseClicked
+
+    private void jB_crearCompaniaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_crearCompaniaMouseClicked
+        String idCompania, nombreCompania;
+        idCompania = jTF_crearIdCompania.getText();
+        nombreCompania = jTF_crearNombreCompania.getText();
+        //mandar datos a la base
+    }//GEN-LAST:event_jB_crearCompaniaMouseClicked
+
+    private void jB_crearClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_crearClienteMouseClicked
+        String rtnCliente, nombreCliente, direccion, telefono, tipoCliente, idPersona, tipoEmpresa;
+        char sexo;
+        double ingresoPersona;
+        rtnCliente = jTF_crearRtnCliente.getText();
+        nombreCliente = jTF_crearNombreCliente.getText();
+        direccion = jTF_crearDireccionCliente.getText();
+        telefono = jTF_crearTelefonoClietne.getText();
+        if (Cliente == 1) {
+            tipoCliente = "Persona";
+            ingresoPersona = Double.parseDouble(jTF_crearIngresoPersonaCliente.getText());
+            if (jRB_masculino.isSelected()) {
+                sexo = 'M';
+            } else {
+                sexo = 'F';
+            }
+            idPersona = jTF_crearIdPersonaClient.getText();
+            //mandar datos a la base
+        } else if (Cliente == 2) {
+            tipoCliente = "Empresa";
+            tipoEmpresa = jTF_crearTipoEmpresaCliente.getText();
+            //mandar datos a la base
+        }
+    }//GEN-LAST:event_jB_crearClienteMouseClicked
+
+    private void jB_crearVentaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_crearVentaMouseClicked
+        String rtnCon, rtnCliente;
+        Date fechaVenta;
+        rtnCon = jCB_crearRtnConVenta.getSelectedItem().toString();
+        rtnCliente = jCB_crearRtnClienteVenta.getSelectedItem().toString();
+        fechaVenta = jDC_crearFechaVenta.getDate();
+        //mandar datos a la base
+    }//GEN-LAST:event_jB_crearVentaMouseClicked
+
+    private void jB_crearCompraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_crearCompraMouseClicked
+        String rtnCon, idCompania, vinVehiculo;
+        Date fecha;
+        double precioVenta;
+        rtnCon = jCB_crearRtnConCompra.getSelectedItem().toString();
+        idCompania = jCB_crearIdCompaniaCompra.getSelectedItem().toString();
+        vinVehiculo = jCB_crearVinVehiculoCompra.getSelectedItem().toString();
+        fecha = jDC_crearFechaCompra.getDate();
+        precioVenta = Double.parseDouble(jTF_crearPrecioCompra.getText());
+        //mandar datos a la base
+    }//GEN-LAST:event_jB_crearCompraMouseClicked
+
+    private void jB_crearProveeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_crearProveeMouseClicked
+        String idProveedor, idCompania;
+        idProveedor = jCB_crearIdProveedorProvee.getSelectedItem().toString();
+        idCompania = jCB_crearIdCompaniaProvee.getSelectedItem().toString();
+        //mandar datos a la base
+    }//GEN-LAST:event_jB_crearProveeMouseClicked
+
+    private void jB_modiPlantaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_modiPlantaMouseClicked
+        String PlantaSelected;
+        PlantaSelected = jCB_modiPlanta.getSelectedItem().toString();
+        String tipoPlanta, nombrePlanta;
+        if (jRB_modiEnsambladora.isSelected()) {
+            tipoPlanta = "Ensambladora";
+        } else {
+            tipoPlanta = "Suministradora";
+        }
+        nombrePlanta = jTF_modiNombrePlanta.getText();
+        //mandar datos a la base
+    }//GEN-LAST:event_jB_modiPlantaMouseClicked
+
+    private void jB_cargarModiPlantaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_cargarModiPlantaMouseClicked
+        String PlantaSelected;
+        PlantaSelected = jCB_modiPlanta.getSelectedItem().toString();
+        String tipoPlanta = null, nombrePlanta;
+        //cargar datos de la planta seleccionada
+        jTF_modiNombrePlanta.setText("");
+        if (tipoPlanta.equals("Ensambladora")) {
+            jRB_modiEnsambladora.setSelected(true);
+        } else {
+            jRB_modiSuministradora.setSelected(true);
+        }
+    }//GEN-LAST:event_jB_cargarModiPlantaMouseClicked
+
+    private void jB_modiConMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_modiConMouseClicked
+        String ConSelected;
+        ConSelected = jCB_modiCon.getSelectedItem().toString();
+        String nombreConcesionario, pais;
+        nombreConcesionario = jTF_modiNombreCon.getText();
+        pais = jTF_modiParisCon.getText();
+        //mandar datos a la base
+    }//GEN-LAST:event_jB_modiConMouseClicked
+
+    private void jB_cargarModiConMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_cargarModiConMouseClicked
+        String ConSelected;
+        ConSelected = jCB_modiCon.getSelectedItem().toString();
+        String nombreConcesionario, pais;
+        //cargar datos del Con seleccionado
+        jTF_modiNombreCon.setText("");
+        jTF_modiParisCon.setText("");
+    }//GEN-LAST:event_jB_cargarModiConMouseClicked
+
+    private void jB_modiVehiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_modiVehiculoMouseClicked
+        String VehiSelected;
+        VehiSelected = jCB_modiVehiculo.getSelectedItem().toString();
+        String tipoMotor, color, transmision, modelo, tipoCarroceria, marca;
+        double precioCompra;
+        tipoMotor = jTF_modiTipoMotor.getText();
+        color = jTF_modiColorVehiculo.getText();
+        transmision = jTF_modiTransmisionVehiculo.getText();
+        modelo = jTF_modiModeloVehiculo.getText();
+        tipoCarroceria = jTF_modiCarroceria.getText();
+        precioCompra = Double.parseDouble(jTF_modiPrecioVehiculo.getText());
+        marca = jTF_modiMarcaVehiculo.getText();
+        //mandar datos a la tabla
+    }//GEN-LAST:event_jB_modiVehiculoMouseClicked
+
+    private void jB_cargarModiVehiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_cargarModiVehiculoMouseClicked
+        String VehiSelected;
+        VehiSelected = jCB_modiVehiculo.getSelectedItem().toString();
+        //cargas la info
+        String tipoMotor = "", color = "", transmision = "", modelo = "", tipoCarroceria = "", marca = "";
+        double precioCompra = 0;
+        jTF_modiTipoMotor.setText(tipoMotor);
+        jTF_modiColorVehiculo.setText(color);
+        jTF_modiTransmisionVehiculo.setText(transmision);
+        jTF_modiModeloVehiculo.setText(modelo);
+        jTF_modiCarroceria.setText(tipoCarroceria);
+        jTF_modiPrecioVehiculo.setText(Double.toString(precioCompra));
+        jTF_modiMarcaVehiculo.setText(marca);
+    }//GEN-LAST:event_jB_cargarModiVehiculoMouseClicked
+
+    private void jB_cargarModiClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_cargarModiClienteMouseClicked
+        String ClienteSelected = jCB_modiCliente.getSelectedItem().toString();
+        //cargas la info
+        String nombreCliente = "", direccion = "", telefono = "", tipoCliente = "", idPersona = "", tipoEmpresa = "";
+        char sexo = ' ';
+        double ingresoPersona = 0;
+        jTF_modiNombreCliente.setText(nombreCliente);
+        jTF_modiDireccionCliente.setText(direccion);
+        jTF_modiTelefonoClietne.setText(telefono);
+        if (tipoCliente.equals("Persona")) {
+            Cliente = 1;
+            jTF_crearTipoEmpresaCliente.setEnabled(false);
+            jTF_crearIdPersonaClient.setEnabled(true);
+            jTF_crearIngresoPersonaCliente.setEnabled(true);
+            jRB_Femenino.setEnabled(true);
+            jRB_masculino.setEnabled(true);
+            jTF_modiIdPersonaClient.setText(idPersona);
+            jTF_modiIngresoPersonaCliente.setText(Double.toString(ingresoPersona));
+            if (sexo == 'M') {
+                jRB_modiMasculino.setSelected(true);
+            } else {
+                jRB_modiFemenino.setSelected(true);
+            }
+        } else {
+            Cliente = 2;
+            jTF_crearTipoEmpresaCliente.setEnabled(true);
+            jTF_crearIdPersonaClient.setEnabled(false);
+            jTF_crearIngresoPersonaCliente.setEnabled(false);
+            jRB_Femenino.setEnabled(false);
+            jRB_masculino.setEnabled(false);
+            jTF_modiTipoEmpresaCliente.setText(tipoEmpresa);
+        }
+    }//GEN-LAST:event_jB_cargarModiClienteMouseClicked
+
+    private void jB_modiClienteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_modiClienteMouseClicked
+        String ClienteSelected = jCB_modiCliente.getSelectedItem().toString();
+        String nombreCliente, direccion, telefono, tipoCliente, idPersona, tipoEmpresa;
+        char sexo;
+        double ingresoPersona;
+        nombreCliente = jTF_modiNombreCliente.getText();
+        direccion = jTF_modiDireccionCliente.getText();
+        telefono = jTF_modiTelefonoClietne.getText();
+        if (Cliente == 1) {
+            tipoCliente = "Persona";
+            ingresoPersona = Double.parseDouble(jTF_modiIngresoPersonaCliente.getText());
+            if (jRB_modiMasculino.isSelected()) {
+                sexo = 'M';
+            } else {
+                sexo = 'F';
+            }
+            idPersona = jTF_modiIdPersonaClient.getText();
+            //mandar datos a la base
+        } else if (Cliente == 2) {
+            tipoCliente = "Empresa";
+            tipoEmpresa = jTF_modiTipoEmpresaCliente.getText();
+            //mandar datos a la base
+        }
+    }//GEN-LAST:event_jB_modiClienteMouseClicked
+
+    private void jB_cargarModiCompaniaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_cargarModiCompaniaMouseClicked
+        String CompaniaSelected;
+        CompaniaSelected = jCB_modiCompania.getSelectedItem().toString();
+        //cargas la info
+        String nombreCompania = "";
+        jTF_modiNombreCompania.setText(nombreCompania);
+    }//GEN-LAST:event_jB_cargarModiCompaniaMouseClicked
+
+    private void jB_modiCompaniaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_modiCompaniaMouseClicked
+        String CompaniaSelected;
+        CompaniaSelected = jCB_modiCompania.getSelectedItem().toString();
+        String nombreCompania;
+        nombreCompania = jTF_modiNombreCompania.getText();
+        //mandar los datos a la base
+    }//GEN-LAST:event_jB_modiCompaniaMouseClicked
+
+    private void jB_cargarModiProveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_cargarModiProveedorMouseClicked
+        String ProveedorSelected;
+        ProveedorSelected = jCB_modiProveedor.getSelectedItem().toString();
+        //cargas info
+        String nombreProveedor = "";
+        jTF_modiNombreProveedor.setText("");
+    }//GEN-LAST:event_jB_cargarModiProveedorMouseClicked
+
+    private void jB_modiProveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_modiProveedorMouseClicked
+        String ProveedorSelected;
+        ProveedorSelected = jCB_modiProveedor.getSelectedItem().toString();
+        String nombreProveedor;
+        nombreProveedor = jTF_modiNombreProveedor.getText();
+        //mandaro datos a la base
+    }//GEN-LAST:event_jB_modiProveedorMouseClicked
+
+    private void jB_VehiculosClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_VehiculosClientesMouseClicked
+        jD_ventanaInventario.pack();
+        jD_ventanaInventario.setModal(true);
+        jD_ventanaInventario.setLocationRelativeTo(this);
+        jD_ventanaInventario.setVisible(true);
+    }//GEN-LAST:event_jB_VehiculosClientesMouseClicked
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        String ConSelected = jCB_concesionarioInventario.getSelectedItem().toString();
+        //cargar los datos del concesionario ingresado
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        //cargas el reporte
+    }//GEN-LAST:event_jButton3MouseClicked
+
+    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
+        String paisSelected = jCB_paisInventairo.getSelectedItem().toString();
+        //cargar los datos del pais seleccionado
+    }//GEN-LAST:event_jButton4MouseClicked
+
+    private void jB_eliminarNonTransMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_eliminarNonTransMouseClicked
+        String elemento_a_eliminar = jL_eliminarNonTrans.getSelectedValue().toString();
+        //eliminas el seleccionado
+    }//GEN-LAST:event_jB_eliminarNonTransMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1779,6 +3095,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.ButtonGroup buttonGroup5;
+    private javax.swing.ButtonGroup buttonGroup6;
     private javax.swing.JButton jB_ProveedoresClientes;
     private javax.swing.JButton jB_VehiculosClientes;
     private javax.swing.JButton jB_anteriorProveedoresClientes;
@@ -1791,45 +3108,97 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jB_anteriorProveedoresClientes7;
     private javax.swing.JButton jB_anteriorProveedoresClientes8;
     private javax.swing.JButton jB_anteriorProveedoresClientes9;
+    private javax.swing.JButton jB_cargarModiCliente;
+    private javax.swing.JButton jB_cargarModiCompania;
+    private javax.swing.JButton jB_cargarModiCompra;
+    private javax.swing.JButton jB_cargarModiCon;
+    private javax.swing.JButton jB_cargarModiPlanta;
+    private javax.swing.JButton jB_cargarModiProveedor;
+    private javax.swing.JButton jB_cargarModiVehiculo;
+    private javax.swing.JButton jB_cargarModiVenta;
+    private javax.swing.JButton jB_crearCliente;
     private javax.swing.JButton jB_crearCompania;
+    private javax.swing.JButton jB_crearCompra;
     private javax.swing.JButton jB_crearCon;
     private javax.swing.JButton jB_crearPlanta;
+    private javax.swing.JButton jB_crearProvee;
     private javax.swing.JButton jB_crearProveedor;
     private javax.swing.JButton jB_crearVehiculo;
     private javax.swing.JButton jB_crearVenta;
+    private javax.swing.JButton jB_crudAdmin;
     private javax.swing.JButton jB_ejecutarCRUD;
+    private javax.swing.JButton jB_eliminarNonTrans;
+    private javax.swing.JButton jB_eliminarTrans;
+    private javax.swing.JButton jB_inventarioAdmin;
     private javax.swing.JButton jB_login;
+    private javax.swing.JButton jB_modiCliente;
+    private javax.swing.JButton jB_modiCompania;
+    private javax.swing.JButton jB_modiCompra;
+    private javax.swing.JButton jB_modiCon;
+    private javax.swing.JButton jB_modiPlanta;
+    private javax.swing.JButton jB_modiProvee;
+    private javax.swing.JButton jB_modiProveedor;
+    private javax.swing.JButton jB_modiVehiculo;
+    private javax.swing.JButton jB_modiVenta;
+    private javax.swing.JButton jB_reportesAdmin;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox4;
-    private javax.swing.JComboBox<String> jComboBox5;
-    private javax.swing.JComboBox<String> jComboBox6;
-    private javax.swing.JComboBox<String> jComboBox7;
-    private javax.swing.JComboBox<String> jComboBox8;
-    private javax.swing.JComboBox<String> jComboBox9;
+    private javax.swing.JComboBox<String> jCB_concesionarioInventario;
+    private javax.swing.JComboBox<String> jCB_crearIdCompaniaCompra;
+    private javax.swing.JComboBox<String> jCB_crearIdCompaniaPlanta;
+    private javax.swing.JComboBox<String> jCB_crearIdCompaniaProvee;
+    private javax.swing.JComboBox<String> jCB_crearIdCompaniaVehiculo;
+    private javax.swing.JComboBox<String> jCB_crearIdProveedorProvee;
+    private javax.swing.JComboBox<String> jCB_crearRtnClienteVenta;
+    private javax.swing.JComboBox<String> jCB_crearRtnConCompra;
+    private javax.swing.JComboBox<String> jCB_crearRtnConVenta;
+    private javax.swing.JComboBox<String> jCB_crearVinVehiculoCompra;
+    private javax.swing.JComboBox<String> jCB_modiCliente;
+    private javax.swing.JComboBox<String> jCB_modiCompania;
+    private javax.swing.JComboBox<String> jCB_modiCon;
+    private javax.swing.JComboBox<String> jCB_modiIdCompaniaCompra;
+    private javax.swing.JComboBox<String> jCB_modiIdCompaniaProvee;
+    private javax.swing.JComboBox<String> jCB_modiIdProveedorProvee;
+    private javax.swing.JComboBox<String> jCB_modiPlanta;
+    private javax.swing.JComboBox<String> jCB_modiProveedor;
+    private javax.swing.JComboBox<String> jCB_modiRtnClienteVenta;
+    private javax.swing.JComboBox<String> jCB_modiRtnConCompra;
+    private javax.swing.JComboBox<String> jCB_modiRtnConVenta;
+    private javax.swing.JComboBox<String> jCB_modiVehiculo;
+    private javax.swing.JComboBox<String> jCB_modiVinVehiculoCompra;
+    private javax.swing.JComboBox<String> jCB_paisInventairo;
+    private com.toedter.calendar.JDateChooser jDC_crearFechaCompra;
     private com.toedter.calendar.JDateChooser jDC_crearFechaVenta;
-    private javax.swing.JDialog jD_crearAcuerdo;
+    private com.toedter.calendar.JDateChooser jDC_modiFechaCompra;
+    private com.toedter.calendar.JDateChooser jDC_modiFechaVenta;
     private javax.swing.JDialog jD_crearCliente;
     private javax.swing.JDialog jD_crearCompania;
     private javax.swing.JDialog jD_crearCompra;
     private javax.swing.JDialog jD_crearConsecionario;
     private javax.swing.JDialog jD_crearPlantaFabricacion;
+    private javax.swing.JDialog jD_crearProvee;
     private javax.swing.JDialog jD_crearProveedor;
     private javax.swing.JDialog jD_crearVehiculo;
     private javax.swing.JDialog jD_crearVenta;
+    private javax.swing.JDialog jD_eliminarNonTrans;
+    private javax.swing.JDialog jD_eliminarTrans;
+    private javax.swing.JDialog jD_modiCliente;
+    private javax.swing.JDialog jD_modiCompania;
+    private javax.swing.JDialog jD_modiCompra;
+    private javax.swing.JDialog jD_modiConsecionario;
+    private javax.swing.JDialog jD_modiPlantaFabricacion;
+    private javax.swing.JDialog jD_modiProvee;
+    private javax.swing.JDialog jD_modiProveedor;
+    private javax.swing.JDialog jD_modiVehiculo;
+    private javax.swing.JDialog jD_modiVenta;
     private javax.swing.JDialog jD_ventanaAdmin;
     private javax.swing.JDialog jD_ventanaCRUD;
     private javax.swing.JDialog jD_ventanaCliente;
@@ -1838,14 +3207,65 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JDialog jD_ventanaServicioLocalizacionVehiculo;
     private javax.swing.JLabel jL_ImagenPrincipal;
     private javax.swing.JLabel jL_MemberLogin;
+    private javax.swing.JList<String> jL_eliminarNonTrans;
     private javax.swing.JLabel jL_passwordIcon;
     private javax.swing.JLabel jL_usernameIcon;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel100;
+    private javax.swing.JLabel jLabel101;
+    private javax.swing.JLabel jLabel102;
+    private javax.swing.JLabel jLabel103;
+    private javax.swing.JLabel jLabel104;
+    private javax.swing.JLabel jLabel105;
+    private javax.swing.JLabel jLabel106;
+    private javax.swing.JLabel jLabel107;
+    private javax.swing.JLabel jLabel108;
+    private javax.swing.JLabel jLabel109;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel110;
+    private javax.swing.JLabel jLabel111;
+    private javax.swing.JLabel jLabel112;
+    private javax.swing.JLabel jLabel113;
+    private javax.swing.JLabel jLabel114;
+    private javax.swing.JLabel jLabel115;
+    private javax.swing.JLabel jLabel116;
+    private javax.swing.JLabel jLabel117;
+    private javax.swing.JLabel jLabel118;
+    private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel120;
+    private javax.swing.JLabel jLabel121;
+    private javax.swing.JLabel jLabel122;
+    private javax.swing.JLabel jLabel123;
+    private javax.swing.JLabel jLabel124;
+    private javax.swing.JLabel jLabel125;
+    private javax.swing.JLabel jLabel126;
+    private javax.swing.JLabel jLabel127;
+    private javax.swing.JLabel jLabel128;
+    private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel130;
+    private javax.swing.JLabel jLabel131;
+    private javax.swing.JLabel jLabel132;
+    private javax.swing.JLabel jLabel133;
+    private javax.swing.JLabel jLabel134;
+    private javax.swing.JLabel jLabel135;
+    private javax.swing.JLabel jLabel136;
+    private javax.swing.JLabel jLabel137;
+    private javax.swing.JLabel jLabel138;
+    private javax.swing.JLabel jLabel139;
     private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel140;
+    private javax.swing.JLabel jLabel141;
+    private javax.swing.JLabel jLabel142;
+    private javax.swing.JLabel jLabel143;
+    private javax.swing.JLabel jLabel144;
+    private javax.swing.JLabel jLabel145;
+    private javax.swing.JLabel jLabel146;
+    private javax.swing.JLabel jLabel147;
+    private javax.swing.JLabel jLabel148;
+    private javax.swing.JLabel jLabel149;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
@@ -1935,6 +3355,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel93;
     private javax.swing.JLabel jLabel94;
     private javax.swing.JLabel jLabel95;
+    private javax.swing.JLabel jLabel96;
+    private javax.swing.JLabel jLabel97;
+    private javax.swing.JLabel jLabel98;
+    private javax.swing.JLabel jLabel99;
     private javax.swing.JPanel jP_memberLogin;
     private javax.swing.JPasswordField jP_password;
     private javax.swing.JPanel jPanel1;
@@ -1942,24 +3366,49 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
+    private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel21;
+    private javax.swing.JPanel jPanel22;
+    private javax.swing.JPanel jPanel23;
+    private javax.swing.JPanel jPanel24;
+    private javax.swing.JPanel jPanel25;
+    private javax.swing.JPanel jPanel26;
+    private javax.swing.JPanel jPanel27;
+    private javax.swing.JPanel jPanel28;
+    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel30;
+    private javax.swing.JPanel jPanel31;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JRadioButton jRB_Ensambladora;
-    private javax.swing.JRadioButton jRB_Otra;
+    private javax.swing.JRadioButton jRB_Femenino;
     private javax.swing.JRadioButton jRB_cliente;
     private javax.swing.JRadioButton jRB_compania;
     private javax.swing.JRadioButton jRB_compra;
     private javax.swing.JRadioButton jRB_consecionario;
     private javax.swing.JRadioButton jRB_crear;
+    private javax.swing.JRadioButton jRB_crearEnsambladora;
+    private javax.swing.JRadioButton jRB_crearSuministradora;
     private javax.swing.JRadioButton jRB_eliminar;
+    private javax.swing.JRadioButton jRB_masculino;
+    private javax.swing.JRadioButton jRB_modiEnsambladora;
+    private javax.swing.JRadioButton jRB_modiFemenino;
+    private javax.swing.JRadioButton jRB_modiMasculino;
+    private javax.swing.JRadioButton jRB_modiSuministradora;
     private javax.swing.JRadioButton jRB_modificar;
     private javax.swing.JRadioButton jRB_plantaFabricacion;
+    private javax.swing.JRadioButton jRB_provee;
     private javax.swing.JRadioButton jRB_proveedor;
     private javax.swing.JRadioButton jRB_vehiculo;
     private javax.swing.JRadioButton jRB_venta;
@@ -1968,10 +3417,9 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JRadioButton jRadioButton4;
     private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
-    private javax.swing.JRadioButton jRadioButton7;
-    private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane10;
+    private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
@@ -1982,24 +3430,50 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextField jTF_crearCarroceria;
     private javax.swing.JTextField jTF_crearColorVehiculo;
+    private javax.swing.JTextField jTF_crearDireccionCliente;
     private javax.swing.JTextField jTF_crearIdCompania;
+    private javax.swing.JTextField jTF_crearIdPersonaClient;
     private javax.swing.JTextField jTF_crearIdPlanta;
     private javax.swing.JTextField jTF_crearIdProveedor;
+    private javax.swing.JTextField jTF_crearIngresoPersonaCliente;
     private javax.swing.JTextField jTF_crearMarcaVehiculo;
     private javax.swing.JTextField jTF_crearModeloVehiculo;
+    private javax.swing.JTextField jTF_crearNombreCliente;
     private javax.swing.JTextField jTF_crearNombreCompania;
     private javax.swing.JTextField jTF_crearNombreCon;
     private javax.swing.JTextField jTF_crearNombrePlanta;
     private javax.swing.JTextField jTF_crearNombreProveedor;
     private javax.swing.JTextField jTF_crearParisCon;
+    private javax.swing.JTextField jTF_crearPrecioCompra;
     private javax.swing.JTextField jTF_crearPrecioVehiculo;
-    private javax.swing.JTextField jTF_crearRtnClienteVenta;
+    private javax.swing.JTextField jTF_crearRtnCliente;
     private javax.swing.JTextField jTF_crearRtnCon;
-    private javax.swing.JTextField jTF_crearRtnConVenta;
+    private javax.swing.JTextField jTF_crearTelefonoClietne;
+    private javax.swing.JTextField jTF_crearTipoEmpresaCliente;
     private javax.swing.JTextField jTF_crearTipoMotor;
     private javax.swing.JTextField jTF_crearTransmisionVehiculo;
     private javax.swing.JTextField jTF_crearVinVehiculo;
+    private javax.swing.JTextField jTF_modiCarroceria;
+    private javax.swing.JTextField jTF_modiColorVehiculo;
+    private javax.swing.JTextField jTF_modiDireccionCliente;
+    private javax.swing.JTextField jTF_modiIdPersonaClient;
+    private javax.swing.JTextField jTF_modiIngresoPersonaCliente;
+    private javax.swing.JTextField jTF_modiMarcaVehiculo;
+    private javax.swing.JTextField jTF_modiModeloVehiculo;
+    private javax.swing.JTextField jTF_modiNombreCliente;
+    private javax.swing.JTextField jTF_modiNombreCompania;
+    private javax.swing.JTextField jTF_modiNombreCon;
+    private javax.swing.JTextField jTF_modiNombrePlanta;
+    private javax.swing.JTextField jTF_modiNombreProveedor;
+    private javax.swing.JTextField jTF_modiParisCon;
+    private javax.swing.JTextField jTF_modiPrecioCompra;
+    private javax.swing.JTextField jTF_modiPrecioVehiculo;
+    private javax.swing.JTextField jTF_modiTelefonoClietne;
+    private javax.swing.JTextField jTF_modiTipoEmpresaCliente;
+    private javax.swing.JTextField jTF_modiTipoMotor;
+    private javax.swing.JTextField jTF_modiTransmisionVehiculo;
     private javax.swing.JTextField jTF_username;
+    private javax.swing.JTable jT_eliminarTrans;
     private javax.swing.JTable jT_inventarioProveedoresClientes;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTable jTable1;
@@ -2010,12 +3484,5 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
     private javax.swing.JTable jTable8;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
     // End of variables declaration//GEN-END:variables
 }
