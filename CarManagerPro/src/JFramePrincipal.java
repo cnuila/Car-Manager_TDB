@@ -445,7 +445,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_ventanaAdmin.getContentPane().add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 90, -1, -1));
 
         jB_reportesAdmin.setBackground(new java.awt.Color(153, 153, 153));
-        jB_reportesAdmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\tablero.png")); // NOI18N
+        jB_reportesAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tablero.png"))); // NOI18N
         jB_reportesAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jB_reportesAdminMouseClicked(evt);
@@ -454,7 +454,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_ventanaAdmin.getContentPane().add(jB_reportesAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 300, 530));
 
         jB_inventarioAdmin.setBackground(new java.awt.Color(153, 153, 153));
-        jB_inventarioAdmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\inventario.png")); // NOI18N
+        jB_inventarioAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventario.png"))); // NOI18N
         jB_inventarioAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jB_inventarioAdminMouseClicked(evt);
@@ -463,7 +463,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_ventanaAdmin.getContentPane().add(jB_inventarioAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, 300, 530));
 
         jB_crudAdmin.setBackground(new java.awt.Color(153, 153, 153));
-        jB_crudAdmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\caja-de-herramientas.png")); // NOI18N
+        jB_crudAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/caja-de-herramientas.png"))); // NOI18N
         jB_crudAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jB_crudAdminMouseClicked(evt);
@@ -485,7 +485,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jB_VehiculosClientes.setBackground(new java.awt.Color(255, 253, 168));
         jB_VehiculosClientes.setForeground(new java.awt.Color(0, 0, 0));
-        jB_VehiculosClientes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\coche (1).png")); // NOI18N
+        jB_VehiculosClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/coche (1).png"))); // NOI18N
         jB_VehiculosClientes.setBorder(new javax.swing.border.MatteBorder(null));
         jB_VehiculosClientes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -500,7 +500,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_ventanaCliente.getContentPane().add(jLabel149, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 750, -1, -1));
 
         jB_ProveedoresClientes.setBackground(new java.awt.Color(168, 200, 255));
-        jB_ProveedoresClientes.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\comerciante (1).png")); // NOI18N
+        jB_ProveedoresClientes.setIcon(new javax.swing.ImageIcon(getClass().getResource("/comerciante (1).png"))); // NOI18N
         jB_ProveedoresClientes.setBorder(new javax.swing.border.MatteBorder(null));
         jB_ProveedoresClientes.setEnabled(false);
         jD_ventanaCliente.getContentPane().add(jB_ProveedoresClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 390, 550, 390));
@@ -560,7 +560,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel4.add(jLabel33, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jButton3.setBackground(new java.awt.Color(0, 0, 0));
-        jButton3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\busqueda (2).png")); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/busqueda (2).png"))); // NOI18N
         jButton3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton3MouseClicked(evt);
@@ -573,7 +573,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel4.add(jLabel36, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, -1, -1));
 
         jB_anteriorProveedoresClientes2.setBackground(new java.awt.Color(0, 0, 0));
-        jB_anteriorProveedoresClientes2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\responder.png")); // NOI18N
+        jB_anteriorProveedoresClientes2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/responder.png"))); // NOI18N
         jB_anteriorProveedoresClientes2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jB_anteriorProveedoresClientes2.setBorderPainted(false);
         jPanel4.add(jB_anteriorProveedoresClientes2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
@@ -1139,7 +1139,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jButton2.setBackground(new java.awt.Color(51, 0, 51));
         jButton2.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 18)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\dinero.png")); // NOI18N
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dinero.png"))); // NOI18N
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 190, 50, 40));
 
         jLabel28.setBackground(new java.awt.Color(204, 204, 204));
@@ -1148,7 +1148,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel28.setText("Seleccione El Consecionario");
         jPanel2.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, -1));
 
-        jLabel29.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\concesionario (3).png")); // NOI18N
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/concesionario (3).png"))); // NOI18N
         jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, 40));
 
         jCB_concesionarioInventario.setBackground(new java.awt.Color(51, 0, 51));
@@ -1178,25 +1178,25 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\anadir (2).png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anadir (2).png"))); // NOI18N
         jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 140, 150));
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\fabrica.png")); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/fabrica.png"))); // NOI18N
         jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 370, 70, 80));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\metodo-de-pago.png")); // NOI18N
+        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/metodo-de-pago.png"))); // NOI18N
         jPanel3.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 370, -1, 80));
 
-        jLabel7.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\proveedor.png")); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/proveedor.png"))); // NOI18N
         jPanel3.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 70, 80));
 
-        jLabel10.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\trato (1).png")); // NOI18N
+        jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/trato (1).png"))); // NOI18N
         jPanel3.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 530, 70, 70));
 
-        jLabel12.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\empresa.png")); // NOI18N
+        jLabel12.setIcon(new javax.swing.ImageIcon(getClass().getResource("/empresa.png"))); // NOI18N
         jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 530, 70, 70));
 
-        jLabel13.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\cliente.png")); // NOI18N
+        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/cliente.png"))); // NOI18N
         jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 530, 70, 70));
 
         buttonGroup2.add(jRB_plantaFabricacion);
@@ -1244,7 +1244,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel18.setText("Compania");
         jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 610, -1, -1));
 
-        jLabel11.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\concesionario.png")); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/concesionario.png"))); // NOI18N
         jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 530, 70, 70));
 
         jLabel16.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -1268,7 +1268,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel23.setText("Seleccione la entidad que desea aplicarle lo antes seleccionado:");
         jPanel3.add(jLabel23, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\borrar (2).png")); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/borrar (2).png"))); // NOI18N
         jLabel3.setText("jLabel1");
         jPanel3.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 127, 142));
 
@@ -1277,7 +1277,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel20.setText("Eliminar");
         jPanel3.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\pluma (2).png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/pluma (2).png"))); // NOI18N
         jLabel2.setText("jLabel1");
         jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 70, 127, 142));
 
@@ -1316,7 +1316,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel14.setText("Venta");
         jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 450, -1, -1));
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\coche.png")); // NOI18N
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/coche.png"))); // NOI18N
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 380, 70, 70));
 
         jLabel9.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -1335,7 +1335,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         buttonGroup2.add(jRB_provee);
         jPanel1.add(jRB_provee, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 770, -1, -1));
 
-        jLabel71.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\movimiento-de-la-mano.png")); // NOI18N
+        jLabel71.setIcon(new javax.swing.ImageIcon(getClass().getResource("/movimiento-de-la-mano.png"))); // NOI18N
         jPanel1.add(jLabel71, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 680, -1, -1));
 
         jLabel72.setFont(new java.awt.Font("sansserif", 0, 14)); // NOI18N
@@ -2357,7 +2357,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jL_usernameIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\hombre (4).png")); // NOI18N
+        jL_usernameIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/hombre (4).png"))); // NOI18N
         getContentPane().add(jL_usernameIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 180, 30, 40));
 
         jTF_username.setBackground(new java.awt.Color(204, 204, 204));
@@ -2367,7 +2367,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         getContentPane().add(jTF_username, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, 210, 40));
 
         jL_passwordIcon.setBackground(new java.awt.Color(204, 255, 51));
-        jL_passwordIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\palabra-clave (2).png")); // NOI18N
+        jL_passwordIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/palabra-clave (2).png"))); // NOI18N
         getContentPane().add(jL_passwordIcon, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 40, 40));
 
         jP_password.setBackground(new java.awt.Color(204, 204, 204));
@@ -2413,7 +2413,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         getContentPane().add(jP_memberLogin, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 280, 90));
 
-        jL_ImagenPrincipal.setIcon(new javax.swing.ImageIcon("C:\\Users\\Daniel Agurcia\\Desktop\\Teoria BD1\\Proyecto Final\\Imagenes\\663e2c69c7d2723ac219c3f00dad3dae.jpg")); // NOI18N
+        jL_ImagenPrincipal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/663e2c69c7d2723ac219c3f00dad3dae.jpg"))); // NOI18N
         getContentPane().add(jL_ImagenPrincipal, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 550));
 
         pack();

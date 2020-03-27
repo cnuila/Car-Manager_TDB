@@ -72,7 +72,7 @@
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\tablero.png"/>
+              <Image iconType="3" name="/tablero.png"/>
             </Property>
           </Properties>
           <Events>
@@ -90,7 +90,7 @@
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\inventario.png"/>
+              <Image iconType="3" name="/inventario.png"/>
             </Property>
           </Properties>
           <Events>
@@ -108,7 +108,7 @@
               <Color blue="99" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\caja-de-herramientas.png"/>
+              <Image iconType="3" name="/caja-de-herramientas.png"/>
             </Property>
           </Properties>
           <Events>
@@ -169,7 +169,7 @@
               <Color blue="0" green="0" red="0" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\coche (1).png"/>
+              <Image iconType="3" name="/coche (1).png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -208,7 +208,7 @@
               <Color blue="ff" green="c8" red="a8" type="rgb"/>
             </Property>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\comerciante (1).png"/>
+              <Image iconType="3" name="/comerciante (1).png"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.MatteColorBorderInfo">
@@ -383,7 +383,7 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\busqueda (2).png"/>
+                      <Image iconType="3" name="/busqueda (2).png"/>
                     </Property>
                   </Properties>
                   <Events>
@@ -414,7 +414,7 @@
                       <Color blue="0" green="0" red="0" type="rgb"/>
                     </Property>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\responder.png"/>
+                      <Image iconType="3" name="/responder.png"/>
                     </Property>
                     <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                       <Border info="org.netbeans.modules.form.compat2.border.EtchedBorderInfo">
@@ -2008,7 +2008,7 @@
                   <Font name="Bodoni MT Condensed" size="18" style="0"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\dinero.png"/>
+                  <Image iconType="3" name="/dinero.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -2039,7 +2039,7 @@
             <Component class="javax.swing.JLabel" name="jLabel29">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\concesionario (3).png"/>
+                  <Image iconType="3" name="/concesionario (3).png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -2138,7 +2138,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\anadir (2).png"/>
+                  <Image iconType="3" name="/anadir (2).png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -2150,7 +2150,7 @@
             <Component class="javax.swing.JLabel" name="jLabel4">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\fabrica.png"/>
+                  <Image iconType="3" name="/fabrica.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -2162,7 +2162,7 @@
             <Component class="javax.swing.JLabel" name="jLabel6">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\metodo-de-pago.png"/>
+                  <Image iconType="3" name="/metodo-de-pago.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -2174,7 +2174,7 @@
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\proveedor.png"/>
+                  <Image iconType="3" name="/proveedor.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -2186,7 +2186,7 @@
             <Component class="javax.swing.JLabel" name="jLabel10">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\trato (1).png"/>
+                  <Image iconType="3" name="/trato (1).png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -2198,7 +2198,7 @@
             <Component class="javax.swing.JLabel" name="jLabel12">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\empresa.png"/>
+                  <Image iconType="3" name="/empresa.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -2210,7 +2210,7 @@
             <Component class="javax.swing.JLabel" name="jLabel13">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\cliente.png"/>
+                  <Image iconType="3" name="/cliente.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -2383,7 +2383,7 @@
             <Component class="javax.swing.JLabel" name="jLabel11">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\concesionario.png"/>
+                  <Image iconType="3" name="/concesionario.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -2462,7 +2462,7 @@
             <Component class="javax.swing.JLabel" name="jLabel3">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\borrar (2).png"/>
+                  <Image iconType="3" name="/borrar (2).png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>
@@ -2491,7 +2491,7 @@
             <Component class="javax.swing.JLabel" name="jLabel2">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\pluma (2).png"/>
+                  <Image iconType="3" name="/pluma (2).png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>
@@ -2631,7 +2631,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel8">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\coche.png"/>
+                      <Image iconType="3" name="/coche.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -2684,7 +2684,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel71">
                   <Properties>
                     <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                      <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\movimiento-de-la-mano.png"/>
+                      <Image iconType="3" name="/movimiento-de-la-mano.png"/>
                     </Property>
                   </Properties>
                   <Constraints>
@@ -5966,7 +5966,7 @@
     <Component class="javax.swing.JLabel" name="jL_usernameIcon">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\hombre (4).png"/>
+          <Image iconType="3" name="/hombre (4).png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -6002,7 +6002,7 @@
           <Color blue="33" green="ff" red="cc" type="rgb"/>
         </Property>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\palabra-clave (2).png"/>
+          <Image iconType="3" name="/palabra-clave (2).png"/>
         </Property>
       </Properties>
       <Constraints>
@@ -6120,7 +6120,7 @@
     <Component class="javax.swing.JLabel" name="jL_ImagenPrincipal">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\Daniel Agurcia\Desktop\Teoria BD1\Proyecto Final\Imagenes\663e2c69c7d2723ac219c3f00dad3dae.jpg"/>
+          <Image iconType="3" name="/663e2c69c7d2723ac219c3f00dad3dae.jpg"/>
         </Property>
       </Properties>
       <Constraints>
