@@ -51,13 +51,16 @@ public class JFramePrincipal extends javax.swing.JFrame {
         buttonGroup_Tiempo = new javax.swing.ButtonGroup();
         buttonGroup4 = new javax.swing.ButtonGroup();
         buttonGroup5 = new javax.swing.ButtonGroup();
+        buttonGroup_generIngreso = new javax.swing.ButtonGroup();
         jD_ventanaAdmin = new javax.swing.JDialog();
         jLabel38 = new javax.swing.JLabel();
         jLabel39 = new javax.swing.JLabel();
+        jLabel121 = new javax.swing.JLabel();
         jLabel40 = new javax.swing.JLabel();
         jB_reportesAdmin = new javax.swing.JButton();
-        jB_inventarioAdmin = new javax.swing.JButton();
+        jB_bitacoraAdmin = new javax.swing.JButton();
         jB_crudAdmin = new javax.swing.JButton();
+        jB_inventarioAdmin1 = new javax.swing.JButton();
         jD_ventanaCliente = new javax.swing.JDialog();
         jLabel25 = new javax.swing.JLabel();
         jLabel26 = new javax.swing.JLabel();
@@ -405,7 +408,11 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel141 = new javax.swing.JLabel();
         jScrollPane11 = new javax.swing.JScrollPane();
         jT_eliminarTrans = new javax.swing.JTable();
-        buttonGroup_generIngreso = new javax.swing.ButtonGroup();
+        jD_ventanaBitacora = new javax.swing.JDialog();
+        jPanel11 = new javax.swing.JPanel();
+        jLabel130 = new javax.swing.JLabel();
+        jScrollPane9 = new javax.swing.JScrollPane();
+        jT_bitacora = new javax.swing.JTable();
         jL_usernameIcon = new javax.swing.JLabel();
         jTF_username = new javax.swing.JTextField();
         jL_passwordIcon = new javax.swing.JLabel();
@@ -420,17 +427,22 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel38.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 50)); // NOI18N
         jLabel38.setForeground(new java.awt.Color(51, 51, 51));
         jLabel38.setText("CRUD");
-        jD_ventanaAdmin.getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 80, -1));
+        jD_ventanaAdmin.getContentPane().add(jLabel38, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 70, 80, -1));
 
         jLabel39.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 50)); // NOI18N
         jLabel39.setForeground(new java.awt.Color(51, 51, 51));
         jLabel39.setText("Reportes");
-        jD_ventanaAdmin.getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 90, -1, -1));
+        jD_ventanaAdmin.getContentPane().add(jLabel39, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, -1, -1));
+
+        jLabel121.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 50)); // NOI18N
+        jLabel121.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel121.setText("Bitacora");
+        jD_ventanaAdmin.getContentPane().add(jLabel121, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 70, -1, -1));
 
         jLabel40.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 50)); // NOI18N
         jLabel40.setForeground(new java.awt.Color(51, 51, 51));
         jLabel40.setText("Inventario");
-        jD_ventanaAdmin.getContentPane().add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 90, -1, -1));
+        jD_ventanaAdmin.getContentPane().add(jLabel40, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 70, -1, -1));
 
         jB_reportesAdmin.setBackground(new java.awt.Color(153, 153, 153));
         jB_reportesAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/tablero.png"))); // NOI18N
@@ -441,14 +453,14 @@ public class JFramePrincipal extends javax.swing.JFrame {
         });
         jD_ventanaAdmin.getContentPane().add(jB_reportesAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 0, 300, 530));
 
-        jB_inventarioAdmin.setBackground(new java.awt.Color(153, 153, 153));
-        jB_inventarioAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventario.png"))); // NOI18N
-        jB_inventarioAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
+        jB_bitacoraAdmin.setBackground(new java.awt.Color(153, 153, 153));
+        jB_bitacoraAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/clipboard (1).png"))); // NOI18N
+        jB_bitacoraAdmin.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jB_inventarioAdminMouseClicked(evt);
+                jB_bitacoraAdminMouseClicked(evt);
             }
         });
-        jD_ventanaAdmin.getContentPane().add(jB_inventarioAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, 300, 530));
+        jD_ventanaAdmin.getContentPane().add(jB_bitacoraAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 0, 300, 530));
 
         jB_crudAdmin.setBackground(new java.awt.Color(153, 153, 153));
         jB_crudAdmin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/caja-de-herramientas.png"))); // NOI18N
@@ -458,6 +470,15 @@ public class JFramePrincipal extends javax.swing.JFrame {
             }
         });
         jD_ventanaAdmin.getContentPane().add(jB_crudAdmin, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 530));
+
+        jB_inventarioAdmin1.setBackground(new java.awt.Color(153, 153, 153));
+        jB_inventarioAdmin1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/inventario.png"))); // NOI18N
+        jB_inventarioAdmin1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jB_inventarioAdmin1MouseClicked(evt);
+            }
+        });
+        jD_ventanaAdmin.getContentPane().add(jB_inventarioAdmin1, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 0, 300, 530));
 
         jD_ventanaCliente.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1918,6 +1939,54 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 .addGap(14, 14, 14))
         );
 
+        jD_ventanaBitacora.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel11.setBackground(new java.awt.Color(204, 204, 255));
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel130.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
+        jLabel130.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel130.setText("Bitacora");
+        jPanel11.add(jLabel130, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, -1, -1));
+
+        jT_bitacora.setBackground(new java.awt.Color(255, 255, 255));
+        jT_bitacora.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "IP", "Tabla Referencia", "Codigo", "Operacion", "Fecha"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jT_bitacora.setFillsViewportHeight(true);
+        jT_bitacora.setGridColor(new java.awt.Color(0, 153, 153));
+        jT_bitacora.setSelectionBackground(new java.awt.Color(153, 153, 255));
+        jT_bitacora.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jT_bitacora.setShowHorizontalLines(true);
+        jT_bitacora.setShowVerticalLines(true);
+        jScrollPane9.setViewportView(jT_bitacora);
+        if (jT_bitacora.getColumnModel().getColumnCount() > 0) {
+            jT_bitacora.getColumnModel().getColumn(0).setResizable(false);
+            jT_bitacora.getColumnModel().getColumn(1).setResizable(false);
+            jT_bitacora.getColumnModel().getColumn(2).setResizable(false);
+            jT_bitacora.getColumnModel().getColumn(3).setResizable(false);
+        }
+
+        jPanel11.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 560, -1));
+
+        jD_ventanaBitacora.getContentPane().add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 520));
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setLocation(new java.awt.Point(500, 500));
         setResizable(false);
@@ -2047,18 +2116,15 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_ventanaMarketing.setVisible(true);
     }//GEN-LAST:event_jB_reportesAdminMouseClicked
 
-    private void jB_inventarioAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_inventarioAdminMouseClicked
-        String sqlComboBox = "SELECT DISTINCT pais FROM concesionario";
-        try {
-            llenarComboBox(cb_paisInventairo, sqlComboBox);
-        } catch (SQLException ex) {
-            Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        jD_ventanaServicioLocalizacionVehiculo.pack();
-        jD_ventanaServicioLocalizacionVehiculo.setModal(true);
-        jD_ventanaServicioLocalizacionVehiculo.setLocationRelativeTo(this);
-        jD_ventanaServicioLocalizacionVehiculo.setVisible(true);
-    }//GEN-LAST:event_jB_inventarioAdminMouseClicked
+    private void jB_bitacoraAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_bitacoraAdminMouseClicked
+        String[] columnas= {"IP","Tabla Referencia","Codigo","Operacion","Fecha"};
+        String sql =  "SELECT * FROM BITACORA";
+        llenarTablaSt(sql,jT_bitacora,columnas);
+        jD_ventanaBitacora.pack();
+        jD_ventanaBitacora.setModal(true);
+        jD_ventanaBitacora.setLocationRelativeTo(this);
+        jD_ventanaBitacora.setVisible(true);
+    }//GEN-LAST:event_jB_bitacoraAdminMouseClicked
 
     private void jB_ejecutarCRUDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_ejecutarCRUDMouseClicked
         int hacer = Que_Quiere_Hacer();
@@ -2751,6 +2817,19 @@ public class JFramePrincipal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton3MouseClicked
 
+    private void jB_inventarioAdmin1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_inventarioAdmin1MouseClicked
+        String sqlComboBox = "SELECT DISTINCT pais FROM concesionario";
+        try {
+            llenarComboBox(cb_paisInventairo, sqlComboBox);
+        } catch (SQLException ex) {
+            Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        jD_ventanaServicioLocalizacionVehiculo.pack();
+        jD_ventanaServicioLocalizacionVehiculo.setModal(true);
+        jD_ventanaServicioLocalizacionVehiculo.setLocationRelativeTo(this);
+        jD_ventanaServicioLocalizacionVehiculo.setVisible(true);
+    }//GEN-LAST:event_jB_inventarioAdmin1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -3171,6 +3250,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jB_anteriorProveedoresClientes6;
     private javax.swing.JButton jB_anteriorProveedoresClientes7;
     private javax.swing.JButton jB_anteriorProveedoresClientes8;
+    private javax.swing.JButton jB_bitacoraAdmin;
     private javax.swing.JButton jB_cargarModiCliente;
     private javax.swing.JButton jB_cargarModiCompania;
     private javax.swing.JButton jB_cargarModiCon;
@@ -3190,7 +3270,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jB_ejecutarCRUD;
     private javax.swing.JButton jB_eliminarNonTrans;
     private javax.swing.JButton jB_eliminarTrans;
-    private javax.swing.JButton jB_inventarioAdmin;
+    private javax.swing.JButton jB_inventarioAdmin1;
     private javax.swing.JButton jB_login;
     private javax.swing.JButton jB_modiCliente;
     private javax.swing.JButton jB_modiCompania;
@@ -3241,6 +3321,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JDialog jD_modiProveedor;
     private javax.swing.JDialog jD_modiVehiculo;
     private javax.swing.JDialog jD_ventanaAdmin;
+    private javax.swing.JDialog jD_ventanaBitacora;
     private javax.swing.JDialog jD_ventanaCRUD;
     private javax.swing.JDialog jD_ventanaCliente;
     private javax.swing.JDialog jD_ventanaInventario;
@@ -3276,6 +3357,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel120;
+    private javax.swing.JLabel jLabel121;
     private javax.swing.JLabel jLabel122;
     private javax.swing.JLabel jLabel123;
     private javax.swing.JLabel jLabel124;
@@ -3285,6 +3367,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel128;
     private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel130;
     private javax.swing.JLabel jLabel139;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel140;
@@ -3401,6 +3484,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JPasswordField jP_password;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
+    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
@@ -3456,6 +3540,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextField jTF_crearCarroceria;
     private javax.swing.JTextField jTF_crearColorVehiculo;
@@ -3498,6 +3583,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTF_modiTipoMotor;
     private javax.swing.JTextField jTF_modiTransmisionVehiculo;
     private javax.swing.JTextField jTF_username;
+    private javax.swing.JTable jT_bitacora;
     private javax.swing.JTable jT_eliminarTrans;
     private javax.swing.JTabbedPane jTabbedPane1;
     private com.toedter.calendar.JDateChooser jdc_fecha1;
