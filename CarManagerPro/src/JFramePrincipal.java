@@ -5,7 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -33,7 +35,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     /**
      * Creates new form JFramePrincipal
      */
-    public JFramePrincipal() {
+    public JFramePrincipal() throws SQLException {
         initComponents();
     }
 
@@ -48,7 +50,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
-        buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup_Tiempo = new javax.swing.ButtonGroup();
         buttonGroup4 = new javax.swing.ButtonGroup();
         buttonGroup5 = new javax.swing.ButtonGroup();
         jD_ventanaAdmin = new javax.swing.JDialog();
@@ -68,16 +70,16 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel4 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jt_reporte1 = new javax.swing.JTable();
         jLabel33 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jLabel36 = new javax.swing.JLabel();
         jB_anteriorProveedoresClientes2 = new javax.swing.JButton();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
+        rb_mes = new javax.swing.JRadioButton();
+        rb_año = new javax.swing.JRadioButton();
+        rb_semana = new javax.swing.JRadioButton();
+        rb_genero = new javax.swing.JRadioButton();
+        rb_ingreso = new javax.swing.JRadioButton();
         jLabel59 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
@@ -124,24 +126,23 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_ventanaServicioLocalizacionVehiculo = new javax.swing.JDialog();
         jB_anteriorProveedoresClientes3 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jCB_paisInventairo = new javax.swing.JComboBox<>();
+        jt_concesionariosPais = new javax.swing.JTable();
+        cb_paisInventairo = new javax.swing.JComboBox<>();
         jPanel5 = new javax.swing.JPanel();
         jLabel35 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
         jButton4 = new javax.swing.JButton();
         jLabel37 = new javax.swing.JLabel();
         jD_ventanaInventario = new javax.swing.JDialog();
-        jB_anteriorProveedoresClientes = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jLabel27 = new javax.swing.JLabel();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        jT_inventarioProveedoresClientes = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
+        jt_comprarVehiculo = new javax.swing.JButton();
         jLabel29 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jLabel30 = new javax.swing.JLabel();
         jLabel31 = new javax.swing.JLabel();
+        jScrollPane12 = new javax.swing.JScrollPane();
+        jt_PreciosCliente = new javax.swing.JTable();
+        cb_rtnClienteInventario = new javax.swing.JComboBox<>();
+        jLabel154 = new javax.swing.JLabel();
         jD_ventanaCRUD = new javax.swing.JDialog();
         jPanel3 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
@@ -433,7 +434,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel141 = new javax.swing.JLabel();
         jScrollPane11 = new javax.swing.JScrollPane();
         jT_eliminarTrans = new javax.swing.JTable();
-        buttonGroup6 = new javax.swing.ButtonGroup();
+        buttonGroup_generIngreso = new javax.swing.ButtonGroup();
         jL_usernameIcon = new javax.swing.JLabel();
         jTF_username = new javax.swing.JTextField();
         jL_passwordIcon = new javax.swing.JLabel();
@@ -528,40 +529,29 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jScrollPane1.setBackground(new java.awt.Color(51, 0, 0));
 
-        jTable1.setBackground(new java.awt.Color(0, 0, 0));
-        jTable1.setForeground(new java.awt.Color(255, 255, 255));
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jt_reporte1.setBackground(new java.awt.Color(0, 0, 0));
+        jt_reporte1.setForeground(new java.awt.Color(255, 255, 255));
+        jt_reporte1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"qwqw", "w", "qww", "qw"},
-                {"qwq", "qw", "ww", "qq"},
-                {"wwq", "wqq", "wq", "qw"},
-                {"qw", "wqw", "w", "q"}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
 
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
             }
-        });
-        jTable1.setFillsViewportHeight(true);
-        jTable1.setFocusable(false);
-        jTable1.setGridColor(new java.awt.Color(102, 0, 0));
-        jTable1.setRowHeight(20);
-        jTable1.setSelectionBackground(new java.awt.Color(204, 0, 0));
-        jTable1.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
+        ));
+        jt_reporte1.setFillsViewportHeight(true);
+        jt_reporte1.setFocusable(false);
+        jt_reporte1.setGridColor(new java.awt.Color(102, 0, 0));
+        jt_reporte1.setRowHeight(20);
+        jt_reporte1.setSelectionBackground(new java.awt.Color(204, 0, 0));
+        jt_reporte1.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jt_reporte1.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(jt_reporte1);
+        if (jt_reporte1.getColumnModel().getColumnCount() > 0) {
+            jt_reporte1.getColumnModel().getColumn(0).setResizable(false);
+            jt_reporte1.getColumnModel().getColumn(1).setResizable(false);
+            jt_reporte1.getColumnModel().getColumn(2).setResizable(false);
+            jt_reporte1.getColumnModel().getColumn(3).setResizable(false);
         }
 
         jPanel4.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
@@ -589,26 +579,27 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jB_anteriorProveedoresClientes2.setBorderPainted(false);
         jPanel4.add(jB_anteriorProveedoresClientes2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
 
-        buttonGroup3.add(jRadioButton1);
-        jRadioButton1.setText("Mes");
-        jPanel4.add(jRadioButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, -1, -1));
+        buttonGroup_Tiempo.add(rb_mes);
+        rb_mes.setText("Mes");
+        jPanel4.add(rb_mes, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 90, -1, -1));
 
-        buttonGroup3.add(jRadioButton2);
-        jRadioButton2.setSelected(true);
-        jRadioButton2.setText("Ano");
-        jPanel4.add(jRadioButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, -1, -1));
+        buttonGroup_Tiempo.add(rb_año);
+        rb_año.setSelected(true);
+        rb_año.setText("Año");
+        jPanel4.add(rb_año, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 60, -1, -1));
 
-        buttonGroup3.add(jRadioButton3);
-        jRadioButton3.setText("Semana");
-        jPanel4.add(jRadioButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, -1, -1));
+        buttonGroup_Tiempo.add(rb_semana);
+        rb_semana.setText("Semana");
+        jPanel4.add(rb_semana, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 120, -1, -1));
 
-        buttonGroup6.add(jRadioButton4);
-        jRadioButton4.setText("Genero");
-        jPanel4.add(jRadioButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, -1, -1));
+        buttonGroup_generIngreso.add(rb_genero);
+        rb_genero.setSelected(true);
+        rb_genero.setText("Genero");
+        jPanel4.add(rb_genero, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 60, -1, -1));
 
-        buttonGroup6.add(jRadioButton5);
-        jRadioButton5.setText("Ingresos");
-        jPanel4.add(jRadioButton5, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, -1, -1));
+        buttonGroup_generIngreso.add(rb_ingreso);
+        rb_ingreso.setText("Ingresos");
+        jPanel4.add(rb_ingreso, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 90, -1, -1));
 
         jLabel59.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
         jLabel59.setText("Buscar por:");
@@ -991,46 +982,36 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jB_anteriorProveedoresClientes3.setBorderPainted(false);
         jD_ventanaServicioLocalizacionVehiculo.getContentPane().add(jB_anteriorProveedoresClientes3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
 
-        jTable2.setBackground(new java.awt.Color(0, 102, 102));
-        jTable2.setForeground(new java.awt.Color(255, 255, 255));
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        jt_concesionariosPais.setBackground(new java.awt.Color(0, 102, 102));
+        jt_concesionariosPais.setForeground(new java.awt.Color(255, 255, 255));
+        jt_concesionariosPais.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"qweqw", "qw", "qwe", "q"},
-                {"weqw", "eqwweewe", "weq", "qweweqw"},
-                {null, "qwe", "qqweqwe", null},
-                {"eq", "weq", "qwew", "wqee"}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "RTN", "Nombre Concesionario"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jTable2.setFillsViewportHeight(true);
-        jTable2.setGridColor(new java.awt.Color(0, 153, 153));
-        jTable2.setRowHeight(20);
-        jTable2.setSelectionBackground(new java.awt.Color(0, 255, 204));
-        jTable2.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jTable2.getTableHeader().setReorderingAllowed(false);
-        jScrollPane3.setViewportView(jTable2);
-        if (jTable2.getColumnModel().getColumnCount() > 0) {
-            jTable2.getColumnModel().getColumn(0).setResizable(false);
-            jTable2.getColumnModel().getColumn(1).setResizable(false);
-            jTable2.getColumnModel().getColumn(2).setResizable(false);
-            jTable2.getColumnModel().getColumn(3).setResizable(false);
-        }
+        jt_concesionariosPais.setFillsViewportHeight(true);
+        jt_concesionariosPais.setGridColor(new java.awt.Color(0, 153, 153));
+        jt_concesionariosPais.setRowHeight(20);
+        jt_concesionariosPais.setSelectionBackground(new java.awt.Color(0, 255, 204));
+        jt_concesionariosPais.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jt_concesionariosPais.getTableHeader().setReorderingAllowed(false);
+        jScrollPane3.setViewportView(jt_concesionariosPais);
 
         jD_ventanaServicioLocalizacionVehiculo.getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 78, -1, -1));
 
-        jCB_paisInventairo.setBackground(new java.awt.Color(0, 51, 51));
-        jCB_paisInventairo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pais1", "Pais2", "Pais3" }));
-        jD_ventanaServicioLocalizacionVehiculo.getContentPane().add(jCB_paisInventairo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 150, 30));
+        cb_paisInventairo.setBackground(new java.awt.Color(0, 51, 51));
+        jD_ventanaServicioLocalizacionVehiculo.getContentPane().add(cb_paisInventairo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 40, 150, 30));
 
         jPanel5.setBackground(new java.awt.Color(0, 153, 102));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -1060,26 +1041,33 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jD_ventanaInventario.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jB_anteriorProveedoresClientes.setBackground(new java.awt.Color(51, 0, 51));
-        jB_anteriorProveedoresClientes.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jB_anteriorProveedoresClientes.setBorderPainted(false);
-        jD_ventanaInventario.getContentPane().add(jB_anteriorProveedoresClientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
-
         jPanel2.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel27.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
         jLabel27.setForeground(new java.awt.Color(204, 204, 204));
         jLabel27.setText("Inventario");
-        jPanel2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, -1, -1));
+        jPanel2.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, -1, -1));
 
-        jScrollPane2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jt_comprarVehiculo.setBackground(new java.awt.Color(51, 0, 51));
+        jt_comprarVehiculo.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 18)); // NOI18N
+        jt_comprarVehiculo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dinero.png"))); // NOI18N
+        jt_comprarVehiculo.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jt_comprarVehiculoMouseClicked(evt);
+            }
+        });
+        jPanel2.add(jt_comprarVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 190, 50, 40));
 
-        jT_inventarioProveedoresClientes.setBackground(new java.awt.Color(51, 0, 51));
-        jT_inventarioProveedoresClientes.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jT_inventarioProveedoresClientes.setFont(new java.awt.Font("Arial Narrow", 0, 18)); // NOI18N
-        jT_inventarioProveedoresClientes.setForeground(new java.awt.Color(255, 255, 255));
-        jT_inventarioProveedoresClientes.setModel(new javax.swing.table.DefaultTableModel(
+        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/concesionario (3).png"))); // NOI18N
+        jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, 40));
+
+        jLabel31.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
+        jLabel31.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel31.setText("RTN Cliente");
+        jPanel2.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 60, -1, -1));
+
+        jt_PreciosCliente.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -1087,47 +1075,15 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
             }
         ));
-        jT_inventarioProveedoresClientes.setFillsViewportHeight(true);
-        jT_inventarioProveedoresClientes.setFocusCycleRoot(true);
-        jT_inventarioProveedoresClientes.setGridColor(new java.awt.Color(255, 255, 255));
-        jT_inventarioProveedoresClientes.setRowHeight(22);
-        jT_inventarioProveedoresClientes.setSelectionBackground(new java.awt.Color(0, 0, 0));
-        jT_inventarioProveedoresClientes.setSurrendersFocusOnKeystroke(true);
-        jT_inventarioProveedoresClientes.getTableHeader().setResizingAllowed(false);
-        jT_inventarioProveedoresClientes.getTableHeader().setReorderingAllowed(false);
-        jScrollPane2.setViewportView(jT_inventarioProveedoresClientes);
-        if (jT_inventarioProveedoresClientes.getColumnModel().getColumnCount() > 0) {
-            jT_inventarioProveedoresClientes.getColumnModel().getColumn(0).setResizable(false);
-            jT_inventarioProveedoresClientes.getColumnModel().getColumn(1).setResizable(false);
-            jT_inventarioProveedoresClientes.getColumnModel().getColumn(2).setResizable(false);
-            jT_inventarioProveedoresClientes.getColumnModel().getColumn(3).setResizable(false);
-        }
+        jScrollPane12.setViewportView(jt_PreciosCliente);
 
-        jPanel2.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, -1));
+        jPanel2.add(jScrollPane12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 570, 380));
+        jPanel2.add(cb_rtnClienteInventario, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 90, 110, -1));
 
-        jButton2.setBackground(new java.awt.Color(51, 0, 51));
-        jButton2.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 18)); // NOI18N
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/dinero.png"))); // NOI18N
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 190, 50, 40));
-
-        jLabel29.setIcon(new javax.swing.ImageIcon(getClass().getResource("/concesionario (3).png"))); // NOI18N
-        jPanel2.add(jLabel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 10, -1, 40));
-
-        jButton1.setBackground(new java.awt.Color(102, 0, 102));
-        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton1MouseClicked(evt);
-            }
-        });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 80, 40, 30));
-
-        jLabel30.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
-        jLabel30.setText("Buscar");
-        jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 80, -1, -1));
-
-        jLabel31.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
-        jLabel31.setText("Comprar");
-        jPanel2.add(jLabel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 200, -1, -1));
+        jLabel154.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
+        jLabel154.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel154.setText("Comprar");
+        jPanel2.add(jLabel154, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 150, -1, -1));
 
         jD_ventanaInventario.getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 520));
 
@@ -2277,6 +2233,12 @@ public class JFramePrincipal extends javax.swing.JFrame {
             jD_ventanaMarketing.setVisible(true);
         } else if ((username.equals("ServicioLV") || username.equals("serviciolv")) && (password.equals("123"))) {
             JOptionPane.showMessageDialog(this, "Bienvenido Empleado de Servicio de Localizacion de Vehiculos");
+            String sqlComboBox = "SELECT DISTINCT pais FROM concesionario";
+            try {
+                llenarComboBox(cb_paisInventairo, sqlComboBox);
+            } catch (SQLException ex) {
+                Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
             jD_ventanaServicioLocalizacionVehiculo.pack();
             jD_ventanaServicioLocalizacionVehiculo.setModal(true);
             jD_ventanaServicioLocalizacionVehiculo.setLocationRelativeTo(this);
@@ -2307,289 +2269,17 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_ventanaServicioLocalizacionVehiculo.setVisible(true);
     }//GEN-LAST:event_jB_inventarioAdminMouseClicked
 
-    private int Que_Quiere_Hacer() {
-        int hacer = 0;
-        if (jRB_crear.isSelected()) {
-            hacer = 1;
-        } else if (jRB_modificar.isSelected()) {
-            hacer = 2;
-        } else if (jRB_eliminar.isSelected()) {
-            hacer = 3;
-        }
-        return hacer;
-    }
-
-    private int A_Quien() {
-        int quien = 0;
-        if (jRB_plantaFabricacion.isSelected()) {
-            quien = 1;
-        } else if (jRB_vehiculo.isSelected()) {
-            quien = 2;
-        } else if (jRB_venta.isSelected()) {
-            quien = 3;
-        } else if (jRB_proveedor.isSelected()) {
-            quien = 4;
-        } else if (jRB_consecionario.isSelected()) {
-            quien = 5;
-        } else if (jRB_compra.isSelected()) {
-            quien = 6;
-        } else if (jRB_compania.isSelected()) {
-            quien = 7;
-        } else if (jRB_cliente.isSelected()) {
-            quien = 8;
-        } else if (jRB_provee.isSelected()) {
-            quien = 9;
-        }
-        System.out.println(quien);
-        return quien;
-    }
-
-    private void CREAR() throws SQLException {
-        int quien = A_Quien();
-        switch (quien) {
-            case 1:
-                //cargar el combobox jCB_crearIdCompaniaPlanta
-                llenarComboBoxCompañia(jCB_crearIdCompaniaPlanta);
-                jD_crearPlantaFabricacion.pack();
-                jD_crearPlantaFabricacion.setModal(true);
-                jD_crearPlantaFabricacion.setLocationRelativeTo(this);
-                jD_crearPlantaFabricacion.setVisible(true);
-
-                break;
-            case 2:
-                //cargar el combobox jCB_crearIdCompaniaVehiculo
-                jD_crearVehiculo.pack();
-                jD_crearVehiculo.setModal(true);
-                jD_crearVehiculo.setLocationRelativeTo(this);
-                jD_crearVehiculo.setVisible(true);
-                break;
-            case 3:
-                //cargar comboboxes de la ventana de crearVenta
-                jD_crearVenta.pack();
-                jD_crearVenta.setModal(true);
-                jD_crearVenta.setLocationRelativeTo(this);
-                jD_crearVenta.setVisible(true);
-                break;
-            case 4:
-                jD_crearProveedor.pack();
-                jD_crearProveedor.setModal(true);
-                jD_crearProveedor.setLocationRelativeTo(this);
-                jD_crearProveedor.setVisible(true);
-                break;
-            case 5:
-                jD_crearConsecionario.pack();
-                jD_crearConsecionario.setModal(true);
-                jD_crearConsecionario.setLocationRelativeTo(this);
-                jD_crearConsecionario.setVisible(true);
-                break;
-            case 6:
-                //cargar las comboboxes de la ventana crearCompra
-                jD_crearCompra.pack();
-                jD_crearCompra.setModal(true);
-                jD_crearCompra.setLocationRelativeTo(this);
-                jD_crearCompra.setVisible(true);
-                break;
-            case 7:
-                jD_crearCompania.pack();
-                jD_crearCompania.setModal(true);
-                jD_crearCompania.setLocationRelativeTo(this);
-                jD_crearCompania.setVisible(true);
-                break;
-            case 8:
-                int seleccion = JOptionPane.showOptionDialog(null, "Seleccione una opcion",
-                        "Selector de opciones", JOptionPane.YES_NO_CANCEL_OPTION,
-                        JOptionPane.QUESTION_MESSAGE, null,// null para icono por defecto.
-                        new Object[]{"Persona", "Empresa"}, "opcion 1");
-                if (seleccion != -1) {
-                    if (seleccion == 0) {
-                        Cliente = 1;
-                        jTF_crearTipoEmpresaCliente.setEnabled(false);
-                        jTF_crearIdPersonaClient.setEnabled(true);
-                        jTF_crearIngresoPersonaCliente.setEnabled(true);
-                        jRB_Femenino.setEnabled(true);
-                        jRB_masculino.setEnabled(true);
-                    } else if (seleccion == 1) {
-                        Cliente = 2;
-                        jTF_crearTipoEmpresaCliente.setEnabled(true);
-                        jTF_crearIdPersonaClient.setEnabled(false);
-                        jTF_crearIngresoPersonaCliente.setEnabled(false);
-                        jRB_Femenino.setEnabled(false);
-                        jRB_masculino.setEnabled(false);
-                    }
-                    jD_crearCliente.pack();
-                    jD_crearCliente.setModal(true);
-                    jD_crearCliente.setLocationRelativeTo(this);
-                    jD_crearCliente.setVisible(true);
-                } else {
-                    JOptionPane.showMessageDialog(this, "Seleccione que tipo de Cliente!");
-                }
-
-                break;
-            case 9:
-                //cargar las comboboxes de la ventana crearProvee
-                jD_crearProvee.pack();
-                jD_crearProvee.setModal(true);
-                jD_crearProvee.setLocationRelativeTo(this);
-                jD_crearProvee.setVisible(true);
-                break;
-            default:
-                JOptionPane.showMessageDialog(this, "Seleccione a quien quiere aplicarle lo antes seleccionado!");
-                break;
-        }
-    }
-
-    private void MODIFICAR() {
-        int quien = A_Quien();
-        switch (quien) {
-            case 1:
-                //Aqui Cargas los id del combobox jCB_modiPlanta
-                jD_modiPlantaFabricacion.pack();
-                jD_modiPlantaFabricacion.setModal(true);
-                jD_modiPlantaFabricacion.setLocationRelativeTo(this);
-                jD_modiPlantaFabricacion.setVisible(true);
-                break;
-            case 2:
-                //Aqui Cargas los RTN del combobox jCB_modiVehiculo
-                jD_modiVehiculo.pack();
-                jD_modiVehiculo.setModal(true);
-                jD_modiVehiculo.setLocationRelativeTo(this);
-                jD_modiVehiculo.setVisible(true);
-                break;
-            case 3:
-                //Aqui Cargas los id del combobox jCB_modiRtnConVenta y jCB_modiRtnClienteVenta
-                jD_modiVenta.pack();
-                jD_modiVenta.setModal(true);
-                jD_modiVenta.setLocationRelativeTo(this);
-                jD_modiVenta.setVisible(true);
-                break;
-            case 4:
-                //Aqui Cargas los id del combobox jCB_modiProveedor
-                jD_modiProveedor.pack();
-                jD_modiProveedor.setModal(true);
-                jD_modiProveedor.setLocationRelativeTo(this);
-                jD_modiProveedor.setVisible(true);
-                break;
-            case 5:
-                //Aqui Cargas los id del combobox jCB_modiCon
-                jD_modiConsecionario.pack();
-                jD_modiConsecionario.setModal(true);
-                jD_modiConsecionario.setLocationRelativeTo(this);
-                jD_modiConsecionario.setVisible(true);
-                break;
-            case 6:
-                //Aqui Cargas los id del combobox jCB_modiRtnConCompra, jCB_modiIdCompaniaCompra, y jCB_modiVinVehiculoCompra
-                jD_modiCompra.pack();
-                jD_modiCompra.setModal(true);
-                jD_modiCompra.setLocationRelativeTo(this);
-                jD_modiCompra.setVisible(true);
-                break;
-            case 7:
-                //Aqui Cargas los id del combobox jCB_modiCompania
-                jD_modiCompania.pack();
-                jD_modiCompania.setModal(true);
-                jD_modiCompania.setLocationRelativeTo(this);
-                jD_modiCompania.setVisible(true);
-                break;
-            case 8:
-                //Aqui Cargas los RTN del combobox jCB_modiCliente
-                jD_modiCliente.pack();
-                jD_modiCliente.setModal(true);
-                jD_modiCliente.setLocationRelativeTo(this);
-                jD_modiCliente.setVisible(true);
-                break;
-            case 9:
-                JOptionPane.showMessageDialog(this, "Lo sentimos, pero no puede modificar este elemento!");
-                break;
-            default:
-                JOptionPane.showMessageDialog(this, "Seleccione a quien quiere aplicarle lo antes seleccionado!");
-                break;
-        }
-    }
-
-    private void ELIMINAR() {
-        int quien = A_Quien();
-        switch (quien) {
-            case 1:
-                //Aqui cargas las plantas para eliminar, en la Jlist
-                
-                jD_eliminarNonTrans.pack();
-                jD_eliminarNonTrans.setModal(true);
-                jD_eliminarNonTrans.setLocationRelativeTo(this);
-                jD_eliminarNonTrans.setVisible(true);
-                break;
-            case 2:
-                //Aqui cargas los Vehiculos para eliminar  en la Jlist
-                jD_eliminarNonTrans.pack();
-                jD_eliminarNonTrans.setModal(true);
-                jD_eliminarNonTrans.setLocationRelativeTo(this);
-                jD_eliminarNonTrans.setVisible(true);
-                break;
-            case 3:
-                //Aqui cargas las ventas para eliminar
-                jD_eliminarTrans.pack();
-                jD_eliminarTrans.setModal(true);
-                jD_eliminarTrans.setLocationRelativeTo(this);
-                jD_eliminarTrans.setVisible(true);
-                break;
-            case 4:
-                //Aqui cargas los proveedores para eliminar  en la Jlist
-                jD_eliminarNonTrans.pack();
-                jD_eliminarNonTrans.setModal(true);
-                jD_eliminarNonTrans.setLocationRelativeTo(this);
-                jD_eliminarNonTrans.setVisible(true);
-                break;
-            case 5:
-                //Aqui cargas los Concesionario para eliminar en la Jlist
-                jD_eliminarNonTrans.pack();
-                jD_eliminarNonTrans.setModal(true);
-                jD_eliminarNonTrans.setLocationRelativeTo(this);
-                jD_eliminarNonTrans.setVisible(true);
-                break;
-            case 6:
-                //Aqui cargas las Compras para eliminar
-                jD_eliminarTrans.pack();
-                jD_eliminarTrans.setModal(true);
-                jD_eliminarTrans.setLocationRelativeTo(this);
-                jD_eliminarTrans.setVisible(true);
-                break;
-            case 7:
-                //Aqui cargas las Companias para eliminar en la Jlist
-                jD_eliminarNonTrans.pack();
-                jD_eliminarNonTrans.setModal(true);
-                jD_eliminarNonTrans.setLocationRelativeTo(this);
-                jD_eliminarNonTrans.setVisible(true);
-                break;
-            case 8:
-                //Aqui cargas los Clientas para eliminar en la Jlist
-                jD_eliminarNonTrans.pack();
-                jD_eliminarNonTrans.setModal(true);
-                jD_eliminarNonTrans.setLocationRelativeTo(this);
-                jD_eliminarNonTrans.setVisible(true);
-                break;
-            case 9:
-                //Aqui cargas las Provisiones para eliminar
-                jD_eliminarTrans.pack();
-                jD_eliminarTrans.setModal(true);
-                jD_eliminarTrans.setLocationRelativeTo(this);
-                jD_eliminarTrans.setVisible(true);
-                break;
-            default:
-                break;
-        }
-    }
-
     private void jB_ejecutarCRUDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_ejecutarCRUDMouseClicked
         int hacer = Que_Quiere_Hacer();
         switch (hacer) {
-            case 1:
-        {
-            try {
-                CREAR();
-            } catch (SQLException ex) {
-                Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            case 1: {
+                try {
+                    CREAR();
+                } catch (SQLException ex) {
+                    Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
-        }
-                break;
+            break;
             case 2:
                 MODIFICAR();
                 break;
@@ -2953,31 +2643,116 @@ public class JFramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jB_modiProveedorMouseClicked
 
     private void jB_VehiculosClientesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_VehiculosClientesMouseClicked
-        llenarTablaPrecio(jT_inventarioProveedoresClientes);
+        String sqlComboBox = "SELECT rtnClien FROM cliente";
+        String sqlTabla = "SELECT compra_a.rtnCon, concesionario.nombreConcesionario, compra_a.vinVehiculoComprado, compra_a.precioVenta "
+                + "FROM compra_a INNER JOIN concesionario ON compra_a.rtnCon = concesionario.rtnCon "
+                + "WHERE NOT EXISTS (SELECT vinVehiculoVendido FROM le_vende_A WHERE le_vende_a.vinVehiculoVendido = compra_a.vinVehiculoComprado)";
+        String[] columnas = {"RTNCon", "Nombre Concesionario", "Vin Vehiculo", "Precio Venta"};
+        llenarTablaSt(sqlTabla, jt_PreciosCliente, columnas);
+        try {
+            llenarComboBox(cb_rtnClienteInventario, sqlComboBox);
+        } catch (SQLException ex) {
+            Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         jD_ventanaInventario.pack();
         jD_ventanaInventario.setModal(true);
         jD_ventanaInventario.setLocationRelativeTo(this);
         jD_ventanaInventario.setVisible(true);
     }//GEN-LAST:event_jB_VehiculosClientesMouseClicked
 
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        //String ConSelected = jCB_concesionarioInventario.getSelectedItem().toString();
-        //cargar los datos del concesionario ingresado
-    }//GEN-LAST:event_jButton1MouseClicked
-
     private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
         //cargas el reporte
     }//GEN-LAST:event_jButton3MouseClicked
 
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-        String paisSelected = jCB_paisInventairo.getSelectedItem().toString();
+        jt_concesionariosPais.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{}
+        ));
+        DefaultTableModel modeloT = (DefaultTableModel) jt_concesionariosPais.getModel();
+
+        String[] columnas = {"RTN","Nombre Concesionario"};
+        for (Object a : columnas) {
+            modeloT.addColumn(a);
+        }
+        jt_concesionariosPais.setModel(modeloT);
+        
+        DefaultComboBoxModel modeloComboBox = (DefaultComboBoxModel) cb_paisInventairo.getModel();
+        String paisSelected = (String) modeloComboBox.getSelectedItem();
         //cargar los datos del pais seleccionado
+        DefaultTableModel modelo = (DefaultTableModel) jt_concesionariosPais.getModel();
+
+        conn = db.getConnection();
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+        String sqlPrueba = "SELECT rtnCon, nombreConcesionario"
+                + " FROM concesionario"
+                + " WHERE pais = ?";
+        try {
+            ps = conn.prepareStatement(sqlPrueba);
+            ps.setString(1, paisSelected);
+            rs = ps.executeQuery();
+            String[] row = new String[2];
+            while (rs.next()) {
+                for (int i = 0; i < 2; i++) {
+                    row[i] = rs.getString(i + 1);
+                }
+                modelo.addRow(row);
+            }
+            jt_concesionariosPais.setModel(modelo);
+            ps.close();
+            conn.close();
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }//GEN-LAST:event_jButton4MouseClicked
 
     private void jB_eliminarNonTransMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_eliminarNonTransMouseClicked
         String elemento_a_eliminar = jL_eliminarNonTrans.getSelectedValue().toString();
         //eliminas el seleccionado
     }//GEN-LAST:event_jB_eliminarNonTransMouseClicked
+
+    private void jt_comprarVehiculoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jt_comprarVehiculoMouseClicked
+        // TODO add your handling code here:
+        DefaultTableModel modelo = (DefaultTableModel) jt_PreciosCliente.getModel();
+        int rows = modelo.getRowCount(), columns = modelo.getColumnCount();
+        Object data[][] = new String[rows][columns];
+        int specificRow = jt_PreciosCliente.getSelectedRow();
+
+        DefaultComboBoxModel modeloComboBox = (DefaultComboBoxModel) cb_rtnClienteInventario.getModel();
+
+        if (specificRow == -1) {
+            JOptionPane.showMessageDialog(jD_ventanaInventario, "Debe seleccionar una fila", "Información", JOptionPane.INFORMATION_MESSAGE);
+        } else {
+            for (int j = 0; j < columns; j++) {
+                data[0][j] = modelo.getValueAt(specificRow, j);
+            }
+            conn = db.getConnection();
+            CallableStatement cs = null;
+            String sql = "{CALL sp_insertarLe_vende_a(?,?,?,?)}";
+            Date fechaHoy = new Date();
+            java.sql.Date fecha = new java.sql.Date(fechaHoy.getTime());
+
+            try {
+                cs = conn.prepareCall(sql);
+                cs.setString(1, (String) data[0][0]);
+                cs.setString(2, (String) modeloComboBox.getSelectedItem());
+                cs.setString(3, (String) data[0][2]);
+                cs.setDate(4, fecha);
+                cs.execute();
+                cs.close();
+                conn.close();
+                JOptionPane.showMessageDialog(jD_crearConsecionario, "Se ha agregado a la DB con éxito", "Exito", JOptionPane.INFORMATION_MESSAGE);
+                String sqlTabla = "SELECT compra_a.rtnCon, concesionario.nombreConcesionario, compra_a.vinVehiculoComprado, compra_a.precioVenta "
+                        + "FROM compra_a INNER JOIN concesionario ON compra_a.rtnCon = concesionario.rtnCon "
+                        + "WHERE NOT EXISTS (SELECT vinVehiculoVendido FROM le_vende_A WHERE le_vende_a.vinVehiculoVendido = compra_a.vinVehiculoComprado)";
+                String[] columnas = {"RTNCon", "Nombre Concesionario", "Vin Vehiculo", "Precio Venta"};
+                llenarTablaSt(sqlTabla, jt_PreciosCliente, columnas);
+            } catch (SQLException ex) {
+                Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }//GEN-LAST:event_jt_comprarVehiculoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -3009,103 +2784,349 @@ public class JFramePrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFramePrincipal().setVisible(true);
+                try {
+                    new JFramePrincipal().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
 
-    public void llenarComboBoxCompañia(JComboBox comboBox) throws SQLException {
+    public void llenarComboBox(JComboBox comboBox, String sql) throws SQLException {
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) comboBox.getModel();
         conn = db.getConnection();
 
-        Statement st = conn.createStatement();
-        ArrayList<String> idCompañiaArray = new ArrayList<>();
-        String sql = "SELECT idCompañia FROM Compañia";
+        Statement st = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
         ResultSet rs = null;
-        int i = 0;
         try {
             rs = st.executeQuery(sql);
             while (rs.next()) {
-                idCompañiaArray.set(i, rs.getString(i + 1));
-                i++;
+                modelo.addElement(rs.getString(1));
             }
         } catch (Exception e) {
-        }
-        DefaultComboBoxModel modelo
-                = (DefaultComboBoxModel) comboBox.getModel();
-
-        for (i = 0; i < idCompañiaArray.size(); i++) {
-            modelo.addElement(idCompañiaArray.get(i));
         }
         comboBox.setModel(modelo);
         conn.close();
     }
 
-    public void llenarComboBoxConcesionario(JComboBox comboBox) throws SQLException {
-        conn = db.getConnection();
+    public void llenarTablaSt(String sql, JTable tabla, String[] columnas) {
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{}
+        ));
+        DefaultTableModel modeloT = (DefaultTableModel) tabla.getModel();
 
-        Statement st = conn.createStatement();
-        ArrayList<String> idCompañiaArray = new ArrayList<>();
-        String sql = "SELECT rtnCon FROM le_vende_a";
-        ResultSet rs = null;
-        int i = 0;
-        try {
-            rs = st.executeQuery(sql);
-            while (rs.next()) {
-                System.out.println("re");
-                idCompañiaArray.set(i, rs.getString(i + 1));
-                i++;
-            }
-        } catch (Exception e) {
+        for (Object a : columnas) {
+            modeloT.addColumn(a);
         }
-        DefaultComboBoxModel modelo
-                = (DefaultComboBoxModel) comboBox.getModel();
+        tabla.setModel(modeloT);
 
-        for (i = 0; i < idCompañiaArray.size(); i++) {
-            modelo.addElement(idCompañiaArray.get(i));
-        }
-        comboBox.setModel(modelo);
-        conn.close();
-    }
-    
-    public void llenarTablaPrecio(JTable tabla){
-        DefaultTableModel modelo;
-        String[]columnas = {"RTN Concesionario","Nombre Concesionario", "VinVehiculoComprado", "Precio Venta"};
-        modelo = new DefaultTableModel(null, columnas);
-        
-        String sql = "SELECT compra_a.rtnCon, conceionario.nombreConcesionario, compra_a.vinVehiculoComprado,compra_a.precioVenta"
-                + "FROM compra_a INNER JOIN concesionario ON compra_a.rtnCon = concesionario.rtnCon";
-        String[] filas = new String[4];
+        DefaultTableModel modelo = (DefaultTableModel) tabla.getModel();
+
+        String[] row = new String[columnas.length];
         Statement st = null;
         ResultSet rs = null;
         conn = db.getConnection();
-        try{
-            st = conn.createStatement();
+        try {
+            st = conn.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
             rs = st.executeQuery(sql);
-            System.out.println("dsd");
-            while(rs.next()) {
-                for (int i = 0; i < 4;i++){
-                    filas[i] = rs.getString(i+1);
+            while (rs.next()) {
+                for (int i = 0; i < columnas.length; i++) {
+                    row[i] = rs.getString(i + 1);
                 }
-                modelo.addRow(filas);
+                modelo.addRow(row);
             }
             tabla.setModel(modelo);
             conn.close();
-        }catch(Exception e){
-            
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
         }
     }
+
     Conexion db = new Conexion();
     Connection conn = null;
+
+    private int Que_Quiere_Hacer() {
+        int hacer = 0;
+        if (jRB_crear.isSelected()) {
+            hacer = 1;
+        } else if (jRB_modificar.isSelected()) {
+            hacer = 2;
+        } else if (jRB_eliminar.isSelected()) {
+            hacer = 3;
+        }
+        return hacer;
+    }
+
+    private int A_Quien() {
+        int quien = 0;
+        if (jRB_plantaFabricacion.isSelected()) {
+            quien = 1;
+        } else if (jRB_vehiculo.isSelected()) {
+            quien = 2;
+        } else if (jRB_venta.isSelected()) {
+            quien = 3;
+        } else if (jRB_proveedor.isSelected()) {
+            quien = 4;
+        } else if (jRB_consecionario.isSelected()) {
+            quien = 5;
+        } else if (jRB_compra.isSelected()) {
+            quien = 6;
+        } else if (jRB_compania.isSelected()) {
+            quien = 7;
+        } else if (jRB_cliente.isSelected()) {
+            quien = 8;
+        } else if (jRB_provee.isSelected()) {
+            quien = 9;
+        }
+        System.out.println(quien);
+        return quien;
+    }
+
+    private void CREAR() throws SQLException {
+        int quien = A_Quien();
+        switch (quien) {
+            case 1:
+                //cargar el combobox jCB_crearIdCompaniaPlanta
+                jD_crearPlantaFabricacion.pack();
+                jD_crearPlantaFabricacion.setModal(true);
+                jD_crearPlantaFabricacion.setLocationRelativeTo(this);
+                jD_crearPlantaFabricacion.setVisible(true);
+
+                break;
+            case 2:
+                //cargar el combobox jCB_crearIdCompaniaVehiculo
+                jD_crearVehiculo.pack();
+                jD_crearVehiculo.setModal(true);
+                jD_crearVehiculo.setLocationRelativeTo(this);
+                jD_crearVehiculo.setVisible(true);
+                break;
+            case 3:
+                //cargar comboboxes de la ventana de crearVenta
+                jD_crearVenta.pack();
+                jD_crearVenta.setModal(true);
+                jD_crearVenta.setLocationRelativeTo(this);
+                jD_crearVenta.setVisible(true);
+                break;
+            case 4:
+                jD_crearProveedor.pack();
+                jD_crearProveedor.setModal(true);
+                jD_crearProveedor.setLocationRelativeTo(this);
+                jD_crearProveedor.setVisible(true);
+                break;
+            case 5:
+                jD_crearConsecionario.pack();
+                jD_crearConsecionario.setModal(true);
+                jD_crearConsecionario.setLocationRelativeTo(this);
+                jD_crearConsecionario.setVisible(true);
+                break;
+            case 6:
+                //cargar las comboboxes de la ventana crearCompra
+                jD_crearCompra.pack();
+                jD_crearCompra.setModal(true);
+                jD_crearCompra.setLocationRelativeTo(this);
+                jD_crearCompra.setVisible(true);
+                break;
+            case 7:
+                jD_crearCompania.pack();
+                jD_crearCompania.setModal(true);
+                jD_crearCompania.setLocationRelativeTo(this);
+                jD_crearCompania.setVisible(true);
+                break;
+            case 8:
+                int seleccion = JOptionPane.showOptionDialog(null, "Seleccione una opcion",
+                        "Selector de opciones", JOptionPane.YES_NO_CANCEL_OPTION,
+                        JOptionPane.QUESTION_MESSAGE, null,// null para icono por defecto.
+                        new Object[]{"Persona", "Empresa"}, "opcion 1");
+                if (seleccion != -1) {
+                    if (seleccion == 0) {
+                        Cliente = 1;
+                        jTF_crearTipoEmpresaCliente.setEnabled(false);
+                        jTF_crearIdPersonaClient.setEnabled(true);
+                        jTF_crearIngresoPersonaCliente.setEnabled(true);
+                        jRB_Femenino.setEnabled(true);
+                        jRB_masculino.setEnabled(true);
+                    } else if (seleccion == 1) {
+                        Cliente = 2;
+                        jTF_crearTipoEmpresaCliente.setEnabled(true);
+                        jTF_crearIdPersonaClient.setEnabled(false);
+                        jTF_crearIngresoPersonaCliente.setEnabled(false);
+                        jRB_Femenino.setEnabled(false);
+                        jRB_masculino.setEnabled(false);
+                    }
+                    jD_crearCliente.pack();
+                    jD_crearCliente.setModal(true);
+                    jD_crearCliente.setLocationRelativeTo(this);
+                    jD_crearCliente.setVisible(true);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Seleccione que tipo de Cliente!");
+                }
+
+                break;
+            case 9:
+                //cargar las comboboxes de la ventana crearProvee
+                jD_crearProvee.pack();
+                jD_crearProvee.setModal(true);
+                jD_crearProvee.setLocationRelativeTo(this);
+                jD_crearProvee.setVisible(true);
+                break;
+            default:
+                JOptionPane.showMessageDialog(this, "Seleccione a quien quiere aplicarle lo antes seleccionado!");
+                break;
+        }
+    }
+
+    private void MODIFICAR() {
+        int quien = A_Quien();
+        switch (quien) {
+            case 1:
+                //Aqui Cargas los id del combobox jCB_modiPlanta
+                jD_modiPlantaFabricacion.pack();
+                jD_modiPlantaFabricacion.setModal(true);
+                jD_modiPlantaFabricacion.setLocationRelativeTo(this);
+                jD_modiPlantaFabricacion.setVisible(true);
+                break;
+            case 2:
+                //Aqui Cargas los RTN del combobox jCB_modiVehiculo
+                jD_modiVehiculo.pack();
+                jD_modiVehiculo.setModal(true);
+                jD_modiVehiculo.setLocationRelativeTo(this);
+                jD_modiVehiculo.setVisible(true);
+                break;
+            case 3:
+                //Aqui Cargas los id del combobox jCB_modiRtnConVenta y jCB_modiRtnClienteVenta
+                jD_modiVenta.pack();
+                jD_modiVenta.setModal(true);
+                jD_modiVenta.setLocationRelativeTo(this);
+                jD_modiVenta.setVisible(true);
+                break;
+            case 4:
+                //Aqui Cargas los id del combobox jCB_modiProveedor
+                jD_modiProveedor.pack();
+                jD_modiProveedor.setModal(true);
+                jD_modiProveedor.setLocationRelativeTo(this);
+                jD_modiProveedor.setVisible(true);
+                break;
+            case 5:
+                //Aqui Cargas los id del combobox jCB_modiCon
+                jD_modiConsecionario.pack();
+                jD_modiConsecionario.setModal(true);
+                jD_modiConsecionario.setLocationRelativeTo(this);
+                jD_modiConsecionario.setVisible(true);
+                break;
+            case 6:
+                //Aqui Cargas los id del combobox jCB_modiRtnConCompra, jCB_modiIdCompaniaCompra, y jCB_modiVinVehiculoCompra
+                jD_modiCompra.pack();
+                jD_modiCompra.setModal(true);
+                jD_modiCompra.setLocationRelativeTo(this);
+                jD_modiCompra.setVisible(true);
+                break;
+            case 7:
+                //Aqui Cargas los id del combobox jCB_modiCompania
+                jD_modiCompania.pack();
+                jD_modiCompania.setModal(true);
+                jD_modiCompania.setLocationRelativeTo(this);
+                jD_modiCompania.setVisible(true);
+                break;
+            case 8:
+                //Aqui Cargas los RTN del combobox jCB_modiCliente
+                jD_modiCliente.pack();
+                jD_modiCliente.setModal(true);
+                jD_modiCliente.setLocationRelativeTo(this);
+                jD_modiCliente.setVisible(true);
+                break;
+            case 9:
+                JOptionPane.showMessageDialog(this, "Lo sentimos, pero no puede modificar este elemento!");
+                break;
+            default:
+                JOptionPane.showMessageDialog(this, "Seleccione a quien quiere aplicarle lo antes seleccionado!");
+                break;
+        }
+    }
+
+    private void ELIMINAR() {
+        int quien = A_Quien();
+        switch (quien) {
+            case 1:
+                //Aqui cargas las plantas para eliminar, en la Jlist
+
+                jD_eliminarNonTrans.pack();
+                jD_eliminarNonTrans.setModal(true);
+                jD_eliminarNonTrans.setLocationRelativeTo(this);
+                jD_eliminarNonTrans.setVisible(true);
+                break;
+            case 2:
+                //Aqui cargas los Vehiculos para eliminar  en la Jlist
+                jD_eliminarNonTrans.pack();
+                jD_eliminarNonTrans.setModal(true);
+                jD_eliminarNonTrans.setLocationRelativeTo(this);
+                jD_eliminarNonTrans.setVisible(true);
+                break;
+            case 3:
+                //Aqui cargas las ventas para eliminar
+                jD_eliminarTrans.pack();
+                jD_eliminarTrans.setModal(true);
+                jD_eliminarTrans.setLocationRelativeTo(this);
+                jD_eliminarTrans.setVisible(true);
+                break;
+            case 4:
+                //Aqui cargas los proveedores para eliminar  en la Jlist
+                jD_eliminarNonTrans.pack();
+                jD_eliminarNonTrans.setModal(true);
+                jD_eliminarNonTrans.setLocationRelativeTo(this);
+                jD_eliminarNonTrans.setVisible(true);
+                break;
+            case 5:
+                //Aqui cargas los Concesionario para eliminar en la Jlist
+                jD_eliminarNonTrans.pack();
+                jD_eliminarNonTrans.setModal(true);
+                jD_eliminarNonTrans.setLocationRelativeTo(this);
+                jD_eliminarNonTrans.setVisible(true);
+                break;
+            case 6:
+                //Aqui cargas las Compras para eliminar
+                jD_eliminarTrans.pack();
+                jD_eliminarTrans.setModal(true);
+                jD_eliminarTrans.setLocationRelativeTo(this);
+                jD_eliminarTrans.setVisible(true);
+                break;
+            case 7:
+                //Aqui cargas las Companias para eliminar en la Jlist
+                jD_eliminarNonTrans.pack();
+                jD_eliminarNonTrans.setModal(true);
+                jD_eliminarNonTrans.setLocationRelativeTo(this);
+                jD_eliminarNonTrans.setVisible(true);
+                break;
+            case 8:
+                //Aqui cargas los Clientas para eliminar en la Jlist
+                jD_eliminarNonTrans.pack();
+                jD_eliminarNonTrans.setModal(true);
+                jD_eliminarNonTrans.setLocationRelativeTo(this);
+                jD_eliminarNonTrans.setVisible(true);
+                break;
+            case 9:
+                //Aqui cargas las Provisiones para eliminar
+                jD_eliminarTrans.pack();
+                jD_eliminarTrans.setModal(true);
+                jD_eliminarTrans.setLocationRelativeTo(this);
+                jD_eliminarTrans.setVisible(true);
+                break;
+            default:
+                break;
+        }
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
-    private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
     private javax.swing.ButtonGroup buttonGroup5;
-    private javax.swing.ButtonGroup buttonGroup6;
+    private javax.swing.ButtonGroup buttonGroup_Tiempo;
+    private javax.swing.ButtonGroup buttonGroup_generIngreso;
+    private javax.swing.JComboBox<String> cb_paisInventairo;
+    private javax.swing.JComboBox<String> cb_rtnClienteInventario;
     private javax.swing.JButton jB_ProveedoresClientes;
     private javax.swing.JButton jB_VehiculosClientes;
-    private javax.swing.JButton jB_anteriorProveedoresClientes;
     private javax.swing.JButton jB_anteriorProveedoresClientes1;
     private javax.swing.JButton jB_anteriorProveedoresClientes2;
     private javax.swing.JButton jB_anteriorProveedoresClientes3;
@@ -3148,12 +3169,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jB_modiVehiculo;
     private javax.swing.JButton jB_modiVenta;
     private javax.swing.JButton jB_reportesAdmin;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
     private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton8;
@@ -3180,7 +3199,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jCB_modiRtnConVenta;
     private javax.swing.JComboBox<String> jCB_modiVehiculo;
     private javax.swing.JComboBox<String> jCB_modiVinVehiculoCompra;
-    private javax.swing.JComboBox<String> jCB_paisInventairo;
     private com.toedter.calendar.JDateChooser jDC_crearFechaCompra;
     private com.toedter.calendar.JDateChooser jDC_crearFechaVenta;
     private com.toedter.calendar.JDateChooser jDC_modiFechaCompra;
@@ -3277,6 +3295,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel151;
     private javax.swing.JLabel jLabel152;
     private javax.swing.JLabel jLabel153;
+    private javax.swing.JLabel jLabel154;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -3292,7 +3311,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel27;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -3421,15 +3439,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JRadioButton jRB_proveedor;
     private javax.swing.JRadioButton jRB_vehiculo;
     private javax.swing.JRadioButton jRB_venta;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane12;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
@@ -3483,15 +3496,21 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTF_modiTransmisionVehiculo;
     private javax.swing.JTextField jTF_username;
     private javax.swing.JTable jT_eliminarTrans;
-    private javax.swing.JTable jT_inventarioProveedoresClientes;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
     private javax.swing.JTable jTable8;
+    private javax.swing.JTable jt_PreciosCliente;
+    private javax.swing.JButton jt_comprarVehiculo;
+    private javax.swing.JTable jt_concesionariosPais;
+    private javax.swing.JTable jt_reporte1;
+    private javax.swing.JRadioButton rb_año;
+    private javax.swing.JRadioButton rb_genero;
+    private javax.swing.JRadioButton rb_ingreso;
+    private javax.swing.JRadioButton rb_mes;
+    private javax.swing.JRadioButton rb_semana;
     // End of variables declaration//GEN-END:variables
 }
