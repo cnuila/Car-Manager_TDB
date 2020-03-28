@@ -30,8 +30,6 @@ import javax.swing.table.DefaultTableModel;
  */
 public class JFramePrincipal extends javax.swing.JFrame {
 
-    int Cliente;
-
     /**
      * Creates new form JFramePrincipal
      */
@@ -83,46 +81,44 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel59 = new javax.swing.JLabel();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        jt_reporte2 = new javax.swing.JTable();
         jLabel42 = new javax.swing.JLabel();
         jButton8 = new javax.swing.JButton();
         jLabel43 = new javax.swing.JLabel();
         jB_anteriorProveedoresClientes4 = new javax.swing.JButton();
+        jdc_fecha1 = new com.toedter.calendar.JDateChooser();
+        jdc_fecha2 = new com.toedter.calendar.JDateChooser();
+        jLabel155 = new javax.swing.JLabel();
+        jLabel156 = new javax.swing.JLabel();
+        cb_transmision = new javax.swing.JComboBox<>();
         jPanel7 = new javax.swing.JPanel();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
         jLabel45 = new javax.swing.JLabel();
         jButton9 = new javax.swing.JButton();
         jLabel46 = new javax.swing.JLabel();
         jB_anteriorProveedoresClientes5 = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jt_reporte3 = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
         jLabel48 = new javax.swing.JLabel();
         jButton10 = new javax.swing.JButton();
         jLabel49 = new javax.swing.JLabel();
         jB_anteriorProveedoresClientes6 = new javax.swing.JButton();
+        jScrollPane5 = new javax.swing.JScrollPane();
+        jt_reporte4 = new javax.swing.JTable();
         jPanel9 = new javax.swing.JPanel();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
         jLabel51 = new javax.swing.JLabel();
         jButton11 = new javax.swing.JButton();
         jLabel52 = new javax.swing.JLabel();
         jB_anteriorProveedoresClientes7 = new javax.swing.JButton();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jt_reporte5 = new javax.swing.JTable();
         jPanel10 = new javax.swing.JPanel();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        jTable7 = new javax.swing.JTable();
         jLabel54 = new javax.swing.JLabel();
         jButton12 = new javax.swing.JButton();
         jLabel55 = new javax.swing.JLabel();
         jB_anteriorProveedoresClientes8 = new javax.swing.JButton();
-        jPanel11 = new javax.swing.JPanel();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        jTable8 = new javax.swing.JTable();
-        jLabel57 = new javax.swing.JLabel();
-        jButton13 = new javax.swing.JButton();
-        jLabel58 = new javax.swing.JLabel();
-        jB_anteriorProveedoresClientes9 = new javax.swing.JButton();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jt_reporte6 = new javax.swing.JTable();
         jD_ventanaServicioLocalizacionVehiculo = new javax.swing.JDialog();
         jB_anteriorProveedoresClientes3 = new javax.swing.JButton();
         jScrollPane3 = new javax.swing.JScrollPane();
@@ -612,40 +608,36 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jScrollPane4.setBackground(new java.awt.Color(51, 0, 0));
 
-        jTable3.setBackground(new java.awt.Color(0, 0, 0));
-        jTable3.setForeground(new java.awt.Color(255, 255, 255));
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        jt_reporte2.setBackground(new java.awt.Color(0, 0, 0));
+        jt_reporte2.setForeground(new java.awt.Color(255, 255, 255));
+        jt_reporte2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"qwqw", "w", "qww", "qw"},
-                {"qwq", "qw", "ww", "qq"},
-                {"wwq", "wqq", "wq", "qw"},
-                {"qw", "wqw", "w", "q"}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "VIN", "RTN", "Nombre Cliente"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jTable3.setFillsViewportHeight(true);
-        jTable3.setFocusable(false);
-        jTable3.setGridColor(new java.awt.Color(102, 0, 0));
-        jTable3.setRowHeight(20);
-        jTable3.setSelectionBackground(new java.awt.Color(204, 0, 0));
-        jTable3.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jTable3.getTableHeader().setReorderingAllowed(false);
-        jScrollPane4.setViewportView(jTable3);
-        if (jTable3.getColumnModel().getColumnCount() > 0) {
-            jTable3.getColumnModel().getColumn(0).setResizable(false);
-            jTable3.getColumnModel().getColumn(1).setResizable(false);
-            jTable3.getColumnModel().getColumn(2).setResizable(false);
-            jTable3.getColumnModel().getColumn(3).setResizable(false);
+        jt_reporte2.setFillsViewportHeight(true);
+        jt_reporte2.setFocusable(false);
+        jt_reporte2.setGridColor(new java.awt.Color(102, 0, 0));
+        jt_reporte2.setRowHeight(20);
+        jt_reporte2.setSelectionBackground(new java.awt.Color(204, 0, 0));
+        jt_reporte2.setSelectionForeground(new java.awt.Color(0, 0, 0));
+        jt_reporte2.getTableHeader().setReorderingAllowed(false);
+        jScrollPane4.setViewportView(jt_reporte2);
+        if (jt_reporte2.getColumnModel().getColumnCount() > 0) {
+            jt_reporte2.getColumnModel().getColumn(0).setResizable(false);
+            jt_reporte2.getColumnModel().getColumn(1).setResizable(false);
+            jt_reporte2.getColumnModel().getColumn(2).setResizable(false);
         }
 
         jPanel6.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
@@ -655,323 +647,210 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel6.add(jLabel42, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jButton8.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel6.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 100, 40, -1));
+        jButton8.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton8MouseClicked(evt);
+            }
+        });
+        jPanel6.add(jButton8, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 290, 40, 20));
 
         jLabel43.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
-        jLabel43.setText("Buscar");
-        jPanel6.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, -1, -1));
+        jLabel43.setText("Fechas:");
+        jPanel6.add(jLabel43, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 60, -1, -1));
 
         jB_anteriorProveedoresClientes4.setBackground(new java.awt.Color(0, 0, 0));
         jB_anteriorProveedoresClientes4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jB_anteriorProveedoresClientes4.setBorderPainted(false);
         jPanel6.add(jB_anteriorProveedoresClientes4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
+        jPanel6.add(jdc_fecha1, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 100, -1, -1));
+        jPanel6.add(jdc_fecha2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, -1, -1));
+
+        jLabel155.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
+        jLabel155.setText("Transmision:");
+        jPanel6.add(jLabel155, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 190, -1, -1));
+
+        jLabel156.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
+        jLabel156.setText("Buscar");
+        jPanel6.add(jLabel156, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 270, -1, -1));
+        jPanel6.add(cb_transmision, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 230, 110, -1));
 
         jTabbedPane1.addTab("Reporte #2", jPanel6);
 
         jPanel7.setBackground(new java.awt.Color(153, 0, 51));
         jPanel7.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jScrollPane5.setBackground(new java.awt.Color(51, 0, 0));
-
-        jTable4.setBackground(new java.awt.Color(0, 0, 0));
-        jTable4.setForeground(new java.awt.Color(255, 255, 255));
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"qwqw", "w", "qww", "qw"},
-                {"qwq", "qw", "ww", "qq"},
-                {"wwq", "wqq", "wq", "qw"},
-                {"qw", "wqw", "w", "q"}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable4.setFillsViewportHeight(true);
-        jTable4.setFocusable(false);
-        jTable4.setGridColor(new java.awt.Color(102, 0, 0));
-        jTable4.setRowHeight(20);
-        jTable4.setSelectionBackground(new java.awt.Color(204, 0, 0));
-        jTable4.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jTable4.getTableHeader().setReorderingAllowed(false);
-        jScrollPane5.setViewportView(jTable4);
-        if (jTable4.getColumnModel().getColumnCount() > 0) {
-            jTable4.getColumnModel().getColumn(0).setResizable(false);
-            jTable4.getColumnModel().getColumn(1).setResizable(false);
-            jTable4.getColumnModel().getColumn(2).setResizable(false);
-            jTable4.getColumnModel().getColumn(3).setResizable(false);
-        }
-
-        jPanel7.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
-
         jLabel45.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
         jLabel45.setText("Reporte #3");
         jPanel7.add(jLabel45, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jButton9.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel7.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 40, -1));
+        jButton9.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton9MouseClicked(evt);
+            }
+        });
+        jPanel7.add(jButton9, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 120, 40, 30));
 
         jLabel46.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
         jLabel46.setText("Buscar");
-        jPanel7.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, -1, -1));
+        jPanel7.add(jLabel46, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 80, -1, -1));
 
         jB_anteriorProveedoresClientes5.setBackground(new java.awt.Color(0, 0, 0));
         jB_anteriorProveedoresClientes5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jB_anteriorProveedoresClientes5.setBorderPainted(false);
         jPanel7.add(jB_anteriorProveedoresClientes5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
 
-        jTabbedPane1.addTab("Reporte #3", jPanel7);
-
-        jPanel8.setBackground(new java.awt.Color(153, 0, 51));
-        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jScrollPane6.setBackground(new java.awt.Color(51, 0, 0));
-
-        jTable5.setBackground(new java.awt.Color(0, 0, 0));
-        jTable5.setForeground(new java.awt.Color(255, 255, 255));
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        jt_reporte3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"qwqw", "w", "qww", "qw"},
-                {"qwq", "qw", "ww", "qq"},
-                {"wwq", "wqq", "wq", "qw"},
-                {"qw", "wqw", "w", "q"}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Marca", "Cantidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jTable5.setFillsViewportHeight(true);
-        jTable5.setFocusable(false);
-        jTable5.setGridColor(new java.awt.Color(102, 0, 0));
-        jTable5.setRowHeight(20);
-        jTable5.setSelectionBackground(new java.awt.Color(204, 0, 0));
-        jTable5.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jTable5.getTableHeader().setReorderingAllowed(false);
-        jScrollPane6.setViewportView(jTable5);
-        if (jTable5.getColumnModel().getColumnCount() > 0) {
-            jTable5.getColumnModel().getColumn(0).setResizable(false);
-            jTable5.getColumnModel().getColumn(1).setResizable(false);
-            jTable5.getColumnModel().getColumn(2).setResizable(false);
-            jTable5.getColumnModel().getColumn(3).setResizable(false);
-        }
+        jScrollPane2.setViewportView(jt_reporte3);
 
-        jPanel8.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+        jPanel7.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 500, -1));
+
+        jTabbedPane1.addTab("Reporte #3", jPanel7);
+
+        jPanel8.setBackground(new java.awt.Color(153, 0, 51));
+        jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel48.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
         jLabel48.setText("Reporte #4");
         jPanel8.add(jLabel48, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jButton10.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel8.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 40, -1));
+        jButton10.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton10MouseClicked(evt);
+            }
+        });
+        jPanel8.add(jButton10, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 130, 40, 30));
 
         jLabel49.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
         jLabel49.setText("Buscar");
-        jPanel8.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, -1, -1));
+        jPanel8.add(jLabel49, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 90, -1, -1));
 
         jB_anteriorProveedoresClientes6.setBackground(new java.awt.Color(0, 0, 0));
         jB_anteriorProveedoresClientes6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jB_anteriorProveedoresClientes6.setBorderPainted(false);
         jPanel8.add(jB_anteriorProveedoresClientes6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
 
+        jt_reporte4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Marca", "Unidad de Ventas"
+            }
+        ));
+        jScrollPane5.setViewportView(jt_reporte4);
+
+        jPanel8.add(jScrollPane5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, 490, -1));
+
         jTabbedPane1.addTab("Reporte #4", jPanel8);
 
         jPanel9.setBackground(new java.awt.Color(153, 0, 51));
         jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jScrollPane7.setBackground(new java.awt.Color(51, 0, 0));
-
-        jTable6.setBackground(new java.awt.Color(0, 0, 0));
-        jTable6.setForeground(new java.awt.Color(255, 255, 255));
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"qwqw", "w", "qww", "qw"},
-                {"qwq", "qw", "ww", "qq"},
-                {"wwq", "wqq", "wq", "qw"},
-                {"qw", "wqw", "w", "q"}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jTable6.setFillsViewportHeight(true);
-        jTable6.setFocusable(false);
-        jTable6.setGridColor(new java.awt.Color(102, 0, 0));
-        jTable6.setRowHeight(20);
-        jTable6.setSelectionBackground(new java.awt.Color(204, 0, 0));
-        jTable6.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jTable6.getTableHeader().setReorderingAllowed(false);
-        jScrollPane7.setViewportView(jTable6);
-        if (jTable6.getColumnModel().getColumnCount() > 0) {
-            jTable6.getColumnModel().getColumn(0).setResizable(false);
-            jTable6.getColumnModel().getColumn(1).setResizable(false);
-            jTable6.getColumnModel().getColumn(2).setResizable(false);
-            jTable6.getColumnModel().getColumn(3).setResizable(false);
-        }
-
-        jPanel9.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
         jLabel51.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
         jLabel51.setText("Reporte #5");
         jPanel9.add(jLabel51, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jButton11.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel9.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 40, -1));
+        jButton11.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton11MouseClicked(evt);
+            }
+        });
+        jPanel9.add(jButton11, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 120, 40, 30));
 
         jLabel52.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
         jLabel52.setText("Buscar");
-        jPanel9.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, -1, -1));
+        jPanel9.add(jLabel52, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 80, -1, -1));
 
         jB_anteriorProveedoresClientes7.setBackground(new java.awt.Color(0, 0, 0));
         jB_anteriorProveedoresClientes7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jB_anteriorProveedoresClientes7.setBorderPainted(false);
         jPanel9.add(jB_anteriorProveedoresClientes7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
 
-        jTabbedPane1.addTab("Reporte #5", jPanel9);
-
-        jPanel10.setBackground(new java.awt.Color(153, 0, 51));
-        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jScrollPane8.setBackground(new java.awt.Color(51, 0, 0));
-
-        jTable7.setBackground(new java.awt.Color(0, 0, 0));
-        jTable7.setForeground(new java.awt.Color(255, 255, 255));
-        jTable7.setModel(new javax.swing.table.DefaultTableModel(
+        jt_reporte5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"qwqw", "w", "qww", "qw"},
-                {"qwq", "qw", "ww", "qq"},
-                {"wwq", "wqq", "wq", "qw"},
-                {"qw", "wqw", "w", "q"}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Tipo Carroceria", "Unidad de Ventas", "Mes"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jTable7.setFillsViewportHeight(true);
-        jTable7.setFocusable(false);
-        jTable7.setGridColor(new java.awt.Color(102, 0, 0));
-        jTable7.setRowHeight(20);
-        jTable7.setSelectionBackground(new java.awt.Color(204, 0, 0));
-        jTable7.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jTable7.getTableHeader().setReorderingAllowed(false);
-        jScrollPane8.setViewportView(jTable7);
-        if (jTable7.getColumnModel().getColumnCount() > 0) {
-            jTable7.getColumnModel().getColumn(0).setResizable(false);
-            jTable7.getColumnModel().getColumn(1).setResizable(false);
-            jTable7.getColumnModel().getColumn(2).setResizable(false);
-            jTable7.getColumnModel().getColumn(3).setResizable(false);
-        }
+        jScrollPane6.setViewportView(jt_reporte5);
 
-        jPanel10.add(jScrollPane8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+        jPanel9.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 510, -1));
+
+        jTabbedPane1.addTab("Reporte #5", jPanel9);
+
+        jPanel10.setBackground(new java.awt.Color(153, 0, 51));
+        jPanel10.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel54.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
         jLabel54.setText("Reporte #6");
         jPanel10.add(jLabel54, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
 
         jButton12.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel10.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 40, -1));
+        jButton12.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton12MouseClicked(evt);
+            }
+        });
+        jPanel10.add(jButton12, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 110, 40, 30));
 
         jLabel55.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
         jLabel55.setText("Buscar");
-        jPanel10.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, -1, -1));
+        jPanel10.add(jLabel55, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, -1, -1));
 
         jB_anteriorProveedoresClientes8.setBackground(new java.awt.Color(0, 0, 0));
         jB_anteriorProveedoresClientes8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jB_anteriorProveedoresClientes8.setBorderPainted(false);
         jPanel10.add(jB_anteriorProveedoresClientes8, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
 
-        jTabbedPane1.addTab("Reporte #6", jPanel10);
-
-        jPanel11.setBackground(new java.awt.Color(153, 0, 51));
-        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jScrollPane9.setBackground(new java.awt.Color(51, 0, 0));
-
-        jTable8.setBackground(new java.awt.Color(0, 0, 0));
-        jTable8.setForeground(new java.awt.Color(255, 255, 255));
-        jTable8.setModel(new javax.swing.table.DefaultTableModel(
+        jt_reporte6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"qwqw", "w", "qww", "qw"},
-                {"qwq", "qw", "ww", "qq"},
-                {"wwq", "wqq", "wq", "qw"},
-                {"qw", "wqw", "w", "q"}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "RTN", "Nombre Concesionario", "Diasde Tardanza"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
-        jTable8.setFillsViewportHeight(true);
-        jTable8.setFocusable(false);
-        jTable8.setGridColor(new java.awt.Color(102, 0, 0));
-        jTable8.setRowHeight(20);
-        jTable8.setSelectionBackground(new java.awt.Color(204, 0, 0));
-        jTable8.setSelectionForeground(new java.awt.Color(0, 0, 0));
-        jTable8.getTableHeader().setReorderingAllowed(false);
-        jScrollPane9.setViewportView(jTable8);
-        if (jTable8.getColumnModel().getColumnCount() > 0) {
-            jTable8.getColumnModel().getColumn(0).setResizable(false);
-            jTable8.getColumnModel().getColumn(1).setResizable(false);
-            jTable8.getColumnModel().getColumn(2).setResizable(false);
-            jTable8.getColumnModel().getColumn(3).setResizable(false);
-        }
+        jScrollPane7.setViewportView(jt_reporte6);
 
-        jPanel11.add(jScrollPane9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
+        jPanel10.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 520, -1));
 
-        jLabel57.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 48)); // NOI18N
-        jLabel57.setText("Reporte #7");
-        jPanel11.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 0, -1, -1));
-
-        jButton13.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel11.add(jButton13, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 40, -1));
-
-        jLabel58.setFont(new java.awt.Font("Bodoni MT Condensed", 0, 24)); // NOI18N
-        jLabel58.setText("Buscar");
-        jPanel11.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 80, -1, -1));
-
-        jB_anteriorProveedoresClientes9.setBackground(new java.awt.Color(0, 0, 0));
-        jB_anteriorProveedoresClientes9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        jB_anteriorProveedoresClientes9.setBorderPainted(false);
-        jPanel11.add(jB_anteriorProveedoresClientes9, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 30, 30));
-
-        jTabbedPane1.addTab("Reporte #7", jPanel11);
+        jTabbedPane1.addTab("Reporte #6", jPanel10);
 
         jD_ventanaMarketing.getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 600));
 
@@ -2227,6 +2106,12 @@ public class JFramePrincipal extends javax.swing.JFrame {
             jD_ventanaCliente.setVisible(true);
         } else if ((username.equals("Marketing") || username.equals("marketing")) && (password.equals("123"))) {
             JOptionPane.showMessageDialog(this, "Bienvenido Empleado de Marketing");
+            String sqlComboBox = "SELECT DISTINCT transmision FROM vehiculo";
+            try {
+                llenarComboBox(cb_transmision, sqlComboBox);
+            } catch (SQLException ex) {
+                Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+            }
             jD_ventanaMarketing.pack();
             jD_ventanaMarketing.setModal(true);
             jD_ventanaMarketing.setLocationRelativeTo(this);
@@ -2660,10 +2545,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_ventanaInventario.setVisible(true);
     }//GEN-LAST:event_jB_VehiculosClientesMouseClicked
 
-    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
-        //cargas el reporte
-    }//GEN-LAST:event_jButton3MouseClicked
-
     private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
         jt_concesionariosPais.setModel(new javax.swing.table.DefaultTableModel(
                 new Object[][]{},
@@ -2671,12 +2552,12 @@ public class JFramePrincipal extends javax.swing.JFrame {
         ));
         DefaultTableModel modeloT = (DefaultTableModel) jt_concesionariosPais.getModel();
 
-        String[] columnas = {"RTN","Nombre Concesionario"};
+        String[] columnas = {"RTN", "Nombre Concesionario"};
         for (Object a : columnas) {
             modeloT.addColumn(a);
         }
         jt_concesionariosPais.setModel(modeloT);
-        
+
         DefaultComboBoxModel modeloComboBox = (DefaultComboBoxModel) cb_paisInventairo.getModel();
         String paisSelected = (String) modeloComboBox.getSelectedItem();
         //cargar los datos del pais seleccionado
@@ -2753,6 +2634,126 @@ public class JFramePrincipal extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jt_comprarVehiculoMouseClicked
+
+    private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
+        // TODO add your handling code here:
+        String[] columnas = {"RTN","Nombre Concesionario", "Dias de Tardanza"};
+        String sql = "SELECT * FROM distribMenosEficaz";
+        llenarTablaSt(sql, jt_reporte6, columnas);
+    }//GEN-LAST:event_jButton12MouseClicked
+
+    private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
+        // TODO add your handling code here:
+        String[] columnas = {"Tipo Carroceria","Unidad de Ventas", "Mes"};
+        String sql = "SELECT * FROM mesConvertibles";
+        llenarTablaSt(sql, jt_reporte5, columnas);
+    }//GEN-LAST:event_jButton11MouseClicked
+
+    private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
+        // TODO add your handling code here:
+        String[] columnas = {"Marca","Unidad de Ventas"};
+        String sql = "SELECT * FROM mejoresMarcasVentas WHERE rownum <= 2";
+        llenarTablaSt(sql, jt_reporte4, columnas);
+    }//GEN-LAST:event_jButton10MouseClicked
+
+    private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
+        // TODO add your handling code here:
+        String[] columnas = {"Marca","Cantidad"};
+        String sql = "SELECT * FROM mejoresMarcasGanancia WHERE rownum <= 2";
+        llenarTablaSt(sql, jt_reporte3, columnas);
+    }//GEN-LAST:event_jButton9MouseClicked
+
+    private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
+        // TODO add your handling code here:
+        jt_reporte2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object[][]{},
+            new String[]{}
+        ));
+        DefaultTableModel modeloT = (DefaultTableModel) jt_reporte2.getModel();
+
+        String[] columnas = {"VIN", "RTN", "Nombre Cliente"};
+        for (Object a : columnas) {
+            modeloT.addColumn(a);
+        }
+        jt_reporte2.setModel(modeloT);
+
+        DefaultComboBoxModel modeloComboBox = (DefaultComboBoxModel) cb_transmision.getModel();
+        String transmisionSelected = (String) modeloComboBox.getSelectedItem();
+        //cargar los datos del pais seleccionado
+        DefaultTableModel modelo = (DefaultTableModel) jt_reporte2.getModel();
+
+        String sqlPrueba = "SELECT vin, rtnClien, nombreCliente "
+        + "FROM transmisiondefectuosa "
+        + "WHERE ? > transmisionDefectuosa.fecha and ? < transmisionDefectuosa.fecha and "
+        + "transmisionDefectuosa.transmision = ?";
+        try {
+            Date fecha1 = new java.sql.Date(jdc_fecha1.getDate().getTime());
+            Date fecha2 = new java.sql.Date(jdc_fecha2.getDate().getTime());
+            if (fecha1.compareTo(fecha2) == 0 || fecha1.compareTo(fecha2) > 0) {
+                JOptionPane.showMessageDialog(jD_ventanaMarketing, "Las fechas no pueden ser iguales y/o la primera primera debe ser menor a la segunda", "Información", JOptionPane.INFORMATION_MESSAGE);
+            } else {
+                conn = db.getConnection();
+                PreparedStatement ps = null;
+                ResultSet rs = null;
+                ps = conn.prepareStatement(sqlPrueba);
+                ps.setDate(1, (java.sql.Date) fecha2);
+                ps.setDate(2, (java.sql.Date) fecha1);
+                ps.setString(3, transmisionSelected);
+                rs = ps.executeQuery();
+                String[] row = new String[columnas.length];
+                while (rs.next()) {
+                    for (int i = 0; i < columnas.length; i++) {
+                        row[i] = rs.getString(i + 1);
+                    }
+                    modelo.addRow(row);
+                }
+                jt_reporte2.setModel(modelo);
+                ps.close();
+                conn.close();
+            }
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+    }//GEN-LAST:event_jButton8MouseClicked
+
+    private void jButton3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton3MouseClicked
+        //cargas el reporte
+        String sql = "";
+        if (rb_año.isSelected() && rb_genero.isSelected()) {
+            sql = "SELECT * FROM tendenciaVentasAñoGen";
+            String[] columnas = {"Marca", "Cantidad Marca", "Año", "Genero"};
+            llenarTablaSt(sql, jt_reporte1, columnas);
+        }
+        if (rb_año.isSelected() && rb_ingreso.isSelected()) {
+            sql = "SELECT * FROM tendenciaVentasAñoIngreso";
+            String[] columnas = {"Marca", "Cantidad Marca", "Año", "Ingreso Anual"};
+            llenarTablaSt(sql, jt_reporte1, columnas);
+        }
+        if (rb_mes.isSelected()) {
+            if (rb_genero.isSelected()) {
+                sql = "SELECT * FROM tendenciaVentasMesGen";
+                String[] columnas = {"Marca", "Cantidad Marca", "Mes", "Genero"};
+                llenarTablaSt(sql, jt_reporte1, columnas);
+            }
+            if (rb_ingreso.isSelected()) {
+                sql = "SELECT * FROM tendenciaVentasMesIngreso";
+                String[] columnas = {"Marca", "Cantidad Marca", "Mes", "Ingreso Anual"};
+                llenarTablaSt(sql, jt_reporte1, columnas);
+            }
+        }
+        if (rb_semana.isSelected()) {
+            if (rb_genero.isSelected()) {
+                sql = "SELECT * FROM tendenciaVentasSemanaGen";
+                String[] columnas = {"Marca", "Cantidad Marca", "Semana", "Genero"};
+                llenarTablaSt(sql, jt_reporte1, columnas);
+            }
+            if (rb_ingreso.isSelected()) {
+                sql = "SELECT * FROM tendenciaVentasSemanaIngreso";
+                String[] columnas = {"Marca", "Cantidad Marca", "Semana", "Ingreso Anual"};
+                llenarTablaSt(sql, jt_reporte1, columnas);
+            }
+        }
+    }//GEN-LAST:event_jButton3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -3116,6 +3117,8 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 break;
         }
     }
+
+    int Cliente;
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
@@ -3125,6 +3128,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup_generIngreso;
     private javax.swing.JComboBox<String> cb_paisInventairo;
     private javax.swing.JComboBox<String> cb_rtnClienteInventario;
+    private javax.swing.JComboBox<String> cb_transmision;
     private javax.swing.JButton jB_ProveedoresClientes;
     private javax.swing.JButton jB_VehiculosClientes;
     private javax.swing.JButton jB_anteriorProveedoresClientes1;
@@ -3135,7 +3139,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jB_anteriorProveedoresClientes6;
     private javax.swing.JButton jB_anteriorProveedoresClientes7;
     private javax.swing.JButton jB_anteriorProveedoresClientes8;
-    private javax.swing.JButton jB_anteriorProveedoresClientes9;
     private javax.swing.JButton jB_cargarModiCliente;
     private javax.swing.JButton jB_cargarModiCompania;
     private javax.swing.JButton jB_cargarModiCompra;
@@ -3172,7 +3175,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
     private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton8;
@@ -3296,6 +3298,8 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel152;
     private javax.swing.JLabel jLabel153;
     private javax.swing.JLabel jLabel154;
+    private javax.swing.JLabel jLabel155;
+    private javax.swing.JLabel jLabel156;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
@@ -3339,8 +3343,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
-    private javax.swing.JLabel jLabel57;
-    private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
@@ -3390,7 +3392,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JPasswordField jP_password;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
@@ -3443,13 +3444,12 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane11;
     private javax.swing.JScrollPane jScrollPane12;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane8;
-    private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JTextField jTF_crearCarroceria;
     private javax.swing.JTextField jTF_crearColorVehiculo;
     private javax.swing.JTextField jTF_crearDireccionCliente;
@@ -3497,16 +3497,17 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTF_username;
     private javax.swing.JTable jT_eliminarTrans;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JTable jTable6;
-    private javax.swing.JTable jTable7;
-    private javax.swing.JTable jTable8;
+    private com.toedter.calendar.JDateChooser jdc_fecha1;
+    private com.toedter.calendar.JDateChooser jdc_fecha2;
     private javax.swing.JTable jt_PreciosCliente;
     private javax.swing.JButton jt_comprarVehiculo;
     private javax.swing.JTable jt_concesionariosPais;
     private javax.swing.JTable jt_reporte1;
+    private javax.swing.JTable jt_reporte2;
+    private javax.swing.JTable jt_reporte3;
+    private javax.swing.JTable jt_reporte4;
+    private javax.swing.JTable jt_reporte5;
+    private javax.swing.JTable jt_reporte6;
     private javax.swing.JRadioButton rb_año;
     private javax.swing.JRadioButton rb_genero;
     private javax.swing.JRadioButton rb_ingreso;
