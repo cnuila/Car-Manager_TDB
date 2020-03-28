@@ -194,30 +194,32 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jRB_crearSuministradora = new javax.swing.JRadioButton();
         jLabel60 = new javax.swing.JLabel();
         jLabel143 = new javax.swing.JLabel();
-        jCB_crearIdCompaniaPlanta = new javax.swing.JComboBox<>();
+        cb_crearIdCompaniaPlanta = new javax.swing.JComboBox<>();
         jB_crearPlanta = new javax.swing.JButton();
+        jLabel28 = new javax.swing.JLabel();
         jD_crearVehiculo = new javax.swing.JDialog();
         jLabel62 = new javax.swing.JLabel();
+        jPanel12 = new javax.swing.JPanel();
+        jB_crearVehiculo = new javax.swing.JButton();
+        jLabel145 = new javax.swing.JLabel();
+        jCB_crearIdCompaniaVehiculo = new javax.swing.JComboBox<>();
+        jLabel30 = new javax.swing.JLabel();
         jLabel63 = new javax.swing.JLabel();
-        jTF_crearPrecioVehiculo = new javax.swing.JTextField();
         jLabel64 = new javax.swing.JLabel();
         jTF_crearVinVehiculo = new javax.swing.JTextField();
         jLabel65 = new javax.swing.JLabel();
         jTF_crearCarroceria = new javax.swing.JTextField();
+        jSpinner1 = new javax.swing.JSpinner();
         jLabel66 = new javax.swing.JLabel();
         jTF_crearColorVehiculo = new javax.swing.JTextField();
         jLabel67 = new javax.swing.JLabel();
         jTF_crearTransmisionVehiculo = new javax.swing.JTextField();
         jLabel68 = new javax.swing.JLabel();
-        jLabel69 = new javax.swing.JLabel();
         jTF_crearTipoMotor = new javax.swing.JTextField();
+        jLabel69 = new javax.swing.JLabel();
         jTF_crearModeloVehiculo = new javax.swing.JTextField();
         jLabel73 = new javax.swing.JLabel();
         jTF_crearMarcaVehiculo = new javax.swing.JTextField();
-        jPanel12 = new javax.swing.JPanel();
-        jB_crearVehiculo = new javax.swing.JButton();
-        jLabel145 = new javax.swing.JLabel();
-        jCB_crearIdCompaniaVehiculo = new javax.swing.JComboBox<>();
         jD_crearProveedor = new javax.swing.JDialog();
         jLabel77 = new javax.swing.JLabel();
         jLabel78 = new javax.swing.JLabel();
@@ -252,13 +254,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel88 = new javax.swing.JLabel();
         jLabel89 = new javax.swing.JLabel();
         jLabel91 = new javax.swing.JLabel();
-        jLabel92 = new javax.swing.JLabel();
-        jLabel93 = new javax.swing.JLabel();
-        jLabel94 = new javax.swing.JLabel();
-        jRB_masculino = new javax.swing.JRadioButton();
-        jRB_Femenino = new javax.swing.JRadioButton();
-        jTF_crearIdPersonaClient = new javax.swing.JTextField();
-        jTF_crearIngresoPersonaCliente = new javax.swing.JTextField();
         jTF_crearRtnCliente = new javax.swing.JTextField();
         jTF_crearNombreCliente = new javax.swing.JTextField();
         jTF_crearTelefonoClietne = new javax.swing.JTextField();
@@ -269,16 +264,26 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jTF_crearTipoEmpresaCliente = new javax.swing.JTextField();
         jLabel95 = new javax.swing.JLabel();
         jLabel153 = new javax.swing.JLabel();
+        jLabel92 = new javax.swing.JLabel();
+        jRB_masculino = new javax.swing.JRadioButton();
+        jRB_Femenino = new javax.swing.JRadioButton();
+        jLabel93 = new javax.swing.JLabel();
+        jTF_crearIdPersonaClient = new javax.swing.JTextField();
+        jLabel94 = new javax.swing.JLabel();
+        js_ingresoAnual = new javax.swing.JSpinner();
         jD_crearVenta = new javax.swing.JDialog();
         jLabel70 = new javax.swing.JLabel();
         jLabel74 = new javax.swing.JLabel();
-        jLabel75 = new javax.swing.JLabel();
-        jLabel76 = new javax.swing.JLabel();
-        jDC_crearFechaVenta = new com.toedter.calendar.JDateChooser();
-        jB_crearVenta = new javax.swing.JButton();
         jPanel17 = new javax.swing.JPanel();
         jCB_crearRtnConVenta = new javax.swing.JComboBox<>();
         jCB_crearRtnClienteVenta = new javax.swing.JComboBox<>();
+        jB_crearVenta = new javax.swing.JButton();
+        jLabel57 = new javax.swing.JLabel();
+        jCB_crearVinVehiculoVendido = new javax.swing.JComboBox<>();
+        jLabel76 = new javax.swing.JLabel();
+        jDC_crearFechaVenta = new com.toedter.calendar.JDateChooser();
+        jLabel111 = new javax.swing.JLabel();
+        jLabel75 = new javax.swing.JLabel();
         jD_crearCompra = new javax.swing.JDialog();
         jLabel97 = new javax.swing.JLabel();
         jLabel98 = new javax.swing.JLabel();
@@ -290,17 +295,21 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jCB_crearVinVehiculoCompra = new javax.swing.JComboBox<>();
         jB_crearCompra = new javax.swing.JButton();
         jLabel99 = new javax.swing.JLabel();
-        jTF_crearPrecioCompra = new javax.swing.JTextField();
         jLabel148 = new javax.swing.JLabel();
         jDC_crearFechaCompra = new com.toedter.calendar.JDateChooser();
+        jLabel58 = new javax.swing.JLabel();
+        js_precioVenta = new javax.swing.JSpinner();
         jD_crearProvee = new javax.swing.JDialog();
         jLabel101 = new javax.swing.JLabel();
         jLabel102 = new javax.swing.JLabel();
         jLabel103 = new javax.swing.JLabel();
-        jB_crearProvee = new javax.swing.JButton();
         jPanel21 = new javax.swing.JPanel();
         jCB_crearIdCompaniaProvee = new javax.swing.JComboBox<>();
         jCB_crearIdProveedorProvee = new javax.swing.JComboBox<>();
+        jB_crearProvee = new javax.swing.JButton();
+        jLabel104 = new javax.swing.JLabel();
+        jLabel114 = new javax.swing.JLabel();
+        jt_nombreProducto = new javax.swing.JTextField();
         jD_modiPlantaFabricacion = new javax.swing.JDialog();
         jLabel107 = new javax.swing.JLabel();
         jB_modiPlanta = new javax.swing.JButton();
@@ -386,40 +395,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jCB_modiProveedor = new javax.swing.JComboBox<>();
         jLabel140 = new javax.swing.JLabel();
         jB_cargarModiProveedor = new javax.swing.JButton();
-        jD_modiVenta = new javax.swing.JDialog();
-        jLabel104 = new javax.swing.JLabel();
-        jLabel111 = new javax.swing.JLabel();
-        jLabel114 = new javax.swing.JLabel();
-        jLabel121 = new javax.swing.JLabel();
-        jDC_modiFechaVenta = new com.toedter.calendar.JDateChooser();
-        jPanel27 = new javax.swing.JPanel();
-        jCB_modiRtnConVenta = new javax.swing.JComboBox<>();
-        jCB_modiRtnClienteVenta = new javax.swing.JComboBox<>();
-        jB_modiVenta = new javax.swing.JButton();
-        jB_cargarModiVenta = new javax.swing.JButton();
-        jD_modiCompra = new javax.swing.JDialog();
-        jLabel130 = new javax.swing.JLabel();
-        jPanel28 = new javax.swing.JPanel();
-        jLabel134 = new javax.swing.JLabel();
-        jCB_modiRtnConCompra = new javax.swing.JComboBox<>();
-        jCB_modiIdCompaniaCompra = new javax.swing.JComboBox<>();
-        jCB_modiVinVehiculoCompra = new javax.swing.JComboBox<>();
-        jB_modiCompra = new javax.swing.JButton();
-        jB_cargarModiCompra = new javax.swing.JButton();
-        jLabel131 = new javax.swing.JLabel();
-        jLabel133 = new javax.swing.JLabel();
-        jTF_modiPrecioCompra = new javax.swing.JTextField();
-        jLabel132 = new javax.swing.JLabel();
-        jLabel138 = new javax.swing.JLabel();
-        jDC_modiFechaCompra = new com.toedter.calendar.JDateChooser();
-        jD_modiProvee = new javax.swing.JDialog();
-        jLabel135 = new javax.swing.JLabel();
-        jLabel136 = new javax.swing.JLabel();
-        jLabel137 = new javax.swing.JLabel();
-        jPanel29 = new javax.swing.JPanel();
-        jCB_modiIdCompaniaProvee = new javax.swing.JComboBox<>();
-        jCB_modiIdProveedorProvee = new javax.swing.JComboBox<>();
-        jB_modiProvee = new javax.swing.JButton();
         jD_eliminarNonTrans = new javax.swing.JDialog();
         jB_eliminarNonTrans = new javax.swing.JButton();
         jLabel139 = new javax.swing.JLabel();
@@ -1155,6 +1130,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel16.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         buttonGroup4.add(jRB_crearEnsambladora);
+        jRB_crearEnsambladora.setSelected(true);
         jRB_crearEnsambladora.setText("Ensambladora");
         jPanel16.add(jRB_crearEnsambladora, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, -1, -1));
 
@@ -1167,7 +1143,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jLabel143.setText("idCompania");
         jPanel16.add(jLabel143, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 200, -1, -1));
-        jPanel16.add(jCB_crearIdCompaniaPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 159, -1));
+        jPanel16.add(cb_crearIdCompaniaPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 200, 159, -1));
 
         jB_crearPlanta.setText("Crear");
         jB_crearPlanta.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1175,7 +1151,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 jB_crearPlantaMouseClicked(evt);
             }
         });
-        jPanel16.add(jB_crearPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 340, -1, -1));
+        jPanel16.add(jB_crearPlanta, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, -1, -1));
+
+        jLabel28.setText("Crear Planta");
+        jPanel16.add(jLabel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, -1, -1));
 
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
@@ -1195,38 +1174,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jD_crearVehiculo.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jD_crearVehiculo.getContentPane().add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
 
-        jLabel63.setText("Precio");
-        jD_crearVehiculo.getContentPane().add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, -1, -1));
-        jD_crearVehiculo.getContentPane().add(jTF_crearPrecioVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 200, 202, -1));
-
-        jLabel64.setText("VIN");
-        jD_crearVehiculo.getContentPane().add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, -1, -1));
-        jD_crearVehiculo.getContentPane().add(jTF_crearVinVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 250, 202, -1));
-
-        jLabel65.setText("Carroceria");
-        jD_crearVehiculo.getContentPane().add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 320, -1, -1));
-        jD_crearVehiculo.getContentPane().add(jTF_crearCarroceria, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 310, 202, -1));
-
-        jLabel66.setText("Color");
-        jD_crearVehiculo.getContentPane().add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 370, -1, -1));
-        jD_crearVehiculo.getContentPane().add(jTF_crearColorVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 360, 202, -1));
-
-        jLabel67.setText("Transmision");
-        jD_crearVehiculo.getContentPane().add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 420, -1, -1));
-        jD_crearVehiculo.getContentPane().add(jTF_crearTransmisionVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 420, 202, -1));
-
-        jLabel68.setText("Tipo de Motor");
-        jD_crearVehiculo.getContentPane().add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 470, -1, -1));
-
-        jLabel69.setText("Modelo");
-        jD_crearVehiculo.getContentPane().add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 520, -1, -1));
-        jD_crearVehiculo.getContentPane().add(jTF_crearTipoMotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 470, 202, -1));
-        jD_crearVehiculo.getContentPane().add(jTF_crearModeloVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 520, 202, -1));
-
-        jLabel73.setText("Marca");
-        jD_crearVehiculo.getContentPane().add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 580, -1, -1));
-        jD_crearVehiculo.getContentPane().add(jTF_crearMarcaVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 580, 200, -1));
-
         jPanel12.setBackground(new java.awt.Color(204, 204, 204));
         jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -1236,13 +1183,48 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 jB_crearVehiculoMouseClicked(evt);
             }
         });
-        jPanel12.add(jB_crearVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 640, -1, -1));
+        jPanel12.add(jB_crearVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, -1, -1));
 
         jLabel145.setText("idCompania");
-        jPanel12.add(jLabel145, new org.netbeans.lib.awtextra.AbsoluteConstraints(75, 147, -1, -1));
+        jPanel12.add(jLabel145, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+        jPanel12.add(jCB_crearIdCompaniaVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 120, -1));
 
-        jCB_crearIdCompaniaVehiculo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel12.add(jCB_crearIdCompaniaVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(185, 137, 207, -1));
+        jLabel30.setText("Crear Vehiculo");
+        jPanel12.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 30, -1, 20));
+
+        jLabel63.setText("Precio");
+        jPanel12.add(jLabel63, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, -1, -1));
+
+        jLabel64.setText("VIN");
+        jPanel12.add(jLabel64, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        jPanel12.add(jTF_crearVinVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 160, -1));
+
+        jLabel65.setText("Carroceria");
+        jPanel12.add(jLabel65, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
+        jPanel12.add(jTF_crearCarroceria, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 210, 160, -1));
+
+        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 1.0d));
+        jPanel12.add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 80, -1));
+
+        jLabel66.setText("Color");
+        jPanel12.add(jLabel66, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 270, -1, -1));
+        jPanel12.add(jTF_crearColorVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 270, 110, -1));
+
+        jLabel67.setText("Transmision");
+        jPanel12.add(jLabel67, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 140, -1, -1));
+        jPanel12.add(jTF_crearTransmisionVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 130, -1));
+
+        jLabel68.setText("Tipo de Motor");
+        jPanel12.add(jLabel68, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 190, -1, -1));
+        jPanel12.add(jTF_crearTipoMotor, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 190, 130, -1));
+
+        jLabel69.setText("Modelo");
+        jPanel12.add(jLabel69, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 240, -1, -1));
+        jPanel12.add(jTF_crearModeloVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 240, 150, -1));
+
+        jLabel73.setText("Marca");
+        jPanel12.add(jLabel73, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 290, -1, -1));
+        jPanel12.add(jTF_crearMarcaVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 290, 140, -1));
 
         jD_crearVehiculo.getContentPane().add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, 690));
 
@@ -1397,26 +1379,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jLabel91.setText("Direccion");
         jD_crearCliente.getContentPane().add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 270, -1, -1));
-
-        jLabel92.setText("Sexo");
-        jD_crearCliente.getContentPane().add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 383, -1, -1));
-
-        jLabel93.setText("Id del Cliente");
-        jD_crearCliente.getContentPane().add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 432, -1, -1));
-
-        jLabel94.setText("Ingreso Anual");
-        jD_crearCliente.getContentPane().add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 487, -1, -1));
-
-        buttonGroup5.add(jRB_masculino);
-        jRB_masculino.setText("M");
-        jD_crearCliente.getContentPane().add(jRB_masculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 382, -1, -1));
-
-        jRB_Femenino.setBackground(new java.awt.Color(0, 0, 0));
-        buttonGroup5.add(jRB_Femenino);
-        jRB_Femenino.setText("F");
-        jD_crearCliente.getContentPane().add(jRB_Femenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 382, -1, -1));
-        jD_crearCliente.getContentPane().add(jTF_crearIdPersonaClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(104, 426, 159, -1));
-        jD_crearCliente.getContentPane().add(jTF_crearIngresoPersonaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(102, 481, 161, -1));
         jD_crearCliente.getContentPane().add(jTF_crearRtnCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 110, 180, -1));
         jD_crearCliente.getContentPane().add(jTF_crearNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 160, 180, -1));
         jD_crearCliente.getContentPane().add(jTF_crearTelefonoClietne, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 210, 180, -1));
@@ -1432,15 +1394,37 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 jB_crearClienteMouseClicked(evt);
             }
         });
-        jPanel13.add(jB_crearCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 540, -1, -1));
-        jPanel13.add(jTF_crearTipoEmpresaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 380, 163, -1));
+        jPanel13.add(jB_crearCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 420, -1, -1));
+        jPanel13.add(jTF_crearTipoEmpresaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 350, 163, -1));
 
         jLabel95.setBackground(new java.awt.Color(0, 0, 0));
         jLabel95.setText("Tipo de Empresa");
-        jPanel13.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 390, -1, -1));
+        jPanel13.add(jLabel95, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 350, -1, -1));
 
         jLabel153.setText("Crear Cliente");
         jPanel13.add(jLabel153, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, -1, -1));
+
+        jLabel92.setText("Sexo");
+        jPanel13.add(jLabel92, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 340, -1, -1));
+
+        buttonGroup5.add(jRB_masculino);
+        jRB_masculino.setText("M");
+        jPanel13.add(jRB_masculino, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 340, -1, -1));
+
+        jRB_Femenino.setBackground(new java.awt.Color(0, 0, 0));
+        buttonGroup5.add(jRB_Femenino);
+        jRB_Femenino.setText("F");
+        jPanel13.add(jRB_Femenino, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 340, -1, -1));
+
+        jLabel93.setText("Id del Cliente");
+        jPanel13.add(jLabel93, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, -1, -1));
+        jPanel13.add(jTF_crearIdPersonaClient, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 400, 159, -1));
+
+        jLabel94.setText("Ingreso Anual");
+        jPanel13.add(jLabel94, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 440, -1, -1));
+
+        js_ingresoAnual.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 1.0d));
+        jPanel13.add(js_ingresoAnual, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 440, 110, -1));
 
         jD_crearCliente.getContentPane().add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 580, 580));
 
@@ -1451,14 +1435,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel74.setText("RTN del Concesionario");
         jD_crearVenta.getContentPane().add(jLabel74, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 97, -1, -1));
 
-        jLabel75.setText("RTN del Cliente");
-        jD_crearVenta.getContentPane().add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 164, -1, -1));
-
-        jLabel76.setText("Fecha de la compra ");
-        jD_crearVenta.getContentPane().add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 232, -1, -1));
-
-        jDC_crearFechaVenta.setDate(new java.util.Date(934933459000L));
-        jD_crearVenta.getContentPane().add(jDC_crearFechaVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 237, -1));
+        jPanel17.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel17.add(jCB_crearRtnConVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 160, -1));
+        jPanel17.add(jCB_crearRtnClienteVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 160, -1));
 
         jB_crearVenta.setText("Crear");
         jB_crearVenta.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1466,16 +1446,23 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 jB_crearVentaMouseClicked(evt);
             }
         });
-        jD_crearVenta.getContentPane().add(jB_crearVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 320, -1, -1));
+        jPanel17.add(jB_crearVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, -1, -1));
 
-        jPanel17.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel17.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel57.setText("Crear Venta");
+        jPanel17.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, -1, -1));
+        jPanel17.add(jCB_crearVinVehiculoVendido, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 210, 180, -1));
 
-        jCB_crearRtnConVenta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel17.add(jCB_crearRtnConVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 160, -1));
+        jLabel76.setText("Fecha de la compra ");
+        jPanel17.add(jLabel76, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 250, -1, -1));
 
-        jCB_crearRtnClienteVenta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel17.add(jCB_crearRtnClienteVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 160, -1));
+        jDC_crearFechaVenta.setDate(new java.util.Date(934933459000L));
+        jPanel17.add(jDC_crearFechaVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 250, 237, -1));
+
+        jLabel111.setText("RTN del Cliente");
+        jPanel17.add(jLabel111, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 164, -1, -1));
+
+        jLabel75.setText("Vin Vehiculo");
+        jPanel17.add(jLabel75, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
 
         jD_crearVenta.getContentPane().add(jPanel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 350));
 
@@ -1493,14 +1480,8 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel14.setBackground(new java.awt.Color(204, 204, 204));
         jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         jPanel14.add(jLabel96, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
-
-        jCB_crearRtnConCompra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel14.add(jCB_crearRtnConCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 180, -1));
-
-        jCB_crearIdCompaniaCompra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel14.add(jCB_crearIdCompaniaCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 170, 180, -1));
-
-        jCB_crearVinVehiculoCompra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         jPanel14.add(jCB_crearVinVehiculoCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 240, 180, -1));
 
         jB_crearCompra.setText("Crear");
@@ -1509,17 +1490,22 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 jB_crearCompraMouseClicked(evt);
             }
         });
-        jPanel14.add(jB_crearCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, -1, -1));
+        jPanel14.add(jB_crearCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 410, -1, -1));
 
         jLabel99.setText("Precio de la venta");
         jPanel14.add(jLabel99, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 370, -1, -1));
-        jPanel14.add(jTF_crearPrecioCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 360, 205, -1));
 
         jLabel148.setText("Fecha Adquirido");
         jPanel14.add(jLabel148, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 300, -1, -1));
 
         jDC_crearFechaCompra.setDate(new java.util.Date(976084732000L));
         jPanel14.add(jDC_crearFechaCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 290, 200, -1));
+
+        jLabel58.setText("Crear Compra");
+        jPanel14.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 40, -1, -1));
+
+        js_precioVenta.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, null, 1.0d));
+        jPanel14.add(js_precioVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 370, 120, -1));
 
         jD_crearCompra.getContentPane().add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 500));
 
@@ -1532,22 +1518,25 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jLabel103.setText("Id Proveedor");
         jD_crearProvee.getContentPane().add(jLabel103, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 168, -1, -1));
 
+        jPanel21.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel21.add(jCB_crearIdCompaniaProvee, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 150, -1));
+        jPanel21.add(jCB_crearIdProveedorProvee, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 150, -1));
+
         jB_crearProvee.setText("Crear");
         jB_crearProvee.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jB_crearProveeMouseClicked(evt);
             }
         });
-        jD_crearProvee.getContentPane().add(jB_crearProvee, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 290, -1, -1));
+        jPanel21.add(jB_crearProvee, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 260, -1, -1));
 
-        jPanel21.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel21.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jLabel104.setText("Provee");
+        jPanel21.add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, -1, -1));
 
-        jCB_crearIdCompaniaProvee.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel21.add(jCB_crearIdCompaniaProvee, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 150, -1));
-
-        jCB_crearIdProveedorProvee.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel21.add(jCB_crearIdProveedorProvee, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 150, -1));
+        jLabel114.setText("Nombre Producto");
+        jPanel21.add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, -1, -1));
+        jPanel21.add(jt_nombreProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 210, 140, -1));
 
         jD_crearProvee.getContentPane().add(jPanel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 330));
 
@@ -1574,7 +1563,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
         jPanel23.add(jLabel106, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, -1, -1));
 
         buttonGroup4.add(jRB_modiEnsambladora);
-        jRB_modiEnsambladora.setSelected(true);
         jRB_modiEnsambladora.setText("Ensambladora");
         jPanel23.add(jRB_modiEnsambladora, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, -1, -1));
 
@@ -1838,100 +1826,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
         jD_modiProveedor.getContentPane().add(jPanel31, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 460, 300));
 
-        jD_modiVenta.setResizable(false);
-        jD_modiVenta.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jD_modiVenta.getContentPane().add(jLabel104, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 10, -1, -1));
-
-        jLabel111.setText("RTN del Concesionario");
-        jD_modiVenta.getContentPane().add(jLabel111, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 97, -1, -1));
-
-        jLabel114.setText("RTN del Cliente");
-        jD_modiVenta.getContentPane().add(jLabel114, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 164, -1, -1));
-
-        jLabel121.setText("Fecha de la compra ");
-        jD_modiVenta.getContentPane().add(jLabel121, new org.netbeans.lib.awtextra.AbsoluteConstraints(36, 232, -1, -1));
-
-        jDC_modiFechaVenta.setDate(new java.util.Date(934933459000L));
-        jD_modiVenta.getContentPane().add(jDC_modiFechaVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 230, 237, -1));
-
-        jPanel27.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel27.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jCB_modiRtnConVenta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel27.add(jCB_modiRtnConVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 90, 160, -1));
-
-        jCB_modiRtnClienteVenta.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel27.add(jCB_modiRtnClienteVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 160, 160, -1));
-
-        jB_modiVenta.setText("Modificar");
-        jPanel27.add(jB_modiVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 320, -1, -1));
-        jPanel27.add(jB_cargarModiVenta, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 120, 40, -1));
-
-        jD_modiVenta.getContentPane().add(jPanel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 350));
-
-        jD_modiCompra.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel130.setText("RTN Concesionario");
-        jD_modiCompra.getContentPane().add(jLabel130, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 110, -1, -1));
-
-        jPanel28.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel28.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jPanel28.add(jLabel134, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 20, -1, -1));
-
-        jCB_modiRtnConCompra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel28.add(jCB_modiRtnConCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 100, 180, -1));
-
-        jCB_modiIdCompaniaCompra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel28.add(jCB_modiIdCompaniaCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 140, 180, -1));
-
-        jCB_modiVinVehiculoCompra.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel28.add(jCB_modiVinVehiculoCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 190, 180, -1));
-
-        jB_modiCompra.setText("Modificar");
-        jPanel28.add(jB_modiCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 370, -1, -1));
-        jPanel28.add(jB_cargarModiCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 140, 40, -1));
-
-        jLabel131.setText("ID Compania");
-        jPanel28.add(jLabel131, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 150, -1, -1));
-
-        jLabel133.setText("VIN Vehiculo");
-        jPanel28.add(jLabel133, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 190, -1, -1));
-        jPanel28.add(jTF_modiPrecioCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 300, 205, -1));
-
-        jLabel132.setText("Precio de la venta");
-        jPanel28.add(jLabel132, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 310, -1, -1));
-
-        jLabel138.setText("Fecha Adquirido");
-        jPanel28.add(jLabel138, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 270, -1, -1));
-
-        jDC_modiFechaCompra.setDate(new java.util.Date(976084732000L));
-        jPanel28.add(jDC_modiFechaCompra, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 260, 200, -1));
-
-        jD_modiCompra.getContentPane().add(jPanel28, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 480, 420));
-
-        jD_modiProvee.getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        jD_modiProvee.getContentPane().add(jLabel135, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 17, -1, -1));
-
-        jLabel136.setText("Id Compania");
-        jD_modiProvee.getContentPane().add(jLabel136, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 119, -1, -1));
-
-        jLabel137.setText("Id Proveedor");
-        jD_modiProvee.getContentPane().add(jLabel137, new org.netbeans.lib.awtextra.AbsoluteConstraints(42, 168, -1, -1));
-
-        jPanel29.setBackground(new java.awt.Color(204, 204, 204));
-        jPanel29.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jCB_modiIdCompaniaProvee.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel29.add(jCB_modiIdCompaniaProvee, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 150, -1));
-
-        jCB_modiIdProveedorProvee.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel29.add(jCB_modiIdProveedorProvee, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 150, -1));
-
-        jB_modiProvee.setText("Modificar");
-        jPanel29.add(jB_modiProvee, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, -1, -1));
-
-        jD_modiProvee.getContentPane().add(jPanel29, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 370, 260));
-
         jB_eliminarNonTrans.setText("Eliminar");
         jB_eliminarNonTrans.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -2141,6 +2035,12 @@ public class JFramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jB_crudAdminMouseClicked
 
     private void jB_reportesAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_reportesAdminMouseClicked
+        String sqlComboBox = "SELECT DISTINCT transmision FROM vehiculo";
+        try {
+            llenarComboBox(cb_transmision, sqlComboBox);
+        } catch (SQLException ex) {
+            Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         jD_ventanaMarketing.pack();
         jD_ventanaMarketing.setModal(true);
         jD_ventanaMarketing.setLocationRelativeTo(this);
@@ -2148,6 +2048,12 @@ public class JFramePrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jB_reportesAdminMouseClicked
 
     private void jB_inventarioAdminMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_inventarioAdminMouseClicked
+        String sqlComboBox = "SELECT DISTINCT pais FROM concesionario";
+        try {
+            llenarComboBox(cb_paisInventairo, sqlComboBox);
+        } catch (SQLException ex) {
+            Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         jD_ventanaServicioLocalizacionVehiculo.pack();
         jD_ventanaServicioLocalizacionVehiculo.setModal(true);
         jD_ventanaServicioLocalizacionVehiculo.setLocationRelativeTo(this);
@@ -2186,8 +2092,24 @@ public class JFramePrincipal extends javax.swing.JFrame {
             tipoPlanta = "Suministradora";
         }
         nombrePlanta = jTF_crearNombrePlanta.getText();
-        idCompania = jCB_crearIdCompaniaPlanta.getSelectedItem().toString();
-        System.out.println(idCompania);
+        DefaultComboBoxModel modelo = (DefaultComboBoxModel) cb_crearIdCompaniaPlanta.getModel();
+        idCompania = (String) modelo.getSelectedItem();
+        conn = db.getConnection();
+        CallableStatement cs = null;
+        String sql = "{CALL sp_insertarPFabricacion(?,?,?,?)}";
+        try {
+            cs = conn.prepareCall(sql);
+            cs.setString(1, idPlanta);
+            cs.setString(2, idCompania);
+            cs.setString(3, nombrePlanta);
+            cs.setString(4, tipoPlanta);
+            cs.execute();
+            cs.close();
+            conn.close();
+            JOptionPane.showMessageDialog(jD_crearProveedor, "Se ha agregado a la DB con éxito", "Exito", JOptionPane.INFORMATION_MESSAGE);
+        } catch (SQLException ex) {
+            Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
         //mandar datos a la base
     }//GEN-LAST:event_jB_crearPlantaMouseClicked
 
@@ -2201,9 +2123,30 @@ public class JFramePrincipal extends javax.swing.JFrame {
         transmision = jTF_crearTransmisionVehiculo.getText();
         modelo = jTF_crearModeloVehiculo.getText();
         tipoCarroceria = jTF_crearCarroceria.getText();
-        precioCompra = Double.parseDouble(jTF_crearPrecioVehiculo.getText());
+        precioCompra = (double) jSpinner1.getValue();
         marca = jTF_crearMarcaVehiculo.getText();
         //mandar los datos a la base
+        conn = db.getConnection();
+        CallableStatement cs = null;
+        String sql = "{CALL sp_insertarVehiculo(?,?,?,?,?,?,?,?,?)}";
+        try {
+            cs = conn.prepareCall(sql);
+            cs.setString(1, vin);
+            cs.setString(2, idCompania);
+            cs.setString(3, tipoMotor);
+            cs.setString(4, color);
+            cs.setString(5, transmision);
+            cs.setString(6, modelo);
+            cs.setString(7, tipoCarroceria);
+            cs.setDouble(8, precioCompra);
+            cs.setString(9, marca);
+            cs.execute();
+            cs.close();
+            conn.close();
+            JOptionPane.showMessageDialog(jD_crearProveedor, "Se ha agregado a la DB con éxito", "Exito", JOptionPane.INFORMATION_MESSAGE);
+        } catch (SQLException ex) {
+            Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jB_crearVehiculoMouseClicked
 
     private void jB_crearProveedorMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_crearProveedorMouseClicked
@@ -2293,7 +2236,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         }
         if (Cliente == 1) {
             tipoCliente = "Persona";
-            ingresoPersona = Double.parseDouble(jTF_crearIngresoPersonaCliente.getText());
+            ingresoPersona = (double) js_ingresoAnual.getValue();
             if (jRB_masculino.isSelected()) {
                 sexo = 'M';
             } else {
@@ -2339,8 +2282,26 @@ public class JFramePrincipal extends javax.swing.JFrame {
         Date fechaVenta;
         rtnCon = jCB_crearRtnConVenta.getSelectedItem().toString();
         rtnCliente = jCB_crearRtnClienteVenta.getSelectedItem().toString();
+        String vinVehiculoVendido = jCB_crearVinVehiculoVendido.getSelectedItem().toString();
         fechaVenta = jDC_crearFechaVenta.getDate();
+        java.sql.Date fechaSql = new java.sql.Date(fechaVenta.getTime());
         //mandar datos a la base
+        conn = db.getConnection();
+        CallableStatement cs = null;
+        String sql = "{CALL sp_insertarLe_Vende_A(?,?,?,?)}";
+        try {
+            cs = conn.prepareCall(sql);
+            cs.setString(1, rtnCon);
+            cs.setString(2, rtnCliente);
+            cs.setString(3, vinVehiculoVendido);
+            cs.setDate(4, fechaSql);
+            cs.execute();
+            cs.close();
+            conn.close();
+            JOptionPane.showMessageDialog(jD_crearCompania, "Se ha agregado a la DB con éxito", "Exito", JOptionPane.INFORMATION_MESSAGE);
+        } catch (SQLException ex) {
+            Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jB_crearVentaMouseClicked
 
     private void jB_crearCompraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_crearCompraMouseClicked
@@ -2351,15 +2312,49 @@ public class JFramePrincipal extends javax.swing.JFrame {
         idCompania = jCB_crearIdCompaniaCompra.getSelectedItem().toString();
         vinVehiculo = jCB_crearVinVehiculoCompra.getSelectedItem().toString();
         fecha = jDC_crearFechaCompra.getDate();
-        precioVenta = Double.parseDouble(jTF_crearPrecioCompra.getText());
+        Date fechaHoy = new java.sql.Date(fecha.getTime());
+        precioVenta = (double) js_precioVenta.getValue();
         //mandar datos a la base
+        conn = db.getConnection();
+        CallableStatement cs = null;
+        String sql = "{CALL sp_insertarCompra_A(?,?,?,?,?)}";
+        try {
+            cs = conn.prepareCall(sql);
+            cs.setString(1, rtnCon);
+            cs.setString(2, idCompania);
+            cs.setString(3, vinVehiculo);
+            cs.setDouble(4, precioVenta);
+            cs.setDate(5, (java.sql.Date) fechaHoy);
+            cs.execute();
+            cs.close();
+            conn.close();
+            JOptionPane.showMessageDialog(jD_crearCompania, "Se ha agregado a la DB con éxito", "Exito", JOptionPane.INFORMATION_MESSAGE);
+        } catch (SQLException ex) {
+            Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jB_crearCompraMouseClicked
 
     private void jB_crearProveeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_crearProveeMouseClicked
-        String idProveedor, idCompania;
+        String idProveedor, idCompania, nombreProducto;
         idProveedor = jCB_crearIdProveedorProvee.getSelectedItem().toString();
         idCompania = jCB_crearIdCompaniaProvee.getSelectedItem().toString();
+        nombreProducto = jt_nombreProducto.getText();
         //mandar datos a la base
+        conn = db.getConnection();
+        CallableStatement cs = null;
+        String sql = "{CALL sp_insertarProvee(?,?,?)}";
+        try {
+            cs = conn.prepareCall(sql);
+            cs.setString(1, idProveedor);
+            cs.setString(2, idCompania);
+            cs.setString(3, nombreProducto);
+            cs.execute();
+            cs.close();
+            conn.close();
+            JOptionPane.showMessageDialog(jD_crearCompania, "Se ha agregado a la DB con éxito", "Exito", JOptionPane.INFORMATION_MESSAGE);
+        } catch (SQLException ex) {
+            Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_jB_crearProveeMouseClicked
 
     private void jB_modiPlantaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_modiPlantaMouseClicked
@@ -2373,6 +2368,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
         }
         nombrePlanta = jTF_modiNombrePlanta.getText();
         //mandar datos a la base
+        
     }//GEN-LAST:event_jB_modiPlantaMouseClicked
 
     private void jB_cargarModiPlantaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jB_cargarModiPlantaMouseClicked
@@ -2449,7 +2445,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
             Cliente = 1;
             jTF_crearTipoEmpresaCliente.setEnabled(false);
             jTF_crearIdPersonaClient.setEnabled(true);
-            jTF_crearIngresoPersonaCliente.setEnabled(true);
+            js_ingresoAnual.setEnabled(true);
             jRB_Femenino.setEnabled(true);
             jRB_masculino.setEnabled(true);
             jTF_modiIdPersonaClient.setText(idPersona);
@@ -2463,7 +2459,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
             Cliente = 2;
             jTF_crearTipoEmpresaCliente.setEnabled(true);
             jTF_crearIdPersonaClient.setEnabled(false);
-            jTF_crearIngresoPersonaCliente.setEnabled(false);
+            js_ingresoAnual.setEnabled(false);
             jRB_Femenino.setEnabled(false);
             jRB_masculino.setEnabled(false);
             jTF_modiTipoEmpresaCliente.setText(tipoEmpresa);
@@ -2637,28 +2633,28 @@ public class JFramePrincipal extends javax.swing.JFrame {
 
     private void jButton12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton12MouseClicked
         // TODO add your handling code here:
-        String[] columnas = {"RTN","Nombre Concesionario", "Dias de Tardanza"};
+        String[] columnas = {"RTN", "Nombre Concesionario", "Dias de Tardanza"};
         String sql = "SELECT * FROM distribMenosEficaz";
         llenarTablaSt(sql, jt_reporte6, columnas);
     }//GEN-LAST:event_jButton12MouseClicked
 
     private void jButton11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton11MouseClicked
         // TODO add your handling code here:
-        String[] columnas = {"Tipo Carroceria","Unidad de Ventas", "Mes"};
+        String[] columnas = {"Tipo Carroceria", "Unidad de Ventas", "Mes"};
         String sql = "SELECT * FROM mesConvertibles";
         llenarTablaSt(sql, jt_reporte5, columnas);
     }//GEN-LAST:event_jButton11MouseClicked
 
     private void jButton10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton10MouseClicked
         // TODO add your handling code here:
-        String[] columnas = {"Marca","Unidad de Ventas"};
+        String[] columnas = {"Marca", "Unidad de Ventas"};
         String sql = "SELECT * FROM mejoresMarcasVentas WHERE rownum <= 2";
         llenarTablaSt(sql, jt_reporte4, columnas);
     }//GEN-LAST:event_jButton10MouseClicked
 
     private void jButton9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton9MouseClicked
         // TODO add your handling code here:
-        String[] columnas = {"Marca","Cantidad"};
+        String[] columnas = {"Marca", "Cantidad"};
         String sql = "SELECT * FROM mejoresMarcasGanancia WHERE rownum <= 2";
         llenarTablaSt(sql, jt_reporte3, columnas);
     }//GEN-LAST:event_jButton9MouseClicked
@@ -2666,8 +2662,8 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private void jButton8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton8MouseClicked
         // TODO add your handling code here:
         jt_reporte2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object[][]{},
-            new String[]{}
+                new Object[][]{},
+                new String[]{}
         ));
         DefaultTableModel modeloT = (DefaultTableModel) jt_reporte2.getModel();
 
@@ -2683,9 +2679,9 @@ public class JFramePrincipal extends javax.swing.JFrame {
         DefaultTableModel modelo = (DefaultTableModel) jt_reporte2.getModel();
 
         String sqlPrueba = "SELECT vin, rtnClien, nombreCliente "
-        + "FROM transmisiondefectuosa "
-        + "WHERE ? > transmisionDefectuosa.fecha and ? < transmisionDefectuosa.fecha and "
-        + "transmisionDefectuosa.transmision = ?";
+                + "FROM transmisiondefectuosa "
+                + "WHERE ? > transmisionDefectuosa.fecha and ? < transmisionDefectuosa.fecha and "
+                + "transmisionDefectuosa.transmision = ?";
         try {
             Date fecha1 = new java.sql.Date(jdc_fecha1.getDate().getTime());
             Date fecha2 = new java.sql.Date(jdc_fecha2.getDate().getTime());
@@ -2886,10 +2882,19 @@ public class JFramePrincipal extends javax.swing.JFrame {
     }
 
     private void CREAR() throws SQLException {
+        String sqlComboBox = "";
+        String sqlComboBox2 = "";
+        String sqlComboBox3 = "";
         int quien = A_Quien();
         switch (quien) {
             case 1:
                 //cargar el combobox jCB_crearIdCompaniaPlanta
+                sqlComboBox = "SELECT idCompañia FROM compañia";
+                try {
+                    llenarComboBox(cb_crearIdCompaniaPlanta, sqlComboBox);
+                } catch (SQLException ex) {
+                    Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 jD_crearPlantaFabricacion.pack();
                 jD_crearPlantaFabricacion.setModal(true);
                 jD_crearPlantaFabricacion.setLocationRelativeTo(this);
@@ -2898,6 +2903,12 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 break;
             case 2:
                 //cargar el combobox jCB_crearIdCompaniaVehiculo
+                sqlComboBox = "SELECT idCompañia FROM compañia";
+                try {
+                    llenarComboBox(jCB_crearIdCompaniaVehiculo, sqlComboBox);
+                } catch (SQLException ex) {
+                    Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 jD_crearVehiculo.pack();
                 jD_crearVehiculo.setModal(true);
                 jD_crearVehiculo.setLocationRelativeTo(this);
@@ -2905,6 +2916,16 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 break;
             case 3:
                 //cargar comboboxes de la ventana de crearVenta
+                sqlComboBox = "SELECT rtnCon FROM concesionario";
+                sqlComboBox2 = "SELECT rtnClien FROM cliente";
+                sqlComboBox3 = "SELECT vinVehiculoComprado FROM compra_a";
+                try {
+                    llenarComboBox(jCB_crearRtnConVenta, sqlComboBox);
+                    llenarComboBox(jCB_crearRtnClienteVenta, sqlComboBox2);
+                    llenarComboBox(jCB_crearVinVehiculoVendido, sqlComboBox3);
+                } catch (SQLException ex) {
+                    Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 jD_crearVenta.pack();
                 jD_crearVenta.setModal(true);
                 jD_crearVenta.setLocationRelativeTo(this);
@@ -2924,6 +2945,16 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 break;
             case 6:
                 //cargar las comboboxes de la ventana crearCompra
+                sqlComboBox = "SELECT rtnCon FROM concesionario";
+                sqlComboBox2 = "SELECT idCompañia FROM compañia";
+                sqlComboBox3 = "SELECT vin FROM vehiculo";
+                try {
+                    llenarComboBox(jCB_crearRtnConCompra, sqlComboBox);
+                    llenarComboBox(jCB_crearIdCompaniaCompra, sqlComboBox2);
+                    llenarComboBox(jCB_crearVinVehiculoCompra, sqlComboBox3);
+                } catch (SQLException ex) {
+                    Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 jD_crearCompra.pack();
                 jD_crearCompra.setModal(true);
                 jD_crearCompra.setLocationRelativeTo(this);
@@ -2945,14 +2976,14 @@ public class JFramePrincipal extends javax.swing.JFrame {
                         Cliente = 1;
                         jTF_crearTipoEmpresaCliente.setEnabled(false);
                         jTF_crearIdPersonaClient.setEnabled(true);
-                        jTF_crearIngresoPersonaCliente.setEnabled(true);
+                        js_ingresoAnual.setEnabled(true);
                         jRB_Femenino.setEnabled(true);
                         jRB_masculino.setEnabled(true);
                     } else if (seleccion == 1) {
                         Cliente = 2;
                         jTF_crearTipoEmpresaCliente.setEnabled(true);
                         jTF_crearIdPersonaClient.setEnabled(false);
-                        jTF_crearIngresoPersonaCliente.setEnabled(false);
+                        js_ingresoAnual.setEnabled(false);
                         jRB_Femenino.setEnabled(false);
                         jRB_masculino.setEnabled(false);
                     }
@@ -2967,6 +2998,14 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 break;
             case 9:
                 //cargar las comboboxes de la ventana crearProvee
+                sqlComboBox = "SELECT idCompañia FROM compañia";
+                sqlComboBox2 = "SELECT idProveedor FROM proveedor";
+                try {
+                    llenarComboBox(jCB_crearIdCompaniaProvee, sqlComboBox);
+                    llenarComboBox(jCB_crearIdProveedorProvee, sqlComboBox2);
+                } catch (SQLException ex) {
+                    Logger.getLogger(JFramePrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 jD_crearProvee.pack();
                 jD_crearProvee.setModal(true);
                 jD_crearProvee.setLocationRelativeTo(this);
@@ -2997,10 +3036,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 break;
             case 3:
                 //Aqui Cargas los id del combobox jCB_modiRtnConVenta y jCB_modiRtnClienteVenta
-                jD_modiVenta.pack();
-                jD_modiVenta.setModal(true);
-                jD_modiVenta.setLocationRelativeTo(this);
-                jD_modiVenta.setVisible(true);
                 break;
             case 4:
                 //Aqui Cargas los id del combobox jCB_modiProveedor
@@ -3018,10 +3053,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
                 break;
             case 6:
                 //Aqui Cargas los id del combobox jCB_modiRtnConCompra, jCB_modiIdCompaniaCompra, y jCB_modiVinVehiculoCompra
-                jD_modiCompra.pack();
-                jD_modiCompra.setModal(true);
-                jD_modiCompra.setLocationRelativeTo(this);
-                jD_modiCompra.setVisible(true);
                 break;
             case 7:
                 //Aqui Cargas los id del combobox jCB_modiCompania
@@ -3126,6 +3157,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup5;
     private javax.swing.ButtonGroup buttonGroup_Tiempo;
     private javax.swing.ButtonGroup buttonGroup_generIngreso;
+    private javax.swing.JComboBox<String> cb_crearIdCompaniaPlanta;
     private javax.swing.JComboBox<String> cb_paisInventairo;
     private javax.swing.JComboBox<String> cb_rtnClienteInventario;
     private javax.swing.JComboBox<String> cb_transmision;
@@ -3141,12 +3173,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jB_anteriorProveedoresClientes8;
     private javax.swing.JButton jB_cargarModiCliente;
     private javax.swing.JButton jB_cargarModiCompania;
-    private javax.swing.JButton jB_cargarModiCompra;
     private javax.swing.JButton jB_cargarModiCon;
     private javax.swing.JButton jB_cargarModiPlanta;
     private javax.swing.JButton jB_cargarModiProveedor;
     private javax.swing.JButton jB_cargarModiVehiculo;
-    private javax.swing.JButton jB_cargarModiVenta;
     private javax.swing.JButton jB_crearCliente;
     private javax.swing.JButton jB_crearCompania;
     private javax.swing.JButton jB_crearCompra;
@@ -3164,13 +3194,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jB_login;
     private javax.swing.JButton jB_modiCliente;
     private javax.swing.JButton jB_modiCompania;
-    private javax.swing.JButton jB_modiCompra;
     private javax.swing.JButton jB_modiCon;
     private javax.swing.JButton jB_modiPlanta;
-    private javax.swing.JButton jB_modiProvee;
     private javax.swing.JButton jB_modiProveedor;
     private javax.swing.JButton jB_modiVehiculo;
-    private javax.swing.JButton jB_modiVenta;
     private javax.swing.JButton jB_reportesAdmin;
     private javax.swing.JButton jButton10;
     private javax.swing.JButton jButton11;
@@ -3180,7 +3207,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JButton jButton8;
     private javax.swing.JButton jButton9;
     private javax.swing.JComboBox<String> jCB_crearIdCompaniaCompra;
-    private javax.swing.JComboBox<String> jCB_crearIdCompaniaPlanta;
     private javax.swing.JComboBox<String> jCB_crearIdCompaniaProvee;
     private javax.swing.JComboBox<String> jCB_crearIdCompaniaVehiculo;
     private javax.swing.JComboBox<String> jCB_crearIdProveedorProvee;
@@ -3188,23 +3214,15 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jCB_crearRtnConCompra;
     private javax.swing.JComboBox<String> jCB_crearRtnConVenta;
     private javax.swing.JComboBox<String> jCB_crearVinVehiculoCompra;
+    private javax.swing.JComboBox<String> jCB_crearVinVehiculoVendido;
     private javax.swing.JComboBox<String> jCB_modiCliente;
     private javax.swing.JComboBox<String> jCB_modiCompania;
     private javax.swing.JComboBox<String> jCB_modiCon;
-    private javax.swing.JComboBox<String> jCB_modiIdCompaniaCompra;
-    private javax.swing.JComboBox<String> jCB_modiIdCompaniaProvee;
-    private javax.swing.JComboBox<String> jCB_modiIdProveedorProvee;
     private javax.swing.JComboBox<String> jCB_modiPlanta;
     private javax.swing.JComboBox<String> jCB_modiProveedor;
-    private javax.swing.JComboBox<String> jCB_modiRtnClienteVenta;
-    private javax.swing.JComboBox<String> jCB_modiRtnConCompra;
-    private javax.swing.JComboBox<String> jCB_modiRtnConVenta;
     private javax.swing.JComboBox<String> jCB_modiVehiculo;
-    private javax.swing.JComboBox<String> jCB_modiVinVehiculoCompra;
     private com.toedter.calendar.JDateChooser jDC_crearFechaCompra;
     private com.toedter.calendar.JDateChooser jDC_crearFechaVenta;
-    private com.toedter.calendar.JDateChooser jDC_modiFechaCompra;
-    private com.toedter.calendar.JDateChooser jDC_modiFechaVenta;
     private javax.swing.JDialog jD_crearCliente;
     private javax.swing.JDialog jD_crearCompania;
     private javax.swing.JDialog jD_crearCompra;
@@ -3218,13 +3236,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JDialog jD_eliminarTrans;
     private javax.swing.JDialog jD_modiCliente;
     private javax.swing.JDialog jD_modiCompania;
-    private javax.swing.JDialog jD_modiCompra;
     private javax.swing.JDialog jD_modiConsecionario;
     private javax.swing.JDialog jD_modiPlantaFabricacion;
-    private javax.swing.JDialog jD_modiProvee;
     private javax.swing.JDialog jD_modiProveedor;
     private javax.swing.JDialog jD_modiVehiculo;
-    private javax.swing.JDialog jD_modiVenta;
     private javax.swing.JDialog jD_ventanaAdmin;
     private javax.swing.JDialog jD_ventanaCRUD;
     private javax.swing.JDialog jD_ventanaCliente;
@@ -3261,7 +3276,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel119;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel120;
-    private javax.swing.JLabel jLabel121;
     private javax.swing.JLabel jLabel122;
     private javax.swing.JLabel jLabel123;
     private javax.swing.JLabel jLabel124;
@@ -3271,15 +3285,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel128;
     private javax.swing.JLabel jLabel129;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel130;
-    private javax.swing.JLabel jLabel131;
-    private javax.swing.JLabel jLabel132;
-    private javax.swing.JLabel jLabel133;
-    private javax.swing.JLabel jLabel134;
-    private javax.swing.JLabel jLabel135;
-    private javax.swing.JLabel jLabel136;
-    private javax.swing.JLabel jLabel137;
-    private javax.swing.JLabel jLabel138;
     private javax.swing.JLabel jLabel139;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel140;
@@ -3313,8 +3318,10 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel29;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel30;
     private javax.swing.JLabel jLabel31;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -3343,6 +3350,8 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel54;
     private javax.swing.JLabel jLabel55;
     private javax.swing.JLabel jLabel56;
+    private javax.swing.JLabel jLabel57;
+    private javax.swing.JLabel jLabel58;
     private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
@@ -3408,9 +3417,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel24;
     private javax.swing.JPanel jPanel25;
     private javax.swing.JPanel jPanel26;
-    private javax.swing.JPanel jPanel27;
-    private javax.swing.JPanel jPanel28;
-    private javax.swing.JPanel jPanel29;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel30;
     private javax.swing.JPanel jPanel31;
@@ -3450,6 +3456,7 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JSpinner jSpinner1;
     private javax.swing.JTextField jTF_crearCarroceria;
     private javax.swing.JTextField jTF_crearColorVehiculo;
     private javax.swing.JTextField jTF_crearDireccionCliente;
@@ -3457,7 +3464,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTF_crearIdPersonaClient;
     private javax.swing.JTextField jTF_crearIdPlanta;
     private javax.swing.JTextField jTF_crearIdProveedor;
-    private javax.swing.JTextField jTF_crearIngresoPersonaCliente;
     private javax.swing.JTextField jTF_crearMarcaVehiculo;
     private javax.swing.JTextField jTF_crearModeloVehiculo;
     private javax.swing.JTextField jTF_crearNombreCliente;
@@ -3466,8 +3472,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTF_crearNombrePlanta;
     private javax.swing.JTextField jTF_crearNombreProveedor;
     private javax.swing.JTextField jTF_crearParisCon;
-    private javax.swing.JTextField jTF_crearPrecioCompra;
-    private javax.swing.JTextField jTF_crearPrecioVehiculo;
     private javax.swing.JTextField jTF_crearRtnCliente;
     private javax.swing.JTextField jTF_crearRtnCon;
     private javax.swing.JTextField jTF_crearTelefonoClietne;
@@ -3488,7 +3492,6 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JTextField jTF_modiNombrePlanta;
     private javax.swing.JTextField jTF_modiNombreProveedor;
     private javax.swing.JTextField jTF_modiParisCon;
-    private javax.swing.JTextField jTF_modiPrecioCompra;
     private javax.swing.JTextField jTF_modiPrecioVehiculo;
     private javax.swing.JTextField jTF_modiTelefonoClietne;
     private javax.swing.JTextField jTF_modiTipoEmpresaCliente;
@@ -3499,9 +3502,12 @@ public class JFramePrincipal extends javax.swing.JFrame {
     private javax.swing.JTabbedPane jTabbedPane1;
     private com.toedter.calendar.JDateChooser jdc_fecha1;
     private com.toedter.calendar.JDateChooser jdc_fecha2;
+    private javax.swing.JSpinner js_ingresoAnual;
+    private javax.swing.JSpinner js_precioVenta;
     private javax.swing.JTable jt_PreciosCliente;
     private javax.swing.JButton jt_comprarVehiculo;
     private javax.swing.JTable jt_concesionariosPais;
+    private javax.swing.JTextField jt_nombreProducto;
     private javax.swing.JTable jt_reporte1;
     private javax.swing.JTable jt_reporte2;
     private javax.swing.JTable jt_reporte3;
